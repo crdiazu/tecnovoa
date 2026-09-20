@@ -1,0 +1,2433 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TECNOVOA — Soluciones TI y Comunicaciones para Empresas en Chile</title>
+    <meta name="description" content="Integramos TI y comunicaciones para tu empresa en Chile: networking, ciberseguridad, cloud, respaldo, datacenter y soporte. +5 años de experiencia. Solicita diagnóstico hoy." />
+    <meta name="keywords" content="integrador de sistemas Chile, soluciones TI empresas, networking Chile, ciberseguridad empresas Chile, cableado estructurado Santiago, virtualización Proxmox VE Chile, backup continuidad operacional, infraestructura IaaS Chile" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <style>
+      /* ─── RESET & BASE ─────────────────────────────────────── */
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      html { scroll-behavior: smooth; }
+
+      :root, html[data-theme="dark"] {
+        --bg:        #080d1a;
+        --bg-2:      #0c1224;
+        --bg-3:      #111829;
+        --surface:   #0d1527;
+        --surface-h: #141f36;
+        --border:    rgba(255, 255, 255, 0.08);
+        --border-h:  rgba(42, 115, 255, 0.4);
+        --text:      #f0f4ff;
+        --text-2:    #94a3b8;
+        --text-3:    #64748b;
+        --accent:    #2a73ff;
+        --accent-2:  #00c8ff;
+        --accent-g:  linear-gradient(135deg, #2a73ff 0%, #00c8ff 100%);
+        --cyan:      #00c8ff;
+        --glow:      rgba(42, 115, 255, 0.25);
+        --radius-sm: 8px;
+        --radius-md: 14px;
+        --radius-lg: 22px;
+        --radius-xl: 32px;
+        --shadow:    0 16px 40px rgba(0,0,0,0.4);
+        --shadow-sm: 0 4px 14px rgba(0,0,0,0.25);
+        color-scheme: dark;
+      }
+
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      img { max-width: 100%; display: block; }
+      a { color: inherit; text-decoration: none; }
+      ul { list-style: none; }
+
+      .container {
+        width: 88%;
+        max-width: 1680px;
+        margin: 0 auto;
+        padding: 0 clamp(16px, 3vw, 40px);
+      }
+
+      /* ─── SCROLLBAR ────────────────────────────────────────── */
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-track { background: var(--bg); }
+      ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 99px; }
+
+      /* ─── HERO (CORPORATE B2B LUMINOUS — 7 BUSINESS UNITS) ─── */
+      #hero {
+        position: relative;
+        min-height: 88vh;
+        display: flex;
+        align-items: center;
+        padding: 130px 0 80px;
+        background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+        border-bottom: 1px solid #e2e8f0;
+        color: #0f172a;
+        overflow: hidden;
+      }
+
+      .hero-bg-subtle {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(15,23,42,0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(15,23,42,0.03) 1px, transparent 1px);
+        background-size: 32px 32px;
+        mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black 50%, transparent 100%);
+        pointer-events: none;
+      }
+
+      .hero-inner {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: 1.15fr 0.95fr;
+        gap: 56px;
+        align-items: center;
+      }
+
+      .hero-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 12.5px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #1d4ed8;
+        background: #eff6ff;
+        border: 1px solid #dbeafe;
+        padding: 5px 12px;
+        border-radius: 99px;
+        margin-bottom: 20px;
+      }
+
+      .hero-title {
+        font-size: clamp(40px, 5.2vw, 64px);
+        font-weight: 800;
+        line-height: 1.1;
+        letter-spacing: -0.03em;
+        color: #0f172a;
+        margin-bottom: 20px;
+      }
+
+      .hero-title .title-accent {
+        color: #1d4ed8;
+      }
+
+      .hero-lead {
+        font-size: 19px;
+        color: #475569;
+        line-height: 1.6;
+        margin-bottom: 32px;
+        max-width: 620px;
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 14px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 36px;
+      }
+
+      .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 16px 30px;
+        background: #1d4ed8;
+        color: #ffffff !important;
+        font-size: 15.5px;
+        font-weight: 600;
+        border-radius: 8px;
+        border: 1px solid #1e40af;
+        cursor: pointer;
+        transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+        box-shadow: 0 4px 14px rgba(29, 78, 216, 0.22);
+      }
+
+      .btn-primary:hover {
+        background: #1e40af;
+        transform: translateY(-1px);
+        box-shadow: 0 6px 20px rgba(29, 78, 216, 0.32);
+      }
+
+      .btn-secondary {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 15px 26px;
+        background: #ffffff;
+        color: #1e293b;
+        font-size: 15.5px;
+        font-weight: 600;
+        border-radius: 8px;
+        border: 1px solid #cbd5e1;
+        cursor: pointer;
+        transition: background 0.2s, border-color 0.2s, color 0.2s;
+      }
+
+      .btn-secondary:hover {
+        background: #f8fafc;
+        border-color: #94a3b8;
+        color: #0f172a;
+      }
+
+      .hero-pillars-pill {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        padding-top: 24px;
+        border-top: 1px solid #e2e8f0;
+      }
+
+      .pillar-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 12px;
+        font-weight: 600;
+        color: #475569;
+      }
+
+      .pillar-tag svg {
+        color: #16a34a;
+        flex-shrink: 0;
+      }
+
+      /* 7-Unit Executive Showcase */
+      .hero-units-showcase {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 16px;
+        box-shadow: 0 16px 36px -6px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(15, 23, 42, 0.02);
+        padding: 24px;
+      }
+
+      .showcase-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 16px;
+        padding-bottom: 14px;
+        border-bottom: 1px solid #f1f5f9;
+      }
+
+      .showcase-title-wrap {}
+
+      .showcase-badge {
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: #1d4ed8;
+      }
+
+      .showcase-title {
+        font-size: 16px;
+        font-weight: 800;
+        color: #0f172a;
+        margin-top: 2px;
+        letter-spacing: -0.01em;
+      }
+
+      .showcase-indicator {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 11.5px;
+        font-weight: 600;
+        color: #16a34a;
+        background: #f0fdf4;
+        border: 1px solid #dcfce7;
+        padding: 4px 10px;
+        border-radius: 99px;
+      }
+
+      .showcase-indicator-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #16a34a;
+      }
+
+      .showcase-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .unit-tile {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 10px 12px;
+        border-radius: 10px;
+        border: 1px solid #f8fafc;
+        background: #ffffff;
+        text-decoration: none;
+        color: inherit;
+        transition: background 0.15s, border-color 0.15s, transform 0.15s;
+      }
+
+      .unit-tile:hover {
+        background: #f8fafc;
+        border-color: #cbd5e1;
+        transform: translateX(3px);
+      }
+
+      .unit-tile-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        display: grid;
+        place-items: center;
+        flex-shrink: 0;
+      }
+
+      .unit-tile-body {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .unit-tile-title {
+        font-size: 13.5px;
+        font-weight: 700;
+        color: #0f172a;
+        line-height: 1.2;
+      }
+
+      .unit-tile-desc {
+        font-size: 11.5px;
+        color: #64748b;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-top: 1px;
+      }
+
+      .unit-tile-arrow {
+        color: #cbd5e1;
+        transition: color 0.15s, transform 0.15s;
+        flex-shrink: 0;
+      }
+
+      .unit-tile:hover .unit-tile-arrow {
+        color: #1d4ed8;
+        transform: translateX(2px);
+      }
+
+      /* ─── SECTION 2: TRUST / PROOF BAR (MINIMALIST & SIMPLE) ── */
+      .trust-section {
+        background: #ffffff;
+        border-bottom: 1px solid #e2e8f0;
+        padding: 34px 0;
+      }
+
+      .trust-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 18px;
+      }
+
+      .trust-label {
+        font-size: 11.5px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #64748b;
+      }
+
+      .trust-logos {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 28px;
+        flex-wrap: wrap;
+      }
+
+      .trust-logo-item {
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        color: #334155;
+        transition: color 0.2s;
+      }
+
+      .trust-logo-item:hover {
+        color: #1d4ed8;
+      }
+
+      .trust-dot-sep {
+        color: #cbd5e1;
+        font-size: 16px;
+      }
+
+      .trust-cert-strip {
+        font-size: 12px;
+        color: #64748b;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 4px;
+      }
+
+      .trust-cert-strip strong {
+        color: #1e293b;
+      }
+
+      /* ─── 3D ARCHITECTURE EXPLORER SECTION ─────────────────── */
+      #arquitecturas-3d {
+        padding: 90px 0;
+        background: var(--bg-2);
+        border-bottom: 1px solid var(--border);
+        position: relative;
+      }
+
+      .arch-header {
+        text-align: center;
+        max-width: 760px;
+        margin: 0 auto 40px;
+      }
+
+      .arch-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 11.5px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #60a5fa;
+        background: rgba(37, 99, 235, 0.15);
+        border: 1px solid rgba(59, 130, 246, 0.3);
+        padding: 4px 12px;
+        border-radius: 99px;
+        margin-bottom: 14px;
+      }
+
+      .arch-tabs {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        margin-bottom: 36px;
+      }
+
+      .arch-tab-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 15px 14px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        font-size: 14.5px;
+        font-weight: 600;
+        color: var(--text-2);
+        cursor: pointer;
+        transition: all 0.2s ease;
+        text-align: center;
+      }
+
+      .arch-tab-btn:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--text);
+        border-color: rgba(96, 165, 250, 0.4);
+      }
+
+      .arch-tab-btn.active {
+        background: #2563eb;
+        color: #ffffff;
+        border-color: #3b82f6;
+        box-shadow: 0 4px 20px rgba(37, 99, 235, 0.35);
+      }
+
+      .arch-container-card {
+        background: var(--surface);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        align-items: stretch;
+      }
+
+      .arch-preview-wrap {
+        background: var(--bg-3);
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        overflow: hidden;
+      }
+
+      .arch-preview-wrap img {
+        width: 100%;
+        height: 100%;
+        max-height: 480px;
+        object-fit: contain;
+        border-radius: 12px;
+        transition: transform 0.4s ease, opacity 0.2s ease;
+      }
+
+      .arch-preview-wrap:hover img {
+        transform: scale(1.02);
+      }
+
+      .arch-badge-tag {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background: rgba(15, 23, 42, 0.85);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        color: #ffffff;
+        font-size: 11.5px;
+        font-weight: 700;
+        padding: 6px 12px;
+        border-radius: 6px;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .arch-badge-tag-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #22c55e;
+      }
+
+      .arch-info-wrap {
+        padding: 44px 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: var(--surface);
+      }
+
+      .arch-info-category {
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: #60a5fa;
+        margin-bottom: 8px;
+      }
+
+      .arch-info-title {
+        font-size: 24px;
+        font-weight: 800;
+        color: var(--text);
+        line-height: 1.25;
+        letter-spacing: -0.02em;
+        margin-bottom: 14px;
+      }
+
+      .arch-info-desc {
+        font-size: 14.5px;
+        color: var(--text-2);
+        line-height: 1.65;
+        margin-bottom: 24px;
+      }
+
+      .arch-info-specs {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 28px;
+        padding: 18px;
+        background: var(--bg-2);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+      }
+
+      .arch-info-spec {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 13.5px;
+        color: var(--text);
+      }
+
+      .arch-info-spec svg {
+        color: #3b82f6;
+        flex-shrink: 0;
+        margin-top: 3px;
+      }
+
+      .arch-info-actions {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .arch-partners-list {
+        font-size: 12px;
+        color: var(--text-3);
+      }
+
+      .arch-partners-list strong {
+        color: var(--text-2);
+      }
+
+      @media (max-width: 991px) {
+        .arch-container-card {
+          grid-template-columns: 1fr;
+        }
+        .arch-info-wrap {
+          padding: 30px 24px;
+        }
+      }
+
+      /* ─── SECTION HEADER ───────────────────────────────────── */
+      .section-header {
+        text-align: center;
+        margin-bottom: 44px;
+      }
+
+      .section-tag {
+        display: inline-block;
+        padding: 5px 14px;
+        background: rgba(42,115,255,0.1);
+        border: 1px solid rgba(42,115,255,0.25);
+        border-radius: 99px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--cyan);
+        margin-bottom: 18px;
+      }
+
+      .section-title {
+        font-size: clamp(32px, 4.6vw, 54px);
+        font-weight: 900;
+        letter-spacing: -0.04em;
+        line-height: 1.08;
+        margin-bottom: 18px;
+      }
+
+      .section-title .grad {
+        background: var(--accent-g);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .section-sub {
+        font-size: 19px;
+        color: var(--text-2);
+        max-width: 680px;
+        margin: 0 auto;
+        line-height: 1.55;
+      }
+
+      /* ─── SERVICES SECTION ─────────────────────────────────── */
+      #servicios {
+        padding: 100px 0;
+        background: var(--bg-2);
+        position: relative;
+      }
+
+      #servicios::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(42,115,255,0.06) 0%, transparent 70%);
+        pointer-events: none;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+
+      .service-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        transition: border-color 0.3s, background 0.3s, transform 0.3s, box-shadow 0.3s;
+        cursor: default;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .service-card::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 2px;
+        background: var(--accent-g);
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      .service-card:hover {
+        border-color: rgba(42,115,255,0.3);
+        background: var(--surface-h);
+        transform: translateY(-4px);
+        box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(42,115,255,0.15);
+      }
+
+      .service-card:hover::before { opacity: 1; }
+
+      .service-icon {
+        width: 54px; height: 54px;
+        border-radius: var(--radius-md);
+        display: grid;
+        place-items: center;
+        font-size: 24px;
+        flex-shrink: 0;
+      }
+
+      .service-header {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .service-name {
+        font-size: 18px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+      }
+
+      .service-number {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--text-3);
+        margin-top: 2px;
+      }
+
+      .service-desc {
+        font-size: 14px;
+        color: var(--text-2);
+        line-height: 1.65;
+        flex: 1;
+      }
+
+      .service-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: auto;
+        padding-top: 18px;
+        border-top: 1px solid var(--border);
+      }
+
+      .service-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 5px 11px;
+        background: rgba(255,255,255,0.03);
+        border: 1px solid var(--border);
+        border-radius: 99px;
+        font-size: 11.5px;
+        font-weight: 600;
+        color: var(--text-2);
+        white-space: nowrap;
+        transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.2s;
+      }
+
+      .service-tag svg {
+        flex-shrink: 0;
+      }
+
+      .service-card:hover .service-tag {
+        background: rgba(42,115,255,0.06);
+        border-color: rgba(42,115,255,0.22);
+        color: #f1f5f9;
+      }
+
+      /* ─── WHY US ────────────────────────────────────────────── */
+      #porque {
+        padding: 84px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .why-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 16px;
+        margin-top: 0;
+      }
+
+      .why-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 28px 24px;
+        text-align: center;
+        transition: border-color 0.3s, background 0.3s, transform 0.3s;
+      }
+
+      .why-card:hover {
+        border-color: rgba(42,115,255,0.3);
+        background: var(--surface-h);
+        transform: translateY(-4px);
+      }
+
+      .why-icon {
+        font-size: 32px;
+        margin-bottom: 16px;
+        display: block;
+      }
+
+      .why-title {
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        letter-spacing: -0.01em;
+      }
+
+      .why-desc {
+        font-size: 13px;
+        color: var(--text-2);
+        line-height: 1.6;
+      }
+
+      /* ─── CASOS DE ÉXITO ───────────────────────────────────── */
+      #casos {
+        padding: 100px 0;
+        background: var(--bg-2);
+        position: relative;
+      }
+
+      .cases-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+        gap: 20px;
+      }
+
+      .case-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        transition: border-color 0.3s, background 0.3s, transform 0.3s;
+      }
+
+      .case-card:hover {
+        border-color: rgba(42,115,255,0.3);
+        background: var(--surface-h);
+        transform: translateY(-4px);
+      }
+
+      .case-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        background: rgba(42,115,255,0.1);
+        border: 1px solid rgba(42,115,255,0.2);
+        border-radius: 99px;
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--cyan);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        width: fit-content;
+      }
+
+      .case-title {
+        font-size: 18px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        line-height: 1.25;
+      }
+
+      .case-desc {
+        font-size: 14px;
+        color: var(--text-2);
+        line-height: 1.65;
+        flex: 1;
+      }
+
+      .case-services {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+        padding-top: 16px;
+        border-top: 1px solid var(--border);
+      }
+
+      .case-service {
+        padding: 4px 10px;
+        background: rgba(255,255,255,0.04);
+        border: 1px solid var(--border);
+        border-radius: 99px;
+        font-size: 11px;
+        color: var(--text-3);
+      }
+
+      /* ─── PARTNERS ─────────────────────────────────────────── */
+      #partners {
+        padding: 84px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .partners-wrapper {
+        position: relative;
+        overflow: hidden;
+        margin-top: 0;
+      }
+
+      .partners-wrapper::before,
+      .partners-wrapper::after {
+        content: '';
+        position: absolute;
+        top: 0; bottom: 0;
+        width: 120px;
+        z-index: 2;
+        pointer-events: none;
+      }
+
+      .partners-wrapper::before {
+        left: 0;
+        background: linear-gradient(to right, var(--bg), transparent);
+      }
+
+      .partners-wrapper::after {
+        right: 0;
+        background: linear-gradient(to left, var(--bg), transparent);
+      }
+
+      .partners-track {
+        display: flex;
+        gap: 16px;
+        animation: marquee 30s linear infinite;
+        width: max-content;
+      }
+
+      .partners-track:hover { animation-play-state: paused; }
+
+      @keyframes marquee {
+        from { transform: translateX(0); }
+        to   { transform: translateX(-50%); }
+      }
+
+      .partner-chip {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 20px;
+        background: #0f172a;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 99px;
+        font-size: 13.5px;
+        font-weight: 600;
+        color: #f1f5f9;
+        white-space: nowrap;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+        transition: all 0.25s ease;
+      }
+
+      .partner-chip:hover {
+        background: #020617;
+        border-color: #3b82f6;
+        color: #ffffff;
+        box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+        transform: translateY(-2px);
+      }
+
+      .partner-logo-svg {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+        color: #38bdf8;
+        transition: color 0.25s ease, transform 0.25s ease;
+      }
+
+      .partner-chip:hover .partner-logo-svg {
+        color: #60a5fa;
+        transform: scale(1.15);
+      }
+
+      .partner-chip-dark {
+        background: #090d16;
+        border-color: #1e293b;
+        color: #ffffff;
+      }
+
+      .partner-chip-dark:hover {
+        background: #000000;
+        border-color: #3b82f6;
+        color: #ffffff;
+      }
+
+      .wd-logo-svg {
+        width: 18px;
+        height: 14px;
+        flex-shrink: 0;
+      }
+
+      /* ─── CONTACT / CTA ────────────────────────────────────── */
+      #contacto {
+        padding: 84px 0;
+        background: var(--bg-2);
+        position: relative;
+        overflow: hidden;
+      }
+
+      #contacto::before {
+        content: '';
+        position: absolute;
+        width: 600px; height: 600px;
+        border-radius: 999px;
+        background: radial-gradient(circle, rgba(29, 78, 216, 0.08) 0%, transparent 70%);
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+      }
+
+      .contact-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: start;
+        position: relative;
+        z-index: 1;
+      }
+
+      .contact-info {}
+
+      .contact-info h2 {
+        font-size: clamp(28px, 3.5vw, 42px);
+        font-weight: 900;
+        letter-spacing: -0.04em;
+        line-height: 1.1;
+        margin-bottom: 20px;
+      }
+
+      .contact-info p {
+        font-size: 16px;
+        color: var(--text-2);
+        line-height: 1.65;
+        margin-bottom: 40px;
+      }
+
+      .contact-data {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 14px 18px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        transition: border-color 0.2s, background 0.2s;
+      }
+
+      .contact-item:hover {
+        border-color: rgba(42,115,255,0.3);
+        background: var(--surface-h);
+      }
+
+      .contact-item-icon {
+        font-size: 20px;
+        flex-shrink: 0;
+        width: 40px; height: 40px;
+        background: rgba(42,115,255,0.1);
+        border-radius: var(--radius-sm);
+        display: grid;
+        place-items: center;
+      }
+
+      .contact-item-label {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--text-3);
+        margin-bottom: 2px;
+      }
+
+      .contact-item-value {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--text);
+      }
+
+      /* Form */
+      .contact-form-wrap {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-xl);
+        padding: 40px;
+      }
+
+      .form-title {
+        font-size: 20px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        margin-bottom: 28px;
+      }
+
+      .form-group {
+        margin-bottom: 18px;
+      }
+
+      .form-group label {
+        display: block;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--text-2);
+        margin-bottom: 8px;
+      }
+
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        width: 100%;
+        padding: 13px 16px;
+        background: rgba(255,255,255,0.04);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        color: var(--text);
+        font-family: inherit;
+        font-size: 14px;
+        outline: none;
+        transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+        -webkit-appearance: none;
+      }
+
+      .form-group select option {
+        background: var(--bg-3);
+        color: var(--text);
+      }
+
+      .form-group input:focus,
+      .form-group select:focus,
+      .form-group textarea:focus {
+        border-color: var(--accent);
+        background: rgba(42,115,255,0.06);
+        box-shadow: 0 0 0 3px rgba(42,115,255,0.12);
+      }
+
+      .form-group input::placeholder,
+      .form-group textarea::placeholder {
+        color: var(--text-3);
+      }
+
+      .form-group textarea {
+        min-height: 100px;
+        resize: vertical;
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+
+      .form-submit {
+        width: 100%;
+        padding: 15px;
+        background: var(--accent-g);
+        color: #fff;
+        font-family: inherit;
+        font-size: 15px;
+        font-weight: 700;
+        border: none;
+        border-radius: 99px;
+        cursor: pointer;
+        transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
+        box-shadow: 0 0 32px rgba(42,115,255,0.35);
+        margin-top: 8px;
+        letter-spacing: 0.01em;
+      }
+
+      .form-submit:hover {
+        opacity: 0.92;
+        transform: translateY(-1px);
+        box-shadow: 0 6px 32px rgba(42,115,255,0.5);
+      }
+
+      /* ─── SCROLL ANIMATIONS ────────────────────────────────── */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .fade-delay-1 { transition-delay: 0.1s; }
+      .fade-delay-2 { transition-delay: 0.2s; }
+      .fade-delay-3 { transition-delay: 0.3s; }
+      .fade-delay-4 { transition-delay: 0.4s; }
+
+      /* ─── RESPONSIVE ───────────────────────────────────────── */
+      @media (max-width: 1024px) {
+        .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+        .hero-visual { display: none; }
+        .hero-metrics { grid-template-columns: repeat(3, 1fr); }
+        .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+        .arch-container-card { grid-template-columns: 1fr; }
+        .arch-tabs { grid-template-columns: repeat(4, 1fr); gap: 8px; }
+        .arch-tab-btn { padding: 12px 10px; font-size: 13.5px; }
+        .services-grid { grid-template-columns: repeat(2, 1fr); }
+        .cases-grid { grid-template-columns: repeat(2, 1fr); }
+      }
+
+      @media (max-width: 768px) {
+        html, body { overflow-x: hidden; width: 100%; }
+        .container { width: 100%; padding: 0 20px; }
+        #hero { padding: 90px 0 60px; }
+        .hero-title { font-size: clamp(28px, 7vw, 42px); }
+        .hero-lead { font-size: 16px; }
+        .hero-actions { flex-direction: column; width: 100%; }
+        .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+        .hero-metrics { grid-template-columns: repeat(2, 1fr); }
+        .services-grid { grid-template-columns: 1fr; }
+        .arch-tabs { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+        .arch-tab-btn { padding: 12px 10px; font-size: 13px; }
+        .arch-info-wrap { padding: 28px 20px; }
+        .arch-info-title { font-size: 20px; }
+        .cases-grid { grid-template-columns: 1fr; }
+        .why-grid { grid-template-columns: 1fr; }
+        .form-row { grid-template-columns: 1fr; }
+        .contact-form-wrap { padding: 24px 18px; }
+        .section-header { margin-bottom: 32px; }
+        .section-title { font-size: clamp(26px, 6vw, 36px); }
+        .section-sub { font-size: 15px; }
+        .trust-logos { gap: 12px 18px; }
+        .trust-dot-sep { display: none; }
+        .partners-wrapper::before, .partners-wrapper::after { width: 40px; }
+      }
+
+      @media (max-width: 480px) {
+        .container { padding: 0 16px; }
+        .hero-metrics { grid-template-columns: 1fr; }
+        .arch-tabs { grid-template-columns: 1fr; gap: 8px; }
+        .arch-tab-btn { justify-content: flex-start; padding: 12px 14px; font-size: 13px; }
+        .arch-info-specs { padding: 14px; }
+        .arch-info-actions { flex-direction: column; align-items: stretch; gap: 12px; }
+        .arch-partners-list { text-align: center; }
+        .service-card { padding: 24px 18px; }
+        .case-card { padding: 24px 18px; }
+      }
+    
+  /* ─── THEME SWITCHER OVERRIDES ─── */
+  [data-theme="light"],
+  .tv-av-page[data-theme="light"],
+  .tv-landing-page[data-theme="light"] {
+    --bg:        #ffffff !important;
+    --bg-2:      #f8fafc !important;
+    --bg-3:      #f1f5f9 !important;
+    --surface:   #ffffff !important;
+    --surface-h: #f1f5f9 !important;
+    --border:    #e2e8f0 !important;
+    --border-h:  #cbd5e1 !important;
+    --text:      #0f172a !important;
+    --text-2:    #475569 !important;
+    --text-3:    #64748b !important;
+    --accent:    #1d4ed8 !important;
+    --accent-2:  #2563eb !important;
+    --accent-g:  linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%) !important;
+    --cyan:      #1d4ed8 !important;
+    --orange:    #1d4ed8 !important;
+    --orange-g:  linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%) !important;
+    color-scheme: light;
+  }
+
+  /* Theme Toggle Button Styles */
+  .tv-theme-toggle-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 99999;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.88);
+    color: #f0f4ff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  [data-theme="light"] .tv-theme-toggle-btn,
+  .tv-av-page[data-theme="light"] .tv-theme-toggle-btn,
+  .tv-landing-page[data-theme="light"] .tv-theme-toggle-btn {
+    background: rgba(255, 255, 255, 0.92);
+    color: #0f172a;
+    border-color: rgba(15, 23, 42, 0.15);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.15);
+  }
+
+  .tv-theme-toggle-btn:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+  }
+
+  .theme-icon-sun { display: inline-block; }
+  .theme-icon-moon { display: none; }
+
+  [data-theme="light"] .theme-icon-sun,
+  .tv-av-page[data-theme="light"] .theme-icon-sun,
+  .tv-landing-page[data-theme="light"] .theme-icon-sun { display: none; }
+
+  [data-theme="light"] .theme-icon-moon,
+  .tv-av-page[data-theme="light"] .theme-icon-moon,
+  .tv-landing-page[data-theme="light"] .theme-icon-moon { display: inline-block; }
+
+</style>
+  </head>
+  <body>
+
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!--  SECCIÓN 1: HERO (B2B CORPORATIVO LUMINOSO)             -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <section id="hero" aria-label="Presentación corporativa de TECNOVOA">
+      <div class="hero-bg-subtle" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="hero-inner">
+          <!-- Left: Propuesta Paraguas Integral -->
+          <div class="hero-copy">
+            <div class="hero-eyebrow">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              Integrador Tecnológico Empresarial · Chile
+            </div>
+
+            <h1 class="hero-title">
+              Soluciones tecnológicas integrales y continuidad para <span class="title-accent">empresas en Chile</span>
+            </h1>
+
+            <p class="hero-lead">
+              Un único socio estratégico para diseñar, equipar y operar toda tu infraestructura de TI y comunicaciones. Integramos hardware, software y servicios de misión crítica con acompañamiento experto y tiempos de respuesta garantizados.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#contacto" class="btn-primary" id="hero-cta-primary">
+                Solicitar asesoría técnica
+                <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a href="#servicios" class="btn-secondary" id="hero-cta-secondary">
+                Ver las 8 unidades
+                <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+
+            <div class="hero-pillars-pill">
+              <div class="pillar-tag">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+                Respuesta SLA &lt; 2h garantizada
+              </div>
+              <div class="pillar-tag">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+                Ingenieros certificados en Chile
+              </div>
+              <div class="pillar-tag">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+                Respaldo directo de fabricantes
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Selector Ejecutivo de las 8 Unidades de Negocio -->
+          <div class="hero-units-showcase" aria-label="Ecosistema de 8 Unidades de Negocio TECNOVOA">
+            <div class="showcase-header">
+              <div class="showcase-title-wrap">
+                <span class="showcase-badge">Ecosistema Integral</span>
+                <h3 class="showcase-title">8 Unidades de Negocio</h3>
+              </div>
+              <div class="showcase-indicator">
+                <span class="showcase-indicator-dot" aria-hidden="true"></span>
+                <span>Operación Activa</span>
+              </div>
+            </div>
+
+            <div class="showcase-grid" role="list">
+              <!-- Unidad 1 -->
+              <a href="#servicios" class="unit-tile" role="listitem">
+                <div class="unit-tile-icon" style="background:#eff6ff;color:#2563eb" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+                </div>
+                <div class="unit-tile-body">
+                  <div class="unit-tile-title">Telecomunicaciones y Redes</div>
+                  <div class="unit-tile-desc">Cisco, Extreme, WiFi empresarial, Fibra óptica y cableado</div>
+                </div>
+                <svg class="unit-tile-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </a>
+
+              <!-- Unidad 2 -->
+              <a href="#servicios" class="unit-tile" role="listitem">
+                <div class="unit-tile-icon" style="background:#f0fdf4;color:#16a34a" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+                </div>
+                <div class="unit-tile-body">
+                  <div class="unit-tile-title">Datacenter y Cloud</div>
+                  <div class="unit-tile-desc">Servidores Lenovo/Dell, Proxmox VE, Nube híbrida y HCI</div>
+                </div>
+                <svg class="unit-tile-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </a>
+
+              <!-- Unidad 3 -->
+              <a href="#servicios" class="unit-tile" role="listitem">
+                <div class="unit-tile-icon" style="background:#fff7ed;color:#ea580c" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+                </div>
+                <div class="unit-tile-body">
+                  <div class="unit-tile-title">Audio Video Colaboración</div>
+                  <div class="unit-tile-desc">Salas híbridas, Pantallas interactivas HUAWEI IdeaHub, Logitech</div>
+                </div>
+                <svg class="unit-tile-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </a>
+
+              <!-- Unidad 4 -->
+              <a href="#servicios" class="unit-tile" role="listitem">
+                <div class="unit-tile-icon" style="background:#fef2f2;color:#dc2626" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <div class="unit-tile-body">
+                  <div class="unit-tile-title">Ciberseguridad y Cumplimiento</div>
+                  <div class="unit-tile-desc">Fortinet FortiGate NGFW, Sophos, Zero Trust, ISO 27001</div>
+                </div>
+                <svg class="unit-tile-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </a>
+
+              <!-- Unidad 5 -->
+              <a href="#servicios" class="unit-tile" role="listitem">
+                <div class="unit-tile-icon" style="background:#f5f3ff;color:#7c3aed" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                </div>
+                <div class="unit-tile-body">
+                  <div class="unit-tile-title">Respaldo y Archivo</div>
+                  <div class="unit-tile-desc">Veeam, Pure Storage, Western Digital, Bóvedas inmutables anti-ransomware</div>
+                </div>
+                <svg class="unit-tile-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </a>
+
+              <!-- Unidad 6 -->
+              <a href="#servicios" class="unit-tile" role="listitem">
+                <div class="unit-tile-icon" style="background:#f0f9ff;color:#0284c7" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                </div>
+                <div class="unit-tile-body">
+                  <div class="unit-tile-title">Hardware y Software EndUser</div>
+                  <div class="unit-tile-desc">Flotas Lenovo ThinkPad, Microsoft 365, licenciamiento empresarial</div>
+                </div>
+                <svg class="unit-tile-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </a>
+
+              <!-- Unidad 7 -->
+              <a href="#servicios" class="unit-tile" role="listitem">
+                <div class="unit-tile-icon" style="background:#fefce8;color:#ca8a04" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                </div>
+                <div class="unit-tile-body">
+                  <div class="unit-tile-title">Energía Crítica y Seguridad Física</div>
+                  <div class="unit-tile-desc">UPS Eaton y Legrand, Climatización de racks, CCTV IP y accesos</div>
+                </div>
+                <svg class="unit-tile-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!--  SECCIÓN 2: PRUEBA SOCIAL Y CONFIANZA (MINIMALISTA)     -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <section class="trust-section" aria-label="Clientes referentes y alianzas tecnológicas">
+      <div class="container">
+        <div class="trust-inner">
+          <div class="trust-label">Empresas e instituciones que confían en TECNOVOA</div>
+          <div class="trust-logos">
+            <span class="trust-logo-item">Hospital Militar</span>
+            <span class="trust-dot-sep" aria-hidden="true">·</span>
+            <span class="trust-logo-item">Megamedia</span>
+            <span class="trust-dot-sep" aria-hidden="true">·</span>
+            <span class="trust-logo-item">COMBANC</span>
+            <span class="trust-dot-sep" aria-hidden="true">·</span>
+            <span class="trust-logo-item">COMASA</span>
+            <span class="trust-dot-sep" aria-hidden="true">·</span>
+            <span class="trust-logo-item">DUOC UC</span>
+            <span class="trust-dot-sep" aria-hidden="true">·</span>
+            <span class="trust-logo-item">EFE Trenes</span>
+          </div>
+          <div class="trust-cert-strip">
+            <span>Alianzas oficiales certificadas:</span>
+            <strong>Cisco</strong> · <strong>Fortinet</strong> · <strong>Lenovo</strong> · <strong>Proxmox VE</strong> · <strong>Western Digital</strong> · <strong>Morpheus</strong> · <strong>Veeam</strong> · <strong>Microsoft</strong> · <strong>Logitech</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!--  SECCIÓN 2.5: EXPLORADOR INTERACTIVO DE ARQUITECTURAS 3D -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <section id="arquitecturas-3d" aria-label="Explorador de Arquitectura Técnica 3D">
+      <div class="container">
+        <div class="arch-header fade-in">
+          <div class="arch-eyebrow">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            Arquitectura Técnica B2B
+          </div>
+          <h2 class="section-title">
+            Soluciones diseñadas para la continuidad<br><span class="grad">y escalabilidad de tu empresa</span>
+          </h2>
+          <p class="section-sub">
+            Explora cómo integramos cada componente físico y lógico en entornos empresariales de alta exigencia en Chile.
+          </p>
+        </div>
+
+        <!-- Selector de pestañas -->
+        <div class="arch-tabs fade-in" role="tablist">
+          <button class="arch-tab-btn active" data-unit="datacenter" role="tab" aria-selected="true">
+            <span>☁️</span> Datacenter & Cloud
+          </button>
+          <button class="arch-tab-btn" data-unit="redes" role="tab" aria-selected="false">
+            <span>🖧</span> Redes & Conectividad
+          </button>
+          <button class="arch-tab-btn" data-unit="av" role="tab" aria-selected="false">
+            <span>📽️</span> Salas Híbridas & AV
+          </button>
+          <button class="arch-tab-btn" data-unit="ciber" role="tab" aria-selected="false">
+            <span>🔒</span> Ciberseguridad & SOC
+          </button>
+          <button class="arch-tab-btn" data-unit="respaldo" role="tab" aria-selected="false">
+            <span>💾</span> Respaldo y Archivo
+          </button>
+          <button class="arch-tab-btn" data-unit="enduser" role="tab" aria-selected="false">
+            <span>💻</span> Oficinas & End-User
+          </button>
+          <button class="arch-tab-btn" data-unit="virtualizacion" role="tab" aria-selected="false">
+            <span>📦</span> Virtualización
+          </button>
+          <button class="arch-tab-btn" data-unit="energia" role="tab" aria-selected="false">
+            <span>⚡</span> Energía Crítica & CCTV
+          </button>
+        </div>
+
+        <!-- Contenedor Visual y Desglose Técnico -->
+        <div class="arch-container-card fade-in" id="index-arch-container">
+          <!-- Visual con Infografía Isométrica -->
+          <div class="arch-preview-wrap">
+            <div class="arch-badge-tag">
+              <span class="arch-badge-tag-dot" aria-hidden="true"></span>
+              <span id="index-arch-badge">Topología LAN / WiFi 6</span>
+            </div>
+            <img id="index-arch-img" src="img/telecomunicaciones-redes-isometric.jpg" alt="Arquitectura Técnica de Telecomunicaciones y Redes TECNOVOA" loading="lazy">
+          </div>
+
+          <!-- Panel Informativo -->
+          <div class="arch-info-wrap">
+            <div class="arch-info-category" id="index-arch-tag">Unidad de Negocio 01 · Networking</div>
+            <h3 class="arch-info-title" id="index-arch-title">Redes Empresariales, WiFi de Alta Densidad y Fibra Óptica</h3>
+            <p class="arch-info-desc" id="index-arch-desc">
+              Diseñamos e implementamos infraestructuras de red de alta disponibilidad con topología de doble núcleo, segmentación por VLAN y monitoreo centralizado en la nube para garantizar cero caídas en tu operación.
+            </p>
+
+            <div class="arch-info-specs" id="index-arch-specs">
+              <div class="arch-info-spec">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <div><strong>Core &amp; Switching:</strong> Cisco Catalyst, Meraki y Extreme Networks con redundancia L3.</div>
+              </div>
+              <div class="arch-info-spec">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <div><strong>WiFi Empresarial:</strong> Ubiquiti UniFi y Meraki con Site Survey predictivo Ekahau.</div>
+              </div>
+              <div class="arch-info-spec">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <div><strong>Cableado Estructurado:</strong> Cat 6A / Fibra óptica con certificación Fluke Networks AS-BUILT.</div>
+              </div>
+            </div>
+
+            <div class="arch-info-actions">
+              <a href="telecomunicaciones-redes-wp-embed.html" class="btn-primary" id="index-arch-link" style="padding: 11px 22px; font-size: 13.5px;">
+                Ver catálogo técnico de redes
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <div class="arch-partners-list" id="index-arch-partners">
+                Partners: <strong>Cisco</strong> · <strong>Ubiquiti</strong> · <strong>Extreme</strong> · <strong>Fluke</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!--  SERVICIOS — 8 UNIDADES DE NEGOCIO                                     -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <section id="servicios" aria-labelledby="servicios-title">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-tag">Nuestros Servicios</div>
+          <h2 class="section-title" id="servicios-title">
+            8 Unidades de Negocio<br><span class="grad">especializadas</span>
+          </h2>
+          <p class="section-sub">
+            Soluciones TI y comunicaciones integradas para cubrir cada capa de tu infraestructura tecnológica.
+          </p>
+        </div>
+
+        <div class="services-grid" role="list">
+
+          <!-- 1. Datacenter y Cloud (CON LOGOS OFICIALES) -->
+          <article class="service-card fade-in fade-delay-1" role="listitem">
+            <div class="service-header">
+              <div class="service-icon" style="background:rgba(42,115,255,0.12)">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="8" rx="2"></rect><rect x="2" y="14" width="20" height="8" rx="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+              </div>
+              <div>
+                <div class="service-number">UN 01</div>
+                <h3 class="service-name">Datacenter y Cloud</h3>
+              </div>
+            </div>
+            <p class="service-desc">
+              Diseñamos e implementamos infraestructura de Datacenter y plataformas de nube híbrida. 
+              Virtualización con <strong>right-sizing</strong>, consolidación de servidores y 
+              migraciones complejas sin afectar la continuidad operativa. Reduce hasta 60% en costos CAPEX/OPEX.
+            </p>
+            <div class="service-tags" aria-label="Marcas y tecnologías">
+              <!-- Featured Partner -->
+              <span class="service-tag">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#607078" aria-hidden="true"><path d="M18.068 2.4L13.8 9.774h4.316l-4.27 7.378 4.223 4.448L24 14.224V2.4h-5.932zm-12.136 0L1.66 9.774h4.316L1.706 17.152l4.223 4.448 5.869-7.376V2.4H5.932z"></path></svg>
+                HPE
+              </span>
+            </div>
+          </article>
+          <!-- 2. Telecomunicaciones y Redes -->
+
+          <article class="service-card fade-in fade-delay-2" role="listitem">
+            <div class="service-header">
+              <div class="service-icon" style="background:rgba(0,200,255,0.12)">🖧</div>
+              <div>
+                <div class="service-number">UN 02</div>
+                <h3 class="service-name">Telecomunicaciones y Redes</h3>
+              </div>
+            </div>
+            <p class="service-desc">
+              Certificación y optimización de infraestructura inalámbrica mediante <strong>Site Survey</strong> 
+              con Ekahau Sidekick 2. Diseño e implementación de redes LAN/WAN escalables, fibra óptica 
+              (fusión/FTTH), cableado estructurado y radioenlaces para continuidad territorial.
+            </p>
+            <div class="service-tags" aria-label="Marcas y tecnologías">
+              <span class="service-tag">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#607078" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="#607078" stroke-width="1.5" fill="none"/><circle cx="12" cy="12" r="4" fill="#607078"/></svg>
+                Cisco
+              </span>
+            </div>
+          </article>
+
+          <!-- 3. Audio Video Colaboración -->
+          <article class="service-card fade-in fade-delay-3" role="listitem">
+            <div class="service-header">
+              <div class="service-icon" style="background:rgba(251,146,60,0.12)">📽️</div>
+              <div>
+                <div class="service-number">UN 03</div>
+                <h3 class="service-name">Audio Video Colaboración</h3>
+              </div>
+            </div>
+            <p class="service-desc">
+              Instalación y soporte de salas de reuniones con pantallas interactivas y ecosistemas 
+              para trabajo híbrido. Plataformas unificadas de audio y video profesional que mejoran 
+              la comunicación interna y con clientes.
+            </p>
+            <div class="service-tags" aria-label="Marcas y tecnologías">
+              <span class="service-tag">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#607078" aria-hidden="true"><rect x="2" y="4" width="20" height="14" rx="2" stroke="#607078" stroke-width="1.5" fill="none"/><path d="M6 20h12" stroke="#607078" stroke-width="1.5" stroke-linecap="round"/></svg>
+                HUAWEI IdeaHub
+              </span>
+            </div>
+          </article>
+
+          <!-- 4. Ciberseguridad -->
+          <article class="service-card fade-in fade-delay-1" role="listitem">
+            <div class="service-header">
+              <div class="service-icon" style="background:rgba(239,68,68,0.12)">🛡️</div>
+              <div>
+                <div class="service-number">UN 04</div>
+                <h3 class="service-name">Ciberseguridad y Cumplimiento</h3>
+              </div>
+            </div>
+            <p class="service-desc">
+              Protección multicapa contra ransomware y amenazas avanzadas: seguridad perimetral, 
+              hardening, cifrado y gobierno de seguridad. Reduce superficie de ataque sin afectar 
+              la productividad. Archivado para cumplimiento normativo financiero.
+            </p>
+            <div class="service-tags" aria-label="Marcas y tecnologías">
+              <span class="service-tag">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#607078" aria-hidden="true"><path d="M12 2L2 7v6c0 5.25 4.26 10.17 10 11.39C17.74 23.17 22 18.25 22 13V7L12 2z" stroke="#607078" stroke-width="1.5" fill="none"/><path d="M9 12l2 2 4-4" stroke="#607078" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Fortinet
+              </span>
+            </div>
+          </article>
+
+          <!-- 5. Respaldo y Archivo -->
+          <article class="service-card fade-in fade-delay-2" role="listitem">
+            <div class="service-header">
+              <div class="service-icon" style="background:rgba(34,197,94,0.12)">💾</div>
+              <div>
+                <div class="service-number">UN 05</div>
+                <h3 class="service-name">Respaldo y Archivo</h3>
+              </div>
+            </div>
+            <p class="service-desc">
+              Backups inmutables que <strong>ni el ransomware puede tocar</strong> con Object First Ootbi. 
+              DRaaS con redundancia geográfica, retención programada y cumplimiento normativo. 
+              Tiempos de recuperación mínimos ante cualquier incidente.
+            </p>
+            <div class="service-tags" aria-label="Marcas y tecnologías">
+              <span class="service-tag">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#607078" aria-hidden="true"><path d="M19 11H5c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6c0-1.1-.9-2-2-2z" stroke="#607078" stroke-width="1.5" fill="none"/><path d="M12 3v8" stroke="#607078" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="3" r="1.5" fill="#607078"/></svg>
+                Veeam
+              </span>
+              <span class="service-tag">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#607078" aria-hidden="true"><path d="M19 11H5c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6c0-1.1-.9-2-2-2z" stroke="#607078" stroke-width="1.5" fill="none"/><path d="M12 3v8" stroke="#607078" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="3" r="1.5" fill="#607078"/></svg>
+                Western Digital
+              </span>
+            </div>
+          </article>
+
+          <!-- 6. SW y HW EndUser -->
+          <article class="service-card fade-in fade-delay-3" role="listitem">
+            <div class="service-header">
+              <div class="service-icon" style="background:rgba(168,85,247,0.12)">💻</div>
+              <div>
+                <div class="service-number">UN 06</div>
+                <h3 class="service-name">SW y HW EndUser</h3>
+              </div>
+            </div>
+            <p class="service-desc">
+              Hardware corporativo de alto rendimiento, gestión centralizada de licencias y 
+              escritorios virtuales VDI. Modelo <strong>Hardware como Servicio (HaaS)</strong> 
+              para consumo flexible sin inversión inicial. Elimina licencias "fantasma".
+            </p>
+            <div class="service-tags" aria-label="Marcas y tecnologías">
+              <span class="service-tag">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#607078" aria-hidden="true"><path d="M3 3h8v8H3zM13 3h8v8h-8zM3 13h8v8H3zM13 13h8v8h-8z" stroke="#607078" stroke-width="1.5" fill="none"/></svg>
+                Lenovo
+              </span>
+            </div>
+          </article>
+
+          <!-- 7. Respaldo de Energía y Climatización -->
+          <article class="service-card fade-in fade-delay-1" role="listitem">
+            <div class="service-header">
+              <div class="service-icon" style="background:rgba(251,146,60,0.12)">🔋</div>
+              <div>
+                <div class="service-number">UN 07</div>
+                <h3 class="service-name">Respaldo de Energía y Climatización</h3>
+              </div>
+            </div>
+            <p class="service-desc">
+              Sistemas de alimentación ininterrumpida (UPS) trifásicas y monofásicas, PDUs inteligentes y climatización de precisión para la continuidad operacional de centros de cómputos.
+            </p>
+            <div class="service-tags" aria-label="Marcas y tecnologías">
+              <span class="service-tag">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#607078" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#607078" stroke-width="1.5" fill="none" stroke-linejoin="round"/></svg>
+                Eaton
+              </span>
+            </div>
+          </article>
+
+          <!-- 8. Virtualización -->
+          <article class="service-card fade-in fade-delay-2" role="listitem">
+            <div class="service-header">
+              <div class="service-icon" style="background:rgba(168,85,247,0.12)">📦</div>
+              <div>
+                <div class="service-number">UN 08</div>
+                <h3 class="service-name">Virtualización de Servidores</h3>
+              </div>
+            </div>
+            <p class="service-desc">
+              Consolidación de servidores, virtualización de escritorios (VDI) y migración de cargas de trabajo para optimizar la eficiencia y alta disponibilidad de tus recursos TI.
+            </p>
+            <div class="service-tags" aria-label="Marcas y tecnologías">
+              <span class="service-tag">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#607078" aria-hidden="true"><path d="M18.068 2.4L13.8 9.774h4.316l-4.27 7.378 4.223 4.448L24 14.224V2.4h-5.932zm-12.136 0L1.66 9.774h4.316L1.706 17.152l4.223 4.448 5.869-7.376V2.4H5.932z"></path></svg>
+                Nutanix
+              </span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!--  POR QUÉ ELEGIRNOS                                      -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <section id="porque" aria-labelledby="porque-title">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-tag">Nuestra Diferencia</div>
+          <h2 class="section-title" id="porque-title">
+            ¿Por qué elegir<br><span class="grad">TECNOVOA?</span>
+          </h2>
+          <p class="section-sub">
+            No somos solo un proveedor. Somos el socio tecnológico que acompaña cada etapa de tu proyecto.
+          </p>
+        </div>
+
+        <div class="why-grid" role="list">
+          <div class="why-card fade-in fade-delay-1" role="listitem">
+            <span class="why-icon" aria-hidden="true">🏅</span>
+            <h3 class="why-title">Experiencia Comprobada</h3>
+            <p class="why-desc">Ingenieros certificados con más de 15 años de trayectoria en arquitecturas TI, redes, virtualización y continuidad operacional.</p>
+          </div>
+          <div class="why-card fade-in fade-delay-2" role="listitem">
+            <span class="why-icon" aria-hidden="true">🔗</span>
+            <h3 class="why-title">Integración Completa</h3>
+            <p class="why-desc">Desde la evaluación y diseño hasta la implementación y soporte post-proyecto. Un solo punto de contacto para toda la solución.</p>
+          </div>
+          <div class="why-card fade-in fade-delay-3" role="listitem">
+            <span class="why-icon" aria-hidden="true">🎯</span>
+            <h3 class="why-title">Servicio Personalizado</h3>
+            <p class="why-desc">Acompañamiento técnico y comercial orientado a resultados reales, adaptado al tipo, tamaño y actividad de tu empresa.</p>
+          </div>
+          <div class="why-card fade-in fade-delay-4" role="listitem">
+            <span class="why-icon" aria-hidden="true">💰</span>
+            <h3 class="why-title">Flexibilidad CAPEX/OPEX</h3>
+            <p class="why-desc">Modelos de servicio y financiamiento alineados a tu presupuesto: inversión inicial o pago mensual, tú eliges la modalidad.</p>
+          </div>
+          <div class="why-card fade-in fade-delay-1" role="listitem">
+            <span class="why-icon" aria-hidden="true">🤝</span>
+            <h3 class="why-title">Partners Certificados</h3>
+            <p class="why-desc">Alianzas estratégicas vigentes con fabricantes líderes: Cisco, Proxmox VE, Fortinet, Veeam, Microsoft, Schneider Electric y más.</p>
+          </div>
+          <div class="why-card fade-in fade-delay-2" role="listitem">
+            <span class="why-icon" aria-hidden="true">⚡</span>
+            <h3 class="why-title">Respuesta Rápida</h3>
+            <p class="why-desc">Tiempos de respuesta ágiles para incidencias críticas y despliegues de proyectos, minimizando el impacto en tus operaciones.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!--  CASOS DE ÉXITO                                         -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <section id="casos" aria-labelledby="casos-title">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-tag">Casos de Éxito</div>
+          <h2 class="section-title" id="casos-title">
+            Proyectos que<br><span class="grad">hablan por nosotros</span>
+          </h2>
+          <p class="section-sub">
+            Clientes del sector financiero, salud, retail y servicios confían en TECNOVOA para sus proyectos TI más críticos.
+          </p>
+        </div>
+
+        <div class="cases-grid" role="list">
+
+          <article class="case-card fade-in fade-delay-1" role="listitem">
+            <div class="case-tag">
+              <span aria-hidden="true">🏥</span> Salud
+            </div>
+            <h3 class="case-title">Hospital Militar</h3>
+            <p class="case-desc">
+              Rediseño completo de la red y migración en caliente de dos CORE de red, minimizando interrupciones 
+              y asegurando la continuidad operativa de sistemas críticos hospitalarios durante todo el proceso.
+            </p>
+            <div class="case-services" aria-label="Servicios involucrados">
+              <span class="case-service">Networking</span>
+              <span class="case-service">Migración CORE</span>
+              <span class="case-service">Alta disponibilidad</span>
+            </div>
+          </article>
+
+          <article class="case-card fade-in fade-delay-2" role="listitem">
+            <div class="case-tag">
+              <span aria-hidden="true">🏢</span> Empresa
+            </div>
+            <h3 class="case-title">COMASA SPA</h3>
+            <p class="case-desc">
+              Migración y actualización secuencial de los CORE en dos Datacenters simultáneamente, 
+              manteniendo el servicio durante toda la transición sin afectar las operaciones del cliente.
+            </p>
+            <div class="case-services" aria-label="Servicios involucrados">
+              <span class="case-service">Datacenter</span>
+              <span class="case-service">Migración</span>
+              <span class="case-service">Redundancia</span>
+            </div>
+          </article>
+
+          <article class="case-card fade-in fade-delay-3" role="listitem">
+            <div class="case-tag">
+              <span aria-hidden="true">⚙️</span> Servicios
+            </div>
+            <h3 class="case-title">COPERGO LTDA</h3>
+            <p class="case-desc">
+              Diseño e implementación de plataforma completa: comunicaciones, seguridad perimetral, 
+              servidores Active Directory, virtualización, cloud services y backups. Con contrato de 
+              soporte mensual gestionado.
+            </p>
+            <div class="case-services" aria-label="Servicios involucrados">
+              <span class="case-service">Infraestructura completa</span>
+              <span class="case-service">Cloud</span>
+              <span class="case-service">Soporte MSP</span>
+            </div>
+          </article>
+
+          <article class="case-card fade-in fade-delay-1" role="listitem">
+            <div class="case-tag">
+              <span aria-hidden="true">🏦</span> Financiero
+            </div>
+            <h3 class="case-title">COMBANC S.A.</h3>
+            <p class="case-desc">
+              Upgrade y despliegue de plataforma hiperconvergente con migración desde Hyper-V a Proxmox VE. 
+              Administración para transacciones seguras en entorno financiero regulado con altos requisitos 
+              de disponibilidad.
+            </p>
+            <div class="case-services" aria-label="Servicios involucrados">
+              <span class="case-service">Proxmox VE</span>
+              <span class="case-service">Hiperconvergencia</span>
+              <span class="case-service">Sector financiero</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!--  PARTNERS                                               -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <section id="partners" aria-labelledby="partners-title">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-tag">Partners &amp; Marcas</div>
+          <h2 class="section-title" id="partners-title">
+            Respaldados por las mejores<br><span class="grad">marcas del mundo TI</span>
+          </h2>
+          <p class="section-sub">
+            Alianzas certificadas con los principales fabricantes de tecnología para garantizar la mejor solución.
+          </p>
+        </div>
+      </div>
+
+      <div class="partners-wrapper" aria-label="Carrusel de partners tecnológicos">
+        <div class="partners-track" aria-hidden="true">
+          <!-- First set -->
+          <div class="partner-chip"><svg class="partner-logo-svg" viewBox="0 0 32 20" aria-hidden="true"><rect x="2" y="10" width="2" height="8" rx="1" fill="currentColor"/><rect x="6" y="6" width="2" height="12" rx="1" fill="currentColor"/><rect x="10" y="2" width="2" height="16" rx="1" fill="currentColor"/><rect x="14" y="6" width="2" height="12" rx="1" fill="currentColor"/><rect x="18" y="2" width="2" height="16" rx="1" fill="currentColor"/><rect x="22" y="6" width="2" height="12" rx="1" fill="currentColor"/><rect x="26" y="10" width="2" height="8" rx="1" fill="currentColor"/></svg>Cisco</div>
+          <div class="partner-chip"><svg class="partner-logo-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h7v4H4V4zm9 0h7v4h-7V4zM4 10h7v4H4v-4zm9 0h7v4h-7v-4zM4 16h7v4H4v-4zm9 0h7v4h-7v-4z" fill="currentColor"/></svg>Fortinet</div>
+          <div class="partner-chip"><svg class="partner-logo-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 3.8l6.5 3.25v5.9L12 18.2l-6.5-3.25V9.05L12 5.8z" fill="currentColor"/></svg>Proxmox VE</div>
+          <div class="partner-chip"><svg class="partner-logo-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17V7l6 5 3-5 3 5 6-5v10l-6-4-3 4-3-4-6 4z" fill="currentColor"/></svg>Morpheus</div>
+          <div class="partner-chip partner-chip-dark"><svg class="partner-logo-svg" viewBox="0 0 100 50" aria-hidden="true"><path d="M10 5 C7 5 5 7 5 10 L15 40 C16 43 19 45 22 45 C25 45 27 43 28 40 L35 20 C36 17 38 15 41 15 C44 15 46 17 47 20 L54 40 C55 43 58 45 61 45 C64 45 66 43 67 40 L77 10 C78 7 76 5 73 5 C70 5 68 7 67 10 L60 30 L53 10 C52 7 49 5 46 5 C43 5 40 7 39 10 L32 30 L25 10 C24 7 21 5 18 5 Z" fill="currentColor"/></svg>Western Digital</div>
+          <div class="partner-chip"><svg class="partner-logo-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5l6 14h4L6 5H2zm7 0l6 14h4L13 5H9zm7 0l4 9.33L22 5h-4z" fill="currentColor"/></svg>Veeam</div>
+          <div class="partner-chip"><svg class="partner-logo-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 2h9.5v9.5H2V2zm10.5 0H22v9.5h-9.5V2zM2 12.5h9.5V22H2v-9.5zm10.5 0H22V22h-9.5v-9.5z" fill="currentColor"/></svg>Microsoft</div>
+          <div class="partner-chip"><svg class="partner-logo-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2L4 7v10l8 5 8-5V7l-8-5zm0 3.2l5.5 3.4v6.8L12 18.8 6.5 15.4V8.6L12 5.2zM11 9h2v6h-2V9z" fill="currentColor"/></svg>APC Schneider</div>
+          <div class="partner-chip"><svg class="partner-logo-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h4v18H4V3zm6 0h4v7.5L19.5 3H24l-6.5 9L24 21h-4.5L14 13.5V21h-4V3z" fill="currentColor"/></svg>Kaspersky</div>
+          <div class="partner-chip"><svg class="partner-logo-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6h4v12H2V6zm5 0h8v3H9v2h5v3H9v4H7V6zm9 0h6v12h-3V9h-3v9h-3V6z" fill="currentColor"/></svg>Lenovo</div>
+          <div class="partner-chip"><svg class="partner-logo-svg" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="8" width="20" height="8" rx="1.5" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>HPE</div>
+          <div class="partner-chip"><svg class="partner-logo-svg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 8v8h3.5c1.5 0 2.5-1 2.5-2.5S13 11 11.5 11H10V8H8z" fill="currentColor"/></svg>Dell</div>
+          <div class="partner-chip"><svg class="partner-logo-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18h3l1.5-4h7L17 18h3L13.5 5h-3L4 18zm6-7l2.5-6.5L15 11h-5z" fill="currentColor"/></svg>ASUS</div>
+          <div class="partner-chip"><svg class="partner-logo-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5l6 7-6 7h4l4-5 4 5h4l-6-7 6-7h-4l-4 5-4-5H3z" fill="currentColor"/></svg>Extreme Networks</div>
+          <div class="partner-chip"><svg class="partner-logo-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c.6 0 1 .4 1 1v6c0 .6-.4 1-1 1s-1-.4-1-1V3c0-.6.4-1 1-1zm5 3c.4 0 .8.2 1 .6l3 5.2c.3.5.1 1.1-.4 1.4-.5.3-1.1.1-1.4-.4L16.2 6.6c-.3-.5-.1-1.1.4-1.4.1-.1.3-.2.4-.2zM7 5c.1 0 .3.1.4.2.5.3.7.9.4 1.4L4.8 11.8c-.3.5-.9.7-1.4.4-.5-.3-.7-.9-.4-1.4l3-5.2c.2-.4.6-.6 1-.6zM22 12c0 .6-.4 1-1 1h-6c-.6 0-1-.4-1-1s.4-1 1-1h6c.6 0 1 .4 1 1zM9 12c0 .6-.4 1-1 1H2c-.6 0-1-.4-1-1s.4-1 1-1h6c.6 0 1 .4 1 1z" fill="currentColor"/></svg>HUAWEI IdeaHub</div>
+          <div class="partner-chip"><svg class="partner-logo-svg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="9.5" cy="9.5" r="1.5" fill="currentColor"/><path d="M8 15h8v2H8z" fill="currentColor"/></svg>Logitech</div>
+          <div class="partner-chip"><svg class="partner-logo-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h10l6 6v10H4V4zm4 4v8h3v-3h3a2.5 2.5 0 0 0 0-5H8z" fill="currentColor"/></svg>Pure Storage</div>
+          <div class="partner-chip"><svg class="partner-logo-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2L4 7v10l8 5 8-5V7l-8-5zm0 3.5L18 9v6l-6 3.5L6 15V9l6-3.5z" fill="currentColor"/></svg>Object First</div>
+          <div class="partner-chip"><svg class="partner-logo-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h8a5 5 0 0 1 5 5 5 5 0 0 1-5 5H8v6H4V4zm4 4v3h4a1.5 1.5 0 0 0 0-3H8z" fill="currentColor"/></svg>Panduit</div>
+          <div class="partner-chip"><svg class="partner-logo-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v3H8v3h10v3H8v3h12v3H4V5z" fill="currentColor"/></svg>Eaton</div>
+          <!-- Duplicate for seamless loop -->
+          <div class="partner-chip"><svg class="partner-logo-svg" viewBox="0 0 32 20" aria-hidden="true"><rect x="2" y="10" width="2" height="8" rx="1" fill="currentColor"/><rect x="6" y="6" width="2" height="12" rx="1" fill="currentColor"/><rect x="10" y="2" width="2" height="16" rx="1" fill="currentColor"/><rect x="14" y="6" width="2" height="12" rx="1" fill="currentColor"/><rect x="18" y="2" width="2" height="16" rx="1" fill="currentColor"/><rect x="22" y="6" width="2" height="12" rx="1" fill="currentColor"/><rect x="26" y="10" width="2" height="8" rx="1" fill="currentColor"/></svg>Cisco</div>
+          <div class="partner-chip"><svg class="partner-logo-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h7v4H4V4zm9 0h7v4h-7V4zM4 10h7v4H4v-4zm9 0h7v4h-7v-4zM4 16h7v4H4v-4zm9 0h7v4h-7v-4z" fill="currentColor"/></svg>Fortinet</div>
+          <div class="partner-chip"><svg class="partner-logo-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 3.8l6.5 3.25v5.9L12 18.2l-6.5-3.25V9.05L12 5.8z" fill="currentColor"/></svg>Proxmox VE</div>
+          <div class="partner-chip"><svg class="partner-logo-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17V7l6 5 3-5 3 5 6-5v10l-6-4-3 4-3-4-6 4z" fill="currentColor"/></svg>Morpheus</div>
+          <div class="partner-chip partner-chip-dark"><svg class="partner-logo-svg" viewBox="0 0 100 50" aria-hidden="true"><path d="M10 5 C7 5 5 7 5 10 L15 40 C16 43 19 45 22 45 C25 45 27 43 28 40 L35 20 C36 17 38 15 41 15 C44 15 46 17 47 20 L54 40 C55 43 58 45 61 45 C64 45 66 43 67 40 L77 10 C78 7 76 5 73 5 C70 5 68 7 67 10 L60 30 L53 10 C52 7 49 5 46 5 C43 5 40 7 39 10 L32 30 L25 10 C24 7 21 5 18 5 Z" fill="currentColor"/></svg>Western Digital</div>
+          <div class="partner-chip"><svg class="partner-logo-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5l6 14h4L6 5H2zm7 0l6 14h4L13 5H9zm7 0l4 9.33L22 5h-4z" fill="currentColor"/></svg>Veeam</div>
+          <div class="partner-chip"><svg class="partner-logo-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 2h9.5v9.5H2V2zm10.5 0H22v9.5h-9.5V2zM2 12.5h9.5V22H2v-9.5zm10.5 0H22V22h-9.5v-9.5z" fill="currentColor"/></svg>Microsoft</div>
+          <div class="partner-chip"><svg class="partner-logo-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2L4 7v10l8 5 8-5V7l-8-5zm0 3.2l5.5 3.4v6.8L12 18.8 6.5 15.4V8.6L12 5.2zM11 9h2v6h-2V9z" fill="currentColor"/></svg>APC Schneider</div>
+          <div class="partner-chip"><svg class="partner-logo-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h4v18H4V3zm6 0h4v7.5L19.5 3H24l-6.5 9L24 21h-4.5L14 13.5V21h-4V3z" fill="currentColor"/></svg>Kaspersky</div>
+          <div class="partner-chip"><svg class="partner-logo-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6h4v12H2V6zm5 0h8v3H9v2h5v3H9v4H7V6zm9 0h6v12h-3V9h-3v9h-3V6z" fill="currentColor"/></svg>Lenovo</div>
+          <div class="partner-chip"><svg class="partner-logo-svg" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="8" width="20" height="8" rx="1.5" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>HPE</div>
+          <div class="partner-chip"><svg class="partner-logo-svg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 8v8h3.5c1.5 0 2.5-1 2.5-2.5S13 11 11.5 11H10V8H8z" fill="currentColor"/></svg>Dell</div>
+          <div class="partner-chip"><svg class="partner-logo-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18h3l1.5-4h7L17 18h3L13.5 5h-3L4 18zm6-7l2.5-6.5L15 11h-5z" fill="currentColor"/></svg>ASUS</div>
+          <div class="partner-chip"><svg class="partner-logo-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5l6 7-6 7h4l4-5 4 5h4l-6-7 6-7h-4l-4 5-4-5H3z" fill="currentColor"/></svg>Extreme Networks</div>
+          <div class="partner-chip"><svg class="partner-logo-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c.6 0 1 .4 1 1v6c0 .6-.4 1-1 1s-1-.4-1-1V3c0-.6.4-1 1-1zm5 3c.4 0 .8.2 1 .6l3 5.2c.3.5.1 1.1-.4 1.4-.5.3-1.1.1-1.4-.4L16.2 6.6c-.3-.5-.1-1.1.4-1.4.1-.1.3-.2.4-.2zM7 5c.1 0 .3.1.4.2.5.3.7.9.4 1.4L4.8 11.8c-.3.5-.9.7-1.4.4-.5-.3-.7-.9-.4-1.4l3-5.2c.2-.4.6-.6 1-.6zM22 12c0 .6-.4 1-1 1h-6c-.6 0-1-.4-1-1s.4-1 1-1h6c.6 0 1 .4 1 1zM9 12c0 .6-.4 1-1 1H2c-.6 0-1-.4-1-1s.4-1 1-1h6c.6 0 1 .4 1 1z" fill="currentColor"/></svg>HUAWEI IdeaHub</div>
+          <div class="partner-chip"><svg class="partner-logo-svg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="9.5" cy="9.5" r="1.5" fill="currentColor"/><path d="M8 15h8v2H8z" fill="currentColor"/></svg>Logitech</div>
+          <div class="partner-chip"><svg class="partner-logo-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h10l6 6v10H4V4zm4 4v8h3v-3h3a2.5 2.5 0 0 0 0-5H8z" fill="currentColor"/></svg>Pure Storage</div>
+          <div class="partner-chip"><svg class="partner-logo-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2L4 7v10l8 5 8-5V7l-8-5zm0 3.5L18 9v6l-6 3.5L6 15V9l6-3.5z" fill="currentColor"/></svg>Object First</div>
+          <div class="partner-chip"><svg class="partner-logo-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h8a5 5 0 0 1 5 5 5 5 0 0 1-5 5H8v6H4V4zm4 4v3h4a1.5 1.5 0 0 0 0-3H8z" fill="currentColor"/></svg>Panduit</div>
+          <div class="partner-chip"><svg class="partner-logo-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v3H8v3h10v3H8v3h12v3H4V5z" fill="currentColor"/></svg>Eaton</div>
+        </div>
+      </div>
+
+      <!-- Certifications -->
+      <div class="container" style="margin-top:48px">
+        <div class="services-grid" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px">
+          <div class="service-card" style="flex-direction:row;align-items:center;gap:16px;padding:20px 24px">
+            <span style="font-size:28px">🥇</span>
+            <div>
+              <div style="font-size:13px;font-weight:800;margin-bottom:3px">Veeam Value-Added Reseller</div>
+              <div style="font-size:12px;color:var(--text-2)">Partner certificado de respaldo y recuperación</div>
+            </div>
+          </div>
+          <div class="service-card" style="flex-direction:row;align-items:center;gap:16px;padding:20px 24px">
+            <span style="font-size:28px">🏅</span>
+            <div>
+              <div style="font-size:13px;font-weight:800;margin-bottom:3px">Lenovo </div>
+              <div style="font-size:12px;color:var(--text-2)">Intelligent Devices Partner certificado</div>
+            </div>
+          </div>
+          <div class="service-card" style="flex-direction:row;align-items:center;gap:16px;padding:20px 24px">
+            <span style="font-size:28px">🎖️</span>
+            <div>
+              <div style="font-size:13px;font-weight:800;margin-bottom:3px">Kaspersky Registered Partner</div>
+              <div style="font-size:12px;color:var(--text-2)">Soluciones certificadas de ciberseguridad</div>
+            </div>
+          </div>
+          <div class="service-card" style="flex-direction:row;align-items:center;gap:16px;padding:20px 24px">
+            <span style="font-size:28px">⚡</span>
+            <div>
+              <div style="font-size:13px;font-weight:800;margin-bottom:3px">Schneider Electric IT Channels</div>
+              <div style="font-size:12px;color:var(--text-2)">Partner oficial de energía y continuidad</div>
+            </div>
+          </div>
+          <div class="service-card" style="flex-direction:row;align-items:center;gap:16px;padding:20px 24px">
+            <span style="font-size:28px">🔷</span>
+            <div>
+              <div style="font-size:13px;font-weight:800;margin-bottom:3px">HPE Business Solution Provider</div>
+              <div style="font-size:12px;color:var(--text-2)">Networking y soluciones empresariales</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!--  CONTACTO                                               -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <section id="contacto" aria-labelledby="contacto-title">
+      <div class="container">
+        <div class="contact-inner">
+
+          <!-- Left: info -->
+          <div class="contact-info fade-in">
+            <div class="section-tag" style="margin-bottom:18px">Conversemos</div>
+            <h2 id="contacto-title">
+              Hagamos crecer<br>
+              <span style="background:var(--accent-g);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">
+                tu infraestructura TI
+              </span>
+            </h2>
+            <p>
+              Cuéntanos tu desafío tecnológico y te ofrecemos un diagnóstico inicial sin costo. 
+              Nuestros ingenieros certificados analizan tu entorno y proponen la solución más adecuada.
+            </p>
+
+            <div class="contact-data">
+              <a href="tel:+56997051793" class="contact-item" aria-label="Llamar a TECNOVOA">
+                <div class="contact-item-icon">📞</div>
+                <div>
+                  <div class="contact-item-label">Teléfono</div>
+                  <div class="contact-item-value">+56 9 9705 1793</div>
+                </div>
+              </a>
+              <a href="mailto:ventas@tecnovoa.cl" class="contact-item" aria-label="Enviar email a TECNOVOA">
+                <div class="contact-item-icon">✉️</div>
+                <div>
+                  <div class="contact-item-label">Email</div>
+                  <div class="contact-item-value">ventas@tecnovoa.cl</div>
+                </div>
+              </a>
+              <div class="contact-item" aria-label="Dirección de TECNOVOA">
+                <div class="contact-item-icon">📍</div>
+                <div>
+                  <div class="contact-item-label">Dirección</div>
+                  <div class="contact-item-value">Av. Pedro de Valdivia N° 273, Of. 606, Providencia, Santiago</div>
+                </div>
+              </div>
+              <div class="contact-item" aria-label="Cobertura de servicios">
+                <div class="contact-item-icon">🚚</div>
+                <div>
+                  <div class="contact-item-label">Cobertura</div>
+                  <div class="contact-item-value">Despachos a todo Chile</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: form -->
+          <div class="contact-form-wrap fade-in fade-delay-2">
+            <h3 class="form-title">Solicitar diagnóstico gratuito</h3>
+            <form id="contact-form" aria-label="Formulario de contacto TECNOVOA" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contact-name">Nombre</label>
+                  <input type="text" id="contact-name" name="name" placeholder="Tu nombre completo" required autocomplete="name" />
+                </div>
+                <div class="form-group">
+                  <label for="contact-company">Empresa</label>
+                  <input type="text" id="contact-company" name="company" placeholder="Nombre de la empresa" autocomplete="organization" />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contact-email">Email corporativo</label>
+                  <input type="email" id="contact-email" name="email" placeholder="correo@empresa.cl" required autocomplete="email" />
+                </div>
+                <div class="form-group">
+                  <label for="contact-phone">Teléfono</label>
+                  <input type="tel" id="contact-phone" name="phone" placeholder="+56 9 xxxx xxxx" autocomplete="tel" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-service">Servicio de interés</label>
+                <select id="contact-service" name="service">
+                  <option value="">Selecciona una área...</option>
+                  <option value="datacenter">Datacenter y Cloud</option>
+                  <option value="redes">Telecomunicaciones y Redes</option>
+                  <option value="av">Audio Video Colaboración</option>
+                  <option value="ciberseguridad">Ciberseguridad y Cumplimiento</option>
+                  <option value="respaldo">Respaldo y Archivo</option>
+                  <option value="enduser">SW y HW EndUser</option>
+                  <option value="energia">Energía y Seguridad Física</option>
+                  <option value="multiple">Múltiples áreas</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message">¿Cuál es tu desafío tecnológico?</label>
+                <textarea id="contact-message" name="message" placeholder="Cuéntanos brevemente tu situación actual, necesidades o el proyecto que tienes en mente..."></textarea>
+              </div>
+
+              <button type="submit" class="form-submit" id="form-submit-btn">
+                Enviar solicitud de diagnóstico →
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!--  SCRIPTS                                                -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <script>
+      /* ── Scroll animations ──────────────────────────────── */
+      const fadeEls = document.querySelectorAll('.fade-in');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+      fadeEls.forEach(el => observer.observe(el));
+
+      /* ── Smooth anchor offsets ──────────────────────────── */
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', e => {
+          const target = document.querySelector(anchor.getAttribute('href'));
+          if (target) {
+            e.preventDefault();
+            const offset = 80;
+            const top = target.getBoundingClientRect().top + window.scrollY - offset;
+            window.scrollTo({ top, behavior: 'smooth' });
+          }
+        });
+      });
+
+      /* ── Contact form ───────────────────────────────────── */
+      const form = document.getElementById('contact-form');
+      const submitBtn = document.getElementById('form-submit-btn');
+
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+
+        const name  = document.getElementById('contact-name').value.trim();
+        const email = document.getElementById('contact-email').value.trim();
+
+        if (!name) {
+          document.getElementById('contact-name').focus();
+          return;
+        }
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          document.getElementById('contact-email').focus();
+          return;
+        }
+
+        // Simulate send → open email client with prefilled data
+        const service  = document.getElementById('contact-service').value;
+        const company  = document.getElementById('contact-company').value.trim();
+        const phone    = document.getElementById('contact-phone').value.trim();
+        const message  = document.getElementById('contact-message').value.trim();
+
+        const subject = encodeURIComponent(`Solicitud de diagnóstico - ${name}${company ? ' · ' + company : ''}`);
+        const body = encodeURIComponent(
+          `Nombre: ${name}\nEmpresa: ${company || '-'}\nEmail: ${email}\nTeléfono: ${phone || '-'}\nServicio: ${service || '-'}\n\nMensaje:\n${message || '-'}`
+        );
+
+        submitBtn.textContent = '✓ Solicitud enviada — te contactamos pronto';
+        submitBtn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
+        submitBtn.disabled = true;
+
+        setTimeout(() => {
+          window.location.href = `mailto:ventas@tecnovoa.cl?subject=${subject}&body=${body}`;
+        }, 800);
+
+        setTimeout(() => {
+          submitBtn.textContent = 'Enviar solicitud de diagnóstico →';
+          submitBtn.style.background = '';
+          submitBtn.disabled = false;
+          form.reset();
+        }, 5000);
+      });
+
+      /* ── 3D Architecture Explorer Switcher ──────────────── */
+      (function() {
+        const archData = {
+          redes: {
+            badge: "Topología LAN / WiFi 6",
+            img: "img/telecomunicaciones-redes-isometric.jpg",
+            alt: "Arquitectura Técnica de Telecomunicaciones y Redes TECNOVOA",
+            tag: "Unidad de Negocio 01 · Networking",
+            title: "Redes Empresariales, WiFi de Alta Densidad y Fibra Óptica",
+            desc: "Diseñamos e implementamos infraestructuras de red de alta disponibilidad con topología de doble núcleo, segmentación por VLAN y monitoreo centralizado en la nube para garantizar cero caídas en tu operación.",
+            specs: [
+              "<strong>Core & Switching:</strong> Cisco Catalyst, Meraki y Extreme Networks con redundancia L3.",
+              "<strong>WiFi Empresarial:</strong> Ubiquiti UniFi y Meraki con Site Survey predictivo Ekahau.",
+              "<strong>Cableado Estructurado:</strong> Cat 6A / Fibra óptica con certificación Fluke Networks AS-BUILT."
+            ],
+            link: "telecomunicaciones-redes-wp-embed.html",
+            btnText: "Ver catálogo técnico de redes",
+            partners: "Partners: <strong>Cisco</strong> · <strong>Ubiquiti</strong> · <strong>Extreme</strong> · <strong>Fluke</strong>"
+          },
+          av: {
+            badge: "Sala Híbrida Inteligente",
+            img: "img/audio-video-colaboracion-isometric.jpg",
+            alt: "Arquitectura de Sala Híbrida y Colaboración Audiovisual TECNOVOA",
+            tag: "Unidad de Negocio 03 · Audio y Video",
+            title: "Salas de Reuniones Inteligentes y Videoconferencia Corporativa",
+            desc: "Ecosistemas audiovisuales certificados para Microsoft Teams Rooms y Zoom Rooms con encuadre automático por IA, microfonía de techo con cancelación acústica y pantallas táctiles interactivas.",
+            specs: [
+              "<strong>Pantallas Interactivas:</strong> HUAWEI IdeaHub 4K y pantallas profesionales LG/Samsung.",
+              "<strong>Audio & Microfonía:</strong> Barras inteligentes Logitech Rally / MeetUp y microfonía Shure.",
+              "<strong>Automatización:</strong> Control táctil de iluminación, cortinas y audio Crestron."
+            ],
+            link: "audio-video-colaboracion-wp-embed.html",
+            btnText: "Ver soluciones de audio y video",
+            partners: "Partners: <strong>HUAWEI IdeaHub</strong> · <strong>Logitech</strong> · <strong>Crestron</strong> · <strong>Shure</strong>"
+          },
+          ciber: {
+            badge: "Centro de Operaciones SOC & Zero Trust",
+            img: "img/ciberseguridad-cumplimiento-isometric.jpg",
+            alt: "Arquitectura de Ciberseguridad y Centro SOC TECNOVOA",
+            tag: "Unidad de Negocio 04 · Ciberseguridad",
+            title: "Protección Perimetral NGFW, EDR y Monitoreo de Seguridad 24/7",
+            desc: "Arquitectura de seguridad en capas orientada al estándar ISO 27001 y NIST. Bloqueo de ransomware en tiempo real, microsegmentación y visibilidad integral de amenazas.",
+            specs: [
+              "<strong>Next-Gen Firewalls:</strong> Fortinet FortiGate y Sophos XGS con inspección SSL profunda.",
+              "<strong>Detección y Respuesta (EDR):</strong> Kaspersky Endpoint Cloud y Sophos Intercept X con IA.",
+              "<strong>Gestión de Identidades:</strong> Microsoft Entra ID con MFA y Zero Trust Network Access."
+            ],
+            link: "ciberseguridad-wp-embed.html",
+            btnText: "Ver soluciones de ciberseguridad",
+            partners: "Partners: <strong>Fortinet</strong> · <strong>Sophos</strong> · <strong>Kaspersky</strong> · <strong>Microsoft Entra</strong>"
+          },
+          enduser: {
+            badge: "Digital Workplace & Flotas",
+            img: "img/oficinas-enduser-isometric.jpg",
+            alt: "Arquitectura de Espacio de Trabajo Digital y Flotas End-User TECNOVOA",
+            tag: "Unidad de Negocio 06 · End User Computing",
+            title: "Equipamiento de Puestos de Trabajo y Gestión Centralizada de Flotas",
+            desc: "Aprovisionamiento ágil de hardware corporativo con despliegue Zero-Touch (Windows Autopilot / Intune), ergonomía avanzada y soporte técnico prioritario on-site.",
+            specs: [
+              "<strong>Notebooks & Workstations:</strong> Lenovo ThinkPad, Dell Latitude y HP EliteBook con garantía on-site.",
+              "<strong>Productividad Cloud:</strong> Microsoft 365 Business Premium con licenciamiento oficial.",
+              "<strong>Monitores y Periféricos:</strong> Pantallas ergonómicas duales y docking stations Thunderbolt."
+            ],
+            link: "enduser-wp-embed.html",
+            btnText: "Ver catálogo de hardware empresarial",
+            partners: "Partners: <strong>Lenovo</strong> · <strong>Dell</strong> · <strong>HP</strong> · <strong>Microsoft 365</strong>"
+          },
+          energia: {
+            badge: "Energía Crítica & CCTV",
+            img: "img/energia-seguridad-acceso-isometric.jpg",
+            alt: "Arquitectura de Energía Crítica y Seguridad Física TECNOVOA",
+            tag: "Unidad de Negocio 07 · Energía y Seguridad",
+            title: "Continuidad Eléctrica UPS, Climatización y Control Biométrico de Acceso",
+            desc: "Infraestructura de protección física y eléctrica para salas de servidores y oficinas. Respaldo ininterrumpido ante cortes de suministro, detección ambiental y control de acceso.",
+            specs: [
+              "<strong>Sistemas UPS & Generadores:</strong> Eaton y Legrand On-Line Doble Conversión con bypass.",
+              "<strong>Seguridad Física & CCTV:</strong> Cámaras IP 4K con analítica perimetral y torniquetes biométricos.",
+              "<strong>Monitoreo Ambiental:</strong> Sensores de temperatura, humedad y anegamiento en tiempo real."
+            ],
+            link: "energia-wp-embed.html",
+            btnText: "Ver soluciones de energía y seguridad",
+            partners: "Partners: <strong>Eaton</strong> · <strong>Legrand</strong> · <strong>APC</strong> · <strong>Hikvision</strong>"
+          }
+        };
+
+        const tabs = document.querySelectorAll('.arch-tab-btn');
+        const badgeText = document.getElementById('index-arch-badge');
+        const img = document.getElementById('index-arch-img');
+        const tag = document.getElementById('index-arch-tag');
+        const title = document.getElementById('index-arch-title');
+        const desc = document.getElementById('index-arch-desc');
+        const specs = document.getElementById('index-arch-specs');
+        const link = document.getElementById('index-arch-link');
+        const partners = document.getElementById('index-arch-partners');
+
+        if (!tabs.length || !img) return;
+
+        tabs.forEach(tab => {
+          tab.addEventListener('click', function() {
+            tabs.forEach(t => {
+              t.classList.remove('active');
+              t.setAttribute('aria-selected', 'false');
+            });
+            this.classList.add('active');
+            this.setAttribute('aria-selected', 'true');
+
+            const key = this.getAttribute('data-unit');
+            const item = archData[key];
+            if (!item) return;
+
+            img.style.opacity = '0.3';
+            setTimeout(() => {
+              badgeText.textContent = item.badge;
+              img.src = item.img;
+              img.alt = item.alt;
+              tag.textContent = item.tag;
+              title.textContent = item.title;
+              desc.textContent = item.desc;
+              
+              specs.innerHTML = item.specs.map(s => `
+                <div class="arch-info-spec">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <div>${s}</div>
+                </div>
+              `).join('');
+
+              link.href = item.link;
+              link.innerHTML = `${item.btnText} <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+              partners.innerHTML = item.partners;
+
+              img.style.opacity = '1';
+            }, 150);
+          });
+        });
+      })();
+    </script>
+  
+<!-- Theme Toggle Button -->
+<button id="tv-theme-toggle" class="tv-theme-toggle-btn" aria-label="Cambiar tema de color" type="button">
+  <span class="theme-icon-sun" aria-hidden="true">☀️</span>
+  <span class="theme-icon-moon" aria-hidden="true">🌙</span>
+  <span class="theme-toggle-text">Modo Claro</span>
+</button>
+
+</body>
+</html>
+
+
+<script>
+(function() {
+  'use strict';
+  function initTheme() {
+    var toggleBtn = document.getElementById('tv-theme-toggle');
+    var targets = [document.documentElement, document.querySelector('.tv-av-page'), document.querySelector('.tv-landing-page')].filter(Boolean);
+
+    function applyTheme(theme) {
+      targets.forEach(function(el) {
+        el.setAttribute('data-theme', theme);
+      });
+      if (toggleBtn) {
+        var textSpan = toggleBtn.querySelector('.theme-toggle-text');
+        if (textSpan) {
+          textSpan.textContent = theme === 'light' ? 'Modo Oscuro' : 'Modo Claro';
+        }
+      }
+      try { localStorage.setItem('tecnovoa-theme', theme); } catch(e) {}
+    }
+
+    var savedTheme = 'dark';
+    try { savedTheme = localStorage.getItem('tecnovoa-theme') || 'dark'; } catch(e) {}
+    applyTheme(savedTheme);
+
+    if (toggleBtn && !toggleBtn.dataset.themeBound) {
+      toggleBtn.dataset.themeBound = 'true';
+      toggleBtn.addEventListener('click', function() {
+        var currentTheme = (document.documentElement.getAttribute('data-theme') || 'dark') === 'light' ? 'light' : 'dark';
+        var nextTheme = currentTheme === 'light' ? 'dark' : 'light';
+        applyTheme(nextTheme);
+      });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTheme);
+  } else {
+    initTheme();
+  }
+})();
+</script>

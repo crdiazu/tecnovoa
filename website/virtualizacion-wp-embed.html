@@ -1,0 +1,1630 @@
+<!--
+  ╔══════════════════════════════════════════════════════════════════╗
+  ║  TECNOVOA — Virtualización de Servidores                     ║
+  ║  Versión: WordPress Embed (sin navbar, sin footer, sin breadcrumb)║
+  ║  Pegar en: Bloque "HTML Personalizado" de WordPress             ║
+  ╚══════════════════════════════════════════════════════════════════╝
+-->
+
+<!--
+  =============================================================================
+  GUÍA PARA OPTIMIZAR YOAST SEO EN ESTA PÁGINA
+  =============================================================================
+  Para dejar todos los problemas de Yoast SEO en verde (estado óptimo) en esta 
+  página de WordPress, debes seguir estos requerimientos:
+
+  A continuación, tienes la información exacta que debes copiar y pegar en Yoast SEO:
+
+  1. Frase Clave Objetivo:
+     Virtualización de Servidores
+
+  2. Título SEO:
+     Virtualización de Servidores y Nube Híbrida para Continuidad TI | TECNOVOA
+
+  3. Slug:
+     virtualizacion-de-servidores
+
+  4. Meta Descripción:
+     Contáctanos. Optimice su infraestructura TI con soluciones de Virtualización de Servidores, hiperconvergencia (HCI) y alta disponibilidad.
+
+  (NOTA: La frase clave ya ha sido insertada en el Título H1, H2 y en la introducción del texto de esta página).
+  =============================================================================
+-->
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+/* ─────────────────────────────────────────────────────────────────
+   SCOPE: Todo el CSS está limitado al wrapper .tv-landing-page
+   para no interferir con el tema de WordPress.
+───────────────────────────────────────────────────────────────── */
+
+.tv-landing-page *,
+.tv-landing-page *::before,
+.tv-landing-page *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.tv-landing-page {
+  --bg:        #080d1a;
+  --bg-2:      #0c1224;
+  --bg-3:      #111829;
+  --surface:   rgba(255, 255, 255, 0.02);
+  --surface-h: rgba(255, 255, 255, 0.06);
+  --border:    rgba(255, 255, 255, 0.05);
+  --border-h:  rgba(42, 115, 255, 0.4);
+  --text:      #f0f4ff;
+  --text-2:    #8b9ab5;
+  --text-3:    #5a6a84;
+  --accent:    #2a73ff;
+  --accent-2:  #00c8ff;
+  --accent-g:  linear-gradient(135deg, #2a73ff 0%, #00c8ff 100%);
+  --cyan:      #00c8ff;
+  --orange:    #00c8ff;
+  --orange-g:  linear-gradient(135deg, #00c8ff 0%, #2a73ff 100%);
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  overflow-x: hidden;
+
+  /* Margen negativo para anular el padding del contenedor de WP */
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+.tv-landing-page .problem-card,
+.tv-landing-page .portfolio-card,
+.tv-landing-page .process-step,
+.tv-landing-page .partner-card,
+.tv-landing-page .service-item,
+.tv-landing-page .related-card {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.tv-landing-page img { max-width: 100%; display: block; }
+.tv-landing-page a   { color: inherit; text-decoration: none; }
+.tv-landing-page ul,
+.tv-landing-page ol  { list-style: none; }
+
+.tv-landing-page .container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ─── HERO ─────────────────────────────────────────────── */
+.tv-landing-page #energia-hero {
+  position: relative;
+  padding: 72px 0 100px; /* sin navbar propio → padding-top reducido */
+  overflow: hidden;
+}
+
+.tv-landing-page .hero-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.tv-landing-page .hero-stock-img {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&auto=format&fit=crop&q=60');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.07;
+  mix-blend-mode: luminosity;
+}
+
+.tv-landing-page .hero-bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(251,146,60,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(251,146,60,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 30%, transparent 100%);
+}
+
+.tv-landing-page .hero-blob {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(90px);
+  opacity: 0.12;
+}
+
+.tv-landing-page .hero-blob-1 { width:550px; height:550px; background:#fb923c; top:-120px; left:-80px; }
+.tv-landing-page .hero-blob-2 { width:350px; height:350px; background:#2a73ff; bottom:0; right:-60px; }
+
+.tv-landing-page .hero-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  /* FIX: ajuste de columnas para evitar overflow del H1 */
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 48px;
+  align-items: center;
+}
+
+/* H1 — tamaño aumentado */
+.tv-landing-page .hero-title {
+  font-size: clamp(34px, 4vw, 58px);
+  font-weight: 900;
+  line-height: 1.06;
+  letter-spacing: -0.035em;
+  margin-bottom: 22px;
+  overflow: visible;
+  word-break: break-word;
+}
+
+/* Etiqueta del panel de problemas */
+.tv-landing-page .hero-visual-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(251,146,60,0.2);
+}
+
+.tv-landing-page .grad-orange {
+  background: var(--orange-g);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.tv-landing-page .grad-blue {
+  background: var(--accent-g);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.tv-landing-page .hero-lead {
+  font-size: 16px;
+  color: var(--text-2);
+  line-height: 1.7;
+  margin-bottom: 36px;
+  max-width: 540px;
+}
+
+.tv-landing-page .hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+.tv-landing-page .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: var(--accent-g);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 99px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 0 28px rgba(42,115,255,0.4);
+  text-decoration: none;
+}
+
+.tv-landing-page .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 36px rgba(42,115,255,0.5); }
+
+.tv-landing-page .btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 26px;
+  background: transparent;
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 99px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+  text-decoration: none;
+}
+
+.tv-landing-page .btn-secondary:hover { background: var(--surface-h); border-color: var(--border-h); transform: translateY(-2px); }
+
+/* Hero KPIs */
+.tv-landing-page .hero-kpis {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.tv-landing-page .hero-kpi {
+  padding: 22px 16px;
+  text-align: center;
+  border-right: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.tv-landing-page .hero-kpi:last-child { border-right: 0; }
+
+.tv-landing-page .hero-kpi-val {
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  background: var(--orange-g);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.tv-landing-page .hero-kpi-label { font-size: 11px; color: var(--text-2); line-height: 1.4; }
+
+/* Hero visual derecho */
+.tv-landing-page .hero-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tv-landing-page .problem-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 16px 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  transition: border-color 0.3s, background 0.3s;
+  animation: tv-slideIn 0.5s ease backwards;
+}
+
+.tv-landing-page .problem-card:hover { border-color: rgba(251,146,60,0.35); background: var(--surface-h); }
+.tv-landing-page .problem-card:nth-child(1) { animation-delay: 0.1s; }
+.tv-landing-page .problem-card:nth-child(2) { animation-delay: 0.2s; }
+.tv-landing-page .problem-card:nth-child(3) { animation-delay: 0.3s; }
+.tv-landing-page .problem-card:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes tv-slideIn {
+  from { opacity: 0; transform: translateX(24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.tv-landing-page .problem-icon {
+  width: 36px; height: 36px;
+  border-radius: var(--radius-sm);
+  display: grid;
+  place-items: center;
+  font-size: 16px;
+  flex-shrink: 0;
+  background: rgba(251,146,60,0.1);
+}
+
+.tv-landing-page .problem-card strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+
+.tv-landing-page .problem-card span {
+  font-size: 12px;
+  color: var(--text-2);
+  line-height: 1.4;
+}
+
+/* ─── SECCIÓN GENÉRICA ─────────────────────────────────── */
+.tv-landing-page .section { padding: 90px 0; }
+.tv-landing-page .section-alt { background: var(--bg-2); }
+
+.tv-landing-page .section-tag {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(251,146,60,0.1);
+  border: 1px solid rgba(251,146,60,0.25);
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 16px;
+}
+
+.tv-landing-page .section-tag.blue {
+  background: rgba(42,115,255,0.1);
+  border-color: rgba(42,115,255,0.25);
+  color: var(--cyan);
+}
+
+.tv-landing-page .section-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.tv-landing-page .section-title {
+  font-size: clamp(26px, 3.2vw, 40px);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  margin-bottom: 14px;
+  color: var(--text);
+}
+
+.tv-landing-page .section-sub {
+  font-size: 16px;
+  color: var(--text-2);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ─── PORTAFOLIO GRID ──────────────────────────────────── */
+.tv-landing-page .portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 20px;
+}
+
+.tv-landing-page .portfolio-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: border-color 0.3s, background 0.3s, transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.tv-landing-page .portfolio-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--orange-g);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tv-landing-page .portfolio-card:hover {
+  border-color: rgba(251,146,60,0.3);
+  background: var(--surface-h);
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(251,146,60,0.15);
+}
+
+.tv-landing-page .portfolio-card:hover::before { opacity: 1; }
+
+.tv-landing-page .portfolio-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.tv-landing-page .portfolio-icon {
+  width: 48px; height: 48px;
+  border-radius: var(--radius-md);
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  flex-shrink: 0;
+  background: rgba(251,146,60,0.1);
+}
+
+.tv-landing-page .portfolio-title {
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--text);
+}
+
+.tv-landing-page .portfolio-cat {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-top: 2px;
+}
+
+.tv-landing-page .portfolio-desc {
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.65;
+}
+
+.tv-landing-page .product-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+.tv-landing-page .product-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.tv-landing-page .product-dot {
+  width: 6px; height: 6px;
+  background: var(--orange);
+  border-radius: 99px;
+  flex-shrink: 0;
+  margin-top: 7px;
+}
+
+.tv-landing-page .product-item-text {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-2);
+}
+
+.tv-landing-page .product-item-text strong { color: var(--text); font-weight: 700; }
+
+.tv-landing-page .brand-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+.tv-landing-page .brand-tag {
+  padding: 4px 10px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-2);
+  white-space: nowrap;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.tv-landing-page .portfolio-card:hover .brand-tag {
+  background: rgba(251,146,60,0.07);
+  border-color: rgba(251,146,60,0.2);
+  color: var(--orange);
+}
+
+/* ─── PROCESO ──────────────────────────────────────────── */
+.tv-landing-page .process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.tv-landing-page .process-step {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px 22px;
+  text-align: center;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.tv-landing-page .process-step:hover { border-color: rgba(251,146,60,0.3); transform: translateY(-4px); }
+
+.tv-landing-page .process-number {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 14px;
+}
+
+.tv-landing-page .process-icon { font-size: 28px; margin-bottom: 12px; display: block; }
+
+.tv-landing-page .process-step-title {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 10px;
+  color: var(--text);
+}
+
+.tv-landing-page .process-desc { font-size: 13px; color: var(--text-2); line-height: 1.6; }
+
+/* ─── PARTNERS ─────────────────────────────────────────── */
+.tv-landing-page .partners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.tv-landing-page .partner-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: border-color 0.3s, background 0.3s, transform 0.3s;
+}
+
+.tv-landing-page .partner-card:hover {
+  border-color: rgba(251,146,60,0.3);
+  background: var(--surface-h);
+  transform: translateY(-3px);
+}
+
+.tv-landing-page .partner-card.top-partner {
+  border-color: rgba(251,146,60,0.3);
+  background: rgba(251,146,60,0.05);
+}
+
+.tv-landing-page .partner-emoji { font-size: 28px; flex-shrink: 0; }
+
+.tv-landing-page .partner-info-name {
+  font-size: 15px;
+  font-weight: 800;
+  margin-bottom: 4px;
+  color: var(--text);
+}
+
+.tv-landing-page .partner-info-desc { font-size: 12px; color: var(--text-2); line-height: 1.5; }
+
+.tv-landing-page .partner-badge {
+  display: inline-block;
+  padding: 3px 8px;
+  background: rgba(251,146,60,0.15);
+  border: 1px solid rgba(251,146,60,0.3);
+  border-radius: 99px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-top: 6px;
+}
+
+/* ─── SERVICIOS ────────────────────────────────────────── */
+.tv-landing-page .services-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.tv-landing-page .service-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  transition: border-color 0.3s, background 0.3s, transform 0.3s;
+}
+
+.tv-landing-page .service-item:hover {
+  border-color: rgba(42,115,255,0.3);
+  background: var(--surface-h);
+  transform: translateY(-3px);
+}
+
+.tv-landing-page .service-item-icon {
+  width: 44px; height: 44px;
+  border-radius: var(--radius-md);
+  background: rgba(42,115,255,0.1);
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.tv-landing-page .service-item-title {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+
+.tv-landing-page .service-item-desc { font-size: 13px; color: var(--text-2); line-height: 1.6; }
+
+/* ─── UNIDADES RELACIONADAS ────────────────────────────── */
+.tv-landing-page .related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.tv-landing-page .related-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color 0.3s, background 0.3s, transform 0.3s;
+  text-decoration: none;
+}
+
+.tv-landing-page .related-card:hover {
+  border-color: rgba(42,115,255,0.35);
+  background: var(--surface-h);
+  transform: translateY(-4px);
+}
+
+.tv-landing-page .related-card-icon {
+  font-size: 26px;
+  width: 50px; height: 50px;
+  background: rgba(42,115,255,0.1);
+  border-radius: var(--radius-md);
+  display: grid;
+  place-items: center;
+}
+
+.tv-landing-page .related-card-title {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.tv-landing-page .related-card-desc { font-size: 13px; color: var(--text-2); line-height: 1.55; }
+
+.tv-landing-page .related-card-link {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--cyan);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: auto;
+}
+
+/* ─── CTA FINAL ────────────────────────────────────────── */
+.tv-landing-page #av-cta-final {
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-2);
+}
+
+.tv-landing-page #av-cta-final::before {
+  content: '';
+  position: absolute;
+  width: 700px; height: 700px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(251,146,60,0.1) 0%, transparent 70%);
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  pointer-events: none;
+}
+
+.tv-landing-page .cta-inner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.tv-landing-page .cta-title {
+  font-size: clamp(26px, 3.5vw, 42px);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  margin-bottom: 18px;
+  color: var(--text);
+}
+
+.tv-landing-page .cta-sub {
+  font-size: 16px;
+  color: var(--text-2);
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+.tv-landing-page .cta-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.tv-landing-page .cta-contact-strip {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 36px;
+  padding-top: 36px;
+  border-top: 1px solid var(--border);
+}
+
+.tv-landing-page .cta-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text-2);
+  transition: color 0.2s;
+  text-decoration: none;
+}
+
+.tv-landing-page .cta-contact-item:hover { color: var(--text); }
+.tv-landing-page .cta-contact-item .icon { font-size: 18px; }
+
+/* ─── SCROLL ANIMATIONS ────────────────────────────────── */
+.tv-landing-page .fade-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.tv-landing-page .fade-delay-1 { transition-delay: 0.08s; }
+.tv-landing-page .fade-delay-2 { transition-delay: 0.16s; }
+.tv-landing-page .fade-delay-3 { transition-delay: 0.24s; }
+.tv-landing-page .fade-delay-4 { transition-delay: 0.32s; }
+
+/* ─── RESPONSIVE ───────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .tv-landing-page .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+  .tv-landing-page .hero-visual { display: none; }
+  .tv-landing-page .related-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .tv-landing-page .portfolio-grid { grid-template-columns: 1fr; }
+  .tv-landing-page .services-list { grid-template-columns: 1fr; }
+  .tv-landing-page .related-grid { grid-template-columns: 1fr; }
+  .tv-landing-page .hero-kpis { grid-template-columns: 1fr; border-radius: var(--radius-md); }
+  .tv-landing-page .hero-kpi { border-right: 0; border-bottom: 1px solid var(--border); }
+  .tv-landing-page .hero-kpi:last-child { border-bottom: 0; }
+  .tv-landing-page .process-grid { grid-template-columns: 1fr 1fr; }
+  .tv-landing-page .partners-grid { grid-template-columns: 1fr; }
+  .tv-landing-page .section { padding: 70px 0; }
+  .tv-landing-page #energia-hero { padding: 48px 0 80px; }
+  .tv-landing-page .hero-title { font-size: 28px; }
+}
+
+@media (max-width: 480px) {
+  .tv-landing-page .process-grid { grid-template-columns: 1fr; }
+  .tv-landing-page .hero-actions { flex-direction: column; }
+  .tv-landing-page .btn-primary,
+  .tv-landing-page .btn-secondary { width: 100%; justify-content: center; }
+  .tv-landing-page .cta-actions { flex-direction: column; align-items: center; }
+  .tv-landing-page .portfolio-card[style*="span 2"] { grid-column: 1 !important; }
+}
+
+/* ─── CAROUSEL DE MARCAS ───────────────────────────────── */
+.tv-landing-page .brand-carousel-section {
+  padding: 30px 0;
+  background: var(--bg-2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+}
+
+.tv-landing-page .brand-carousel-wrapper {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.tv-landing-page .brand-carousel-track {
+  display: flex;
+  gap: 80px;
+  width: max-content;
+  animation: tv-carousel-scroll 25s linear infinite;
+}
+
+.tv-landing-page .brand-carousel-track:hover {
+  animation-play-state: paused;
+}
+
+.tv-landing-page .brand-carousel-item {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-2);
+  letter-spacing: 1px;
+  transition: color 0.3s, transform 0.3s;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tv-landing-page .brand-carousel-item:hover {
+  color: var(--orange);
+  transform: scale(1.08);
+}
+
+@keyframes tv-carousel-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 40px)); }
+}
+
+  /* ─── THEME SWITCHER OVERRIDES ─── */
+  [data-theme="light"],
+  .tv-av-page[data-theme="light"],
+  .tv-landing-page[data-theme="light"] {
+    --bg:        #ffffff !important;
+    --bg-2:      #f8fafc !important;
+    --bg-3:      #f1f5f9 !important;
+    --surface:   #ffffff !important;
+    --surface-h: #f1f5f9 !important;
+    --border:    #e2e8f0 !important;
+    --border-h:  #cbd5e1 !important;
+    --text:      #0f172a !important;
+    --text-2:    #475569 !important;
+    --text-3:    #64748b !important;
+    --accent:    #1d4ed8 !important;
+    --accent-2:  #2563eb !important;
+    --accent-g:  linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%) !important;
+    --cyan:      #1d4ed8 !important;
+    --orange:    #1d4ed8 !important;
+    --orange-g:  linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%) !important;
+    color-scheme: light;
+  }
+
+  /* Theme Toggle Button Styles */
+  .tv-theme-toggle-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 99999;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.88);
+    color: #f0f4ff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  [data-theme="light"] .tv-theme-toggle-btn,
+  .tv-av-page[data-theme="light"] .tv-theme-toggle-btn,
+  .tv-landing-page[data-theme="light"] .tv-theme-toggle-btn {
+    background: rgba(255, 255, 255, 0.92);
+    color: #0f172a;
+    border-color: rgba(15, 23, 42, 0.15);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.15);
+  }
+
+  .tv-theme-toggle-btn:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+  }
+
+  .theme-icon-sun { display: inline-block; }
+  .theme-icon-moon { display: none; }
+
+  [data-theme="light"] .theme-icon-sun,
+  .tv-av-page[data-theme="light"] .theme-icon-sun,
+  .tv-landing-page[data-theme="light"] .theme-icon-sun { display: none; }
+
+  [data-theme="light"] .theme-icon-moon,
+  .tv-av-page[data-theme="light"] .theme-icon-moon,
+  .tv-landing-page[data-theme="light"] .theme-icon-moon { display: inline-block; }
+
+</style>
+
+<!-- ════════════════════════════════════════════════════════════
+     INICIO DEL CONTENIDO — Pegar todo esto en WordPress
+═════════════════════════════════════════════════════════════ -->
+<div class="tv-landing-page" id="tv-virtualizacion-top">
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!--  HERO SECTION                                          -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <section id="virtualizacion-hero" aria-labelledby="virtualizacion-hero-title">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hero-stock-img"></div>
+      <div class="hero-bg-grid"></div>
+      <div class="hero-blob hero-blob-1"></div>
+      <div class="hero-blob hero-blob-2"></div>
+    </div>
+
+    <div class="container">
+      <div class="hero-inner">
+
+        <!-- Copy izquierdo -->
+        <div>
+
+          <!-- H1 con keyword SEO -->
+          <h1 class="hero-title" id="virtualizacion-hero-title">
+            Virtualización de Servidores<br><span class="grad-orange">y nube híbrida</span>
+          </h1>
+
+          <p class="hero-lead">
+            Optimice el uso de hardware, reduzca costos operativos y agilice el aprovisionamiento de servicios con nuestras soluciones de virtualización de servidores, hiperconvergencia y alta disponibilidad.
+          </p>
+
+          <div class="hero-actions">
+            <a href="https://tecnovoa.cl/contacto/" class="btn-primary" id="virtualizacion-hero-cta">
+              Cotizar soluciones
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#virtualizacion-portafolio" class="btn-secondary">
+              Ver soluciones
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10M4 9l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+
+          <!-- KPIs -->
+          <div class="hero-kpis" role="list" aria-label="Métricas de la unidad">
+            <div class="hero-kpi" role="listitem">
+              <div class="hero-kpi-val">90%+</div>
+              <div class="hero-kpi-label">Ahorro de espacio y energía</div>
+            </div>
+            <div class="hero-kpi" role="listitem">
+              <div class="hero-kpi-val">5+</div>
+              <div class="hero-kpi-label">Marcas líderes asociadas</div>
+            </div>
+            <div class="hero-kpi" role="listitem">
+              <div class="hero-kpi-val">100%</div>
+              <div class="hero-kpi-label">Alta disponibilidad</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual derecho: problemas -->
+        <div class="hero-visual" role="list" aria-label="Problemas que resuelve TECNOVOA">
+          <div class="hero-visual-label">Problemas que podemos resolver</div>
+          <div class="problem-card" role="listitem">
+            <div class="problem-icon" aria-hidden="true">💾</div>
+            <div>
+              <strong>Infraestructura física saturada</strong>
+              <span>Servidores físicos que desperdician recursos y encarecen los costos operativos.</span>
+            </div>
+          </div>
+          <div class="problem-card" role="listitem">
+            <div class="problem-icon" aria-hidden="true">⚡</div>
+            <div>
+              <strong>Sin alta disponibilidad</strong>
+              <span>Caídas de sistemas críticos sin plan de failover ni continuidad operacional.</span>
+            </div>
+          </div>
+          <div class="problem-card" role="listitem">
+            <div class="problem-icon" aria-hidden="true">📊</div>
+            <div>
+              <strong>CAPEX elevado</strong>
+              <span>Compra constante de hardware físico sin visibilidad del ROI ni escalabilidad.</span>
+            </div>
+          </div>
+          <div class="problem-card" role="listitem">
+            <div class="problem-icon" aria-hidden="true">☁️</div>
+            <div>
+              <strong>Migración a la nube bloqueada</strong>
+              <span>Dificultades para integrar entornos on-premise con nube híbrida sin interrumpir operaciones.</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!--  CARRUSEL DE MARCAS                                    -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <section class="brand-carousel-section fade-in" aria-label="Nuestras marcas asociadas">
+    <div class="container">
+      <div class="brand-carousel-wrapper">
+        <div class="brand-carousel-track">
+          <div class="brand-carousel-item">AWS</div>
+          <div class="brand-carousel-item">Ceph</div>
+          <div class="brand-carousel-item">Cisco</div>
+          <div class="brand-carousel-item">Citrix</div>
+          <div class="brand-carousel-item">Commvault</div>
+          <div class="brand-carousel-item">HPE</div>
+          <div class="brand-carousel-item">Microsoft</div>
+          <div class="brand-carousel-item">MinIO</div>
+          <div class="brand-carousel-item">Nakivo</div>
+          <div class="brand-carousel-item">Nutanix</div>
+          <div class="brand-carousel-item">Proxmox</div>
+          <div class="brand-carousel-item">Red Hat</div>
+          <div class="brand-carousel-item">SUSE</div>
+          <div class="brand-carousel-item">Tanzu</div>
+          <div class="brand-carousel-item">Veeam</div>
+          <div class="brand-carousel-item">Veritas</div>
+                    <!-- Repetición para ciclo infinito -->
+          <div class="brand-carousel-item">AWS</div>
+          <div class="brand-carousel-item">Ceph</div>
+          <div class="brand-carousel-item">Cisco</div>
+          <div class="brand-carousel-item">Citrix</div>
+          <div class="brand-carousel-item">Commvault</div>
+          <div class="brand-carousel-item">HPE</div>
+          <div class="brand-carousel-item">Microsoft</div>
+          <div class="brand-carousel-item">MinIO</div>
+          <div class="brand-carousel-item">Nakivo</div>
+          <div class="brand-carousel-item">Nutanix</div>
+          <div class="brand-carousel-item">Proxmox</div>
+          <div class="brand-carousel-item">Red Hat</div>
+          <div class="brand-carousel-item">SUSE</div>
+          <div class="brand-carousel-item">Tanzu</div>
+          <div class="brand-carousel-item">Veeam</div>
+          <div class="brand-carousel-item">Veritas</div>
+                  </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!--  PORTAFOLIO                                            -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <section id="virtualizacion-portafolio" class="section section-alt" aria-labelledby="virtualizacion-portafolio-title">
+    <div class="container">
+
+      <div class="section-header fade-in">
+        <div class="section-tag">Portafolio</div>
+        <h2 class="section-title" id="virtualizacion-portafolio-title">
+          Nuestras soluciones en<br><span class='grad-orange'>Virtualización y Nube Híbrida</span>
+        </h2>
+        <p class="section-sub">
+          Consolide servidores, optimice el almacenamiento y asegure la alta disponibilidad lógica de sus sistemas.
+        </p>
+      </div>
+
+      <div class="portfolio-grid" role="list">
+        <!-- 1. Hipervisores y Virtualización Core -->
+        <article class="portfolio-card fade-in fade-delay-1" role="listitem" style="top: -1px;">
+          <div class="portfolio-header">
+            <div class="portfolio-icon" aria-hidden="true">🗦</div>
+            <div>
+              <div class="portfolio-cat">Categoría 01</div>
+              <h3 class="portfolio-title">Hipervisores y Virtualización</h3>
+            </div>
+          </div>
+          <p class="portfolio-desc">
+            Consolidación de múltiples servidores lógicos sobre un único hardware físico, maximizando la eficiencia de recursos informáticos.
+          </p>
+          <ul class="product-list" role="list">
+            <li class="product-item" role="listitem">
+              <div class="product-dot" aria-hidden="true"></div>
+              <div class="product-item-text"><strong>Microsoft Hyper-V / Nutanix AHV</strong> — Soluciones empresariales de virtualización de alto desempeño</div>
+            </li>
+            <li class="product-item" role="listitem">
+              <div class="product-dot" aria-hidden="true"></div>
+              <div class="product-item-text"><strong>Microsoft Hyper-V</strong> — Integración nativa óptima para entornos Windows Server</div>
+            </li>
+            <li class="product-item" role="listitem">
+              <div class="product-dot" aria-hidden="true"></div>
+              <div class="product-item-text"><strong>Proxmox VE / KVM</strong> — Soluciones open-source de nivel empresarial sin licencias restrictivas</div>
+            </li>
+          </ul>
+          <div class="brand-tags" aria-label="Marcas asociadas">
+            <a href="https://www.nutanix.com" class="brand-tag" target="_blank" rel="noopener">Nutanix</a>
+            <a href="https://www.microsoft.com" class="brand-tag" target="_blank" rel="noopener">Microsoft</a>
+            <a href="https://www.proxmox.com" class="brand-tag" target="_blank" rel="noopener">Proxmox</a>
+            <a href="https://www.redhat.com" class="brand-tag" target="_blank" rel="noopener">Red Hat</a>
+          </div>
+        </article>
+
+        <!-- 2. Hiperconvergencia (HCI) -->
+        <article class="portfolio-card fade-in fade-delay-2" role="listitem">
+          <div class="portfolio-header">
+            <div class="portfolio-icon" aria-hidden="true">🧱</div>
+            <div>
+              <div class="portfolio-cat">Categoría 02</div>
+              <h3 class="portfolio-title">Hiperconvergencia (HCI)</h3>
+            </div>
+          </div>
+          <p class="portfolio-desc">
+            Unificación de cómputo, almacenamiento y redes definidos por software en una única plataforma de administración simplificada.
+          </p>
+          <ul class="product-list" role="list">
+            <li class="product-item" role="listitem">
+              <div class="product-dot" aria-hidden="true"></div>
+              <div class="product-item-text"><strong>Nutanix Cloud Platform</strong> — Líder en HCI multi-hipervisor e independencia de hardware</div>
+            </li>
+            <li class="product-item" role="listitem">
+              <div class="product-dot" aria-hidden="true"></div>
+              <div class="product-item-text"><strong>Nutanix Volumes / Ceph</strong> — Almacenamiento definido por software e hiperconvergencia</div>
+            </li>
+            <li class="product-item" role="listitem">
+              <div class="product-dot" aria-hidden="true"></div>
+              <div class="product-item-text"><strong>HPE SimpliVity</strong> — HCI con compresión y deduplicación acelerada por hardware</div>
+            </li>
+          </ul>
+          <div class="brand-tags" aria-label="Marcas asociadas">
+            <a href="https://www.nutanix.com" class="brand-tag" target="_blank" rel="noopener">Nutanix</a>
+            <a href="https://www.nutanix.com" class="brand-tag" target="_blank" rel="noopener">Nutanix</a>
+            <a href="https://www.cisco.com" class="brand-tag" target="_blank" rel="noopener">Cisco</a>
+            <a href="https://www.hpe.com" class="brand-tag" target="_blank" rel="noopener">HPE</a>
+          </div>
+        </article>
+
+        <!-- 3. Virtualización de Escritorios (VDI) -->
+        <article class="portfolio-card fade-in fade-delay-3" role="listitem">
+          <div class="portfolio-header">
+            <div class="portfolio-icon" aria-hidden="true">💻</div>
+            <div>
+              <div class="portfolio-cat">Categoría 03</div>
+              <h3 class="portfolio-title">Virtualización de Escritorios</h3>
+            </div>
+          </div>
+          <p class="portfolio-desc">
+            Habilite el trabajo híbrido seguro centralizando los escritorios y aplicaciones de sus usuarios en el centro de datos o la nube.
+          </p>
+          <ul class="product-list" role="list">
+            <li class="product-item" role="listitem">
+              <div class="product-dot" aria-hidden="true"></div>
+              <div class="product-item-text"><strong>Citrix DaaS</strong> — Entrega de aplicaciones y escritorios virtuales con alto rendimiento gráfico</div>
+            </li>
+            <li class="product-item" role="listitem">
+              <div class="product-dot" aria-hidden="true"></div>
+              <div class="product-item-text"><strong>Microsoft Dev Box / Azure Virtual Desktop</strong> — Orquestación simplificada de VDI y escritorios virtuales</div>
+            </li>
+            <li class="product-item" role="listitem">
+              <div class="product-dot" aria-hidden="true"></div>
+              <div class="product-item-text"><strong>Amazon WorkSpaces</strong> — Escritorios virtuales completamente administrados en la nube de AWS</div>
+            </li>
+          </ul>
+          <div class="brand-tags" aria-label="Marcas asociadas">
+            <a href="https://www.citrix.com" class="brand-tag" target="_blank" rel="noopener">Citrix</a>
+            <a href="https://www.nutanix.com" class="brand-tag" target="_blank" rel="noopener">Nutanix</a>
+            <a href="https://www.microsoft.com" class="brand-tag" target="_blank" rel="noopener">Microsoft</a>
+            <a href="https://aws.amazon.com" class="brand-tag" target="_blank" rel="noopener">AWS</a>
+          </div>
+        </article>
+
+        <!-- 4. Respaldo y Recuperación ante Desastres (DR) -->
+        <article class="portfolio-card fade-in fade-delay-1" role="listitem">
+          <div class="portfolio-header">
+            <div class="portfolio-icon" aria-hidden="true">🛡️</div>
+            <div>
+              <div class="portfolio-cat">Categoría 04</div>
+              <h3 class="portfolio-title">Respaldo y Disaster Recovery</h3>
+            </div>
+          </div>
+          <p class="portfolio-desc">
+            Asegure la continuidad de su negocio ante ataques de ransomware o fallas críticas con respaldos granulares y failover geográfico.
+          </p>
+          <ul class="product-list" role="list">
+            <li class="product-item" role="listitem">
+              <div class="product-dot" aria-hidden="true"></div>
+              <div class="product-item-text"><strong>Veeam Backup & Replication</strong> — Respaldos rápidos y portabilidad en la nube híbrida</div>
+            </li>
+            <li class="product-item" role="listitem">
+              <div class="product-dot" aria-hidden="true"></div>
+              <div class="product-item-text"><strong>Commvault Cloud</strong> — Protección de datos empresarial unificada para on-premise y SaaS</div>
+            </li>
+            <li class="product-item" role="listitem">
+              <div class="product-dot" aria-hidden="true"></div>
+              <div class="product-item-text"><strong>Nakivo Backup</strong> — Alternativa liviana y costo-efectiva para entornos virtualizados</div>
+            </li>
+          </ul>
+          <div class="brand-tags" aria-label="Marcas asociadas">
+            <a href="https://www.veeam.com" class="brand-tag" target="_blank" rel="noopener">Veeam</a>
+            <a href="https://www.commvault.com" class="brand-tag" target="_blank" rel="noopener">Commvault</a>
+            <a href="https://www.nakivo.com" class="brand-tag" target="_blank" rel="noopener">Nakivo</a>
+            <a href="https://www.veritas.com" class="brand-tag" target="_blank" rel="noopener">Veritas</a>
+          </div>
+        </article>
+
+        <!-- 5. Contenedores y Kubernetes -->
+        <article class="portfolio-card fade-in fade-delay-2" role="listitem">
+          <div class="portfolio-header">
+            <div class="portfolio-icon" aria-hidden="true">☸️</div>
+            <div>
+              <div class="portfolio-cat">Categoría 05</div>
+              <h3 class="portfolio-title">Contenedores y Kubernetes</h3>
+            </div>
+          </div>
+          <p class="portfolio-desc">
+            Modernice el desarrollo de software ejecutando aplicaciones en contenedores portables y escalados de forma automática.
+          </p>
+          <ul class="product-list" role="list">
+            <li class="product-item" role="listitem">
+              <div class="product-dot" aria-hidden="true"></div>
+              <div class="product-item-text"><strong>Red Hat OpenShift</strong> — Plataforma Kubernetes empresarial híbrida y segura</div>
+            </li>
+            <li class="product-item" role="listitem">
+              <div class="product-dot" aria-hidden="true"></div>
+              <div class="product-item-text"><strong>Kubernetes Nativo / K3s</strong> — Gestión de clústeres de contenedores a gran escala</div>
+            </li>
+            <li class="product-item" role="listitem">
+              <div class="product-dot" aria-hidden="true"></div>
+              <div class="product-item-text"><strong>Rancher by SUSE</strong> — Consola centralizada y simple de administración Kubernetes</div>
+            </li>
+          </ul>
+          <div class="brand-tags" aria-label="Marcas asociadas">
+            <a href="https://www.redhat.com" class="brand-tag" target="_blank" rel="noopener">Red Hat</a>
+            <a href="https://kubernetes.io" class="brand-tag" target="_blank" rel="noopener">Kubernetes</a>
+            <a href="https://www.rancher.com" class="brand-tag" target="_blank" rel="noopener">SUSE</a>
+            <a href="https://aws.amazon.com" class="brand-tag" target="_blank" rel="noopener">AWS</a>
+          </div>
+        </article>
+
+        <!-- 6. Almacenamiento Definido por Software (SDS) -->
+        <article class="portfolio-card fade-in fade-delay-3" role="listitem">
+          <div class="portfolio-header">
+            <div class="portfolio-icon" aria-hidden="true">💾</div>
+            <div>
+              <div class="portfolio-cat">Categoría 06</div>
+              <h3 class="portfolio-title">Almacenamiento SDS</h3>
+            </div>
+          </div>
+          <p class="portfolio-desc">
+            Desacople el software de almacenamiento del hardware físico para una escalabilidad masiva y optimización de costos.
+          </p>
+          <ul class="product-list" role="list">
+            <li class="product-item" role="listitem">
+              <div class="product-dot" aria-hidden="true"></div>
+              <div class="product-item-text"><strong>Ceph Storage</strong> — Almacenamiento unificado de objetos, bloques y archivos de código abierto</div>
+            </li>
+            <li class="product-item" role="listitem">
+              <div class="product-dot" aria-hidden="true"></div>
+              <div class="product-item-text"><strong>MinIO Object Storage</strong> — Almacenamiento de objetos S3 compatible y de alto rendimiento</div>
+            </li>
+            <li class="product-item" role="listitem">
+              <div class="product-dot" aria-hidden="true"></div>
+              <div class="product-item-text"><strong>Nutanix Volumes &amp; Objects</strong> — Integración directa de almacenamiento en nodos HCI</div>
+            </li>
+          </ul>
+          <div class="brand-tags" aria-label="Marcas asociadas">
+            <a href="https://www.nutanix.com" class="brand-tag" target="_blank" rel="noopener">Nutanix</a>
+            <a href="https://www.nutanix.com" class="brand-tag" target="_blank" rel="noopener">Nutanix</a>
+            <a href="https://ceph.com" class="brand-tag" target="_blank" rel="noopener">Ceph</a>
+            <a href="https://min.io" class="brand-tag" target="_blank" rel="noopener">MinIO</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!--  CÓMO LO HACEMOS                                       -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <section id="virtualizacion-proceso" class="section" aria-labelledby="virtualizacion-proceso-title">
+    <div class="container">
+
+      <div class="section-header fade-in">
+        <div class="section-tag blue">Metodología</div>
+        <h2 class="section-title" id="virtualizacion-proceso-title">
+          Planificación de<br><span class='grad-blue'>infraestructura virtual</span>
+        </h2>
+        <p class="section-sub">
+          Diseñamos la capa lógica que optimiza su cómputo físico.
+        </p>
+      </div>
+
+      <div class="process-grid fade-in" role="list">
+        <div class="process-step fade-in fade-delay-1" role="listitem">
+          <div class="process-number">Paso 01</div>
+          <span class="process-icon" aria-hidden="true">🔍</span>
+          <h3 class="process-step-title">Levantamiento de cargas</h3>
+          <p class="process-desc">Análisis de uso de CPU, memoria, IOPS y red en sus servidores actuales para determinar el dimensionamiento óptimo.</p>
+        </div>
+        <div class="process-step fade-in fade-delay-2" role="listitem">
+          <div class="process-number">Paso 02</div>
+          <span class="process-icon" aria-hidden="true">📐</span>
+          <h3 class="process-step-title">Arquitectura y Right-sizing</h3>
+          <p class="process-desc">Diseño de clusters de alta disponibilidad, selección del hipervisor adecuado y cálculo de almacenamiento redundante.</p>
+        </div>
+        <div class="process-step fade-in fade-delay-3" role="listitem">
+          <div class="process-number">Paso 03</div>
+          <span class="process-icon" aria-hidden="true">🔧</span>
+          <h3 class="process-step-title">Migración y Despliegue</h3>
+          <p class="process-desc">Migración física a virtual (P2V) y virtual a virtual (V2V) en caliente, sin interrupciones ni pérdida de datos.</p>
+        </div>
+        <div class="process-step fade-in fade-delay-4" role="listitem">
+          <div class="process-number">Paso 04</div>
+          <span class="process-icon" aria-hidden="true">🎓</span>
+          <h3 class="process-step-title">Optimización continua</h3>
+          <p class="process-desc">Monitoreo de rendimiento, gestión preventiva de capacidad y parches de seguridad periódicos para máxima resiliencia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!--  SERVICIOS TECNOVOA                                    -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <section id="virtualizacion-servicios" class="section section-alt" aria-labelledby="virtualizacion-servicios-title">
+    <div class="container">
+
+      <div class="section-header fade-in">
+        <div class="section-tag">Lo que hacemos</div>
+        <h2 class="section-title" id="virtualizacion-servicios-title">
+          Servicios <span class="grad-orange">TECNOVOA</span><br>para modernización de datacenter
+        </h2>
+        <p class="section-sub">
+          Administre de manera eficiente y centralizada sus cargas de trabajo.
+        </p>
+      </div>
+
+      <div class="services-list fade-in" role="list">
+        <div class="service-item fade-in fade-delay-1" role="listitem">
+          <div class="service-item-icon" aria-hidden="true">🏗️</div>
+          <div>
+            <h3 class="service-item-title">Consolidación de servidores lógicos</h3>
+            <p class="service-item-desc">Reduzca la cantidad de hardware físico y simplifique la gestión con right-sizing.</p>
+          </div>
+        </div>
+        <div class="service-item fade-in fade-delay-2" role="listitem">
+          <div class="service-item-icon" aria-hidden="true">☁️</div>
+          <div>
+            <h3 class="service-item-title">Migración a nubes híbridas</h3>
+            <p class="service-item-desc">Interconecte su entorno on-premise con infraestructuras multi-cloud de forma transparente.</p>
+          </div>
+        </div>
+        <div class="service-item fade-in fade-delay-3" role="listitem">
+          <div class="service-item-icon" aria-hidden="true">🛠️</div>
+          <div>
+            <h3 class="service-item-title">Hiperconvergencia e integración HCI</h3>
+            <p class="service-item-desc">Implementación y soporte experto de plataformas Nutanix y Proxmox VE.</p>
+          </div>
+        </div>
+        <div class="service-item fade-in fade-delay-4" role="listitem">
+          <div class="service-item-icon" aria-hidden="true">📦</div>
+          <div>
+            <h3 class="service-item-title">Orquestación de contenedores</h3>
+            <p class="service-item-desc">Modernización de microservicios mediante Kubernetes y plataformas empresariales.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!--  PARTNERS TECNOLÓGICOS                                 -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <section id="virtualizacion-partners" class="section" aria-labelledby="virtualizacion-partners-title">
+    <div class="container">
+
+      <div class="section-header fade-in">
+        <div class="section-tag">Partners Tecnológicos</div>
+        <h2 class="section-title" id="virtualizacion-partners-title">
+          Nuestros aliados en<br><span class='grad-orange'>virtualización y nube</span>
+        </h2>
+        <p class="section-sub">
+          Máxima flexibilidad y soporte respaldado por líderes del sector.
+        </p>
+      </div>
+
+      <div class="partners-grid fade-in" role="list">
+        <div class="partner-card top-partner fade-in fade-delay-1" role="listitem">
+          <div class="partner-emoji" aria-hidden="true">🗦</div>
+          <div>
+            <div class="partner-info-name">Nutanix</div>
+            <p class="partner-info-desc">Hiperconvergencia (HCI), AHV y nube híbrida. Plataforma moderna para infraestructura corporativa.</p>
+            <span class="partner-badge">Partner Estratégico</span>
+          </div>
+        </div>
+        <div class="partner-card fade-in fade-delay-2" role="listitem">
+          <div class="partner-emoji" aria-hidden="true">🧱</div>
+          <div>
+            <div class="partner-info-name">Nutanix</div>
+            <p class="partner-info-desc">Líder en infraestructura hiperconvergente de nube libre, segura y unificada.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!--  UNIDADES RELACIONADAS                                 -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <section id="virtualizacion-relacionadas" class="section section-alt" aria-labelledby="virtualizacion-relacionadas-title">
+    <div class="container">
+
+      <div class="section-header fade-in">
+        <div class="section-tag blue">Complementa tu proyecto</div>
+        <h2 class="section-title" id="virtualizacion-relacionadas-title">
+          Servicios que<br><span class="grad-blue">potencian tu proyecto</span>
+        </h2>
+        <p class="section-sub">
+          Complete su infraestructura física y lógica.
+        </p>
+      </div>
+
+      <div class="related-grid fade-in" role="list">
+        <a href="https://tecnovoa.cl/servicios-ti/datacenter-y-cloud/" class="related-card fade-in fade-delay-1" role="listitem">
+          <div class="related-card-icon" aria-hidden="true">🖥️</div>
+          <h3 class="related-card-title">Datacenter y Cloud</h3>
+          <p class="related-card-desc">Soporte físico y arquitecturas de hardware optimizadas para alojar sus hipervisores.</p>
+          <span class="related-card-link">
+            Ver unidad
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <a href="https://tecnovoa.cl/servicios-ti/telecomunicaciones-y-redes/" class="related-card fade-in fade-delay-2" role="listitem">
+          <div class="related-card-icon" aria-hidden="true">🖧</div>
+          <h3 class="related-card-title">Telecomunicaciones y Redes</h3>
+          <p class="related-card-desc">El rendimiento de la virtualización depende de enlaces de red de alta velocidad y baja latencia.</p>
+          <span class="related-card-link">
+            Ver unidad
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <a href="https://tecnovoa.cl/servicios-ti/respaldo-de-energia/" class="related-card fade-in fade-delay-3" role="listitem">
+          <div class="related-card-icon" aria-hidden="true">🔋</div>
+          <h3 class="related-card-title">Respaldo de Energía y Clima</h3>
+          <p class="related-card-desc">Garantice el soporte eléctrico y la climatización de precisión para todo su hardware físico de computación.</p>
+          <span class="related-card-link">
+            Ver unidad
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!--  CTA FINAL                                             -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <section id="virtualizacion-cta-final" aria-labelledby="virtualizacion-cta-title">
+    <div class="container">
+      <div class="cta-inner fade-in">
+        <div class="section-tag" style="margin-bottom:20px">Conversemos</div>
+        <h2 class="cta-title" id="virtualizacion-cta-title">
+          ¿Quiere optimizar la infraestructura<br><span class='grad-orange'>de servidores de su negocio?</span>
+        </h2>
+        <p class="cta-sub">
+          Contáctenos para realizar un diagnóstico técnico gratuito, evaluar el nivel de consolidación de su equipamiento y diseñar una arquitectura de alta disponibilidad.
+        </p>
+        <div class="cta-actions">
+          <a href="https://tecnovoa.cl/contacto/" class="btn-primary" id="virtualizacion-cta-final-btn">
+            Solicitar propuesta gratis
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="https://tecnovoa.cl/servicios-ti/" class="btn-secondary" id="virtualizacion-cta-back-btn">
+            Ver todos los servicios
+          </a>
+        </div>
+        <div class="cta-contact-strip" role="list" aria-label="Datos de contacto">
+          <a href="tel:+56997051793" class="cta-contact-item" role="listitem">
+            <span class="icon" aria-hidden="true">📞</span>+56 9 9705 1793
+          </a>
+          <a href="mailto:ventas@tecnovoa.cl" class="cta-contact-item" role="listitem">
+            <span class="icon" aria-hidden="true">✉️</span>ventas@tecnovoa.cl
+          </a>
+          <div class="cta-contact-item" role="listitem">
+            <span class="icon" aria-hidden="true">📍</span>Providencia, Santiago de Chile
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<!-- Theme Toggle Button -->
+<button id="tv-theme-toggle" class="tv-theme-toggle-btn" aria-label="Cambiar tema de color" type="button">
+  <span class="theme-icon-sun" aria-hidden="true">☀️</span>
+  <span class="theme-icon-moon" aria-hidden="true">🌙</span>
+  <span class="theme-toggle-text">Modo Claro</span>
+</button>
+
+</div><!-- /.tv-landing-page -->
+
+<script>
+(function() {
+  'use strict';
+  var fadeEls = document.querySelectorAll('.tv-landing-page .fade-in');
+  if ('IntersectionObserver' in window) {
+    // Ocultar dinámicamente con JS (si no hay JS, se muestran por defecto)
+    fadeEls.forEach(function(el) {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+    });
+
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+    
+    setTimeout(function() {
+      fadeEls.forEach(function(el) { io.observe(el); });
+    }, 100);
+  }
+
+  /* ── Smooth anchor scroll (solo anclas internas) ──── */
+  document.querySelectorAll('.tv-landing-page a[href^="#"]').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+      var target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 40, behavior: 'smooth' });
+      }
+    });
+  });
+
+  /* ── Span last portfolio card ───────────────────── */
+  function fixSpan() {
+    var span2 = document.querySelector('.tv-landing-page .tv-span-2');
+    if (!span2) return;
+    span2.style.gridColumn = window.innerWidth <= 480 ? '' : 'span 2';
+  }
+  fixSpan();
+  window.addEventListener('resize', fixSpan, { passive: true });
+
+})();
+</script>
+
+
+<script>
+(function() {
+  'use strict';
+  function initTheme() {
+    var toggleBtn = document.getElementById('tv-theme-toggle');
+    var targets = [document.documentElement, document.querySelector('.tv-av-page'), document.querySelector('.tv-landing-page')].filter(Boolean);
+
+    function applyTheme(theme) {
+      targets.forEach(function(el) {
+        el.setAttribute('data-theme', theme);
+      });
+      if (toggleBtn) {
+        var textSpan = toggleBtn.querySelector('.theme-toggle-text');
+        if (textSpan) {
+          textSpan.textContent = theme === 'light' ? 'Modo Oscuro' : 'Modo Claro';
+        }
+      }
+      try { localStorage.setItem('tecnovoa-theme', theme); } catch(e) {}
+    }
+
+    var savedTheme = 'dark';
+    try { savedTheme = localStorage.getItem('tecnovoa-theme') || 'dark'; } catch(e) {}
+    applyTheme(savedTheme);
+
+    if (toggleBtn && !toggleBtn.dataset.themeBound) {
+      toggleBtn.dataset.themeBound = 'true';
+      toggleBtn.addEventListener('click', function() {
+        var currentTheme = (document.documentElement.getAttribute('data-theme') || 'dark') === 'light' ? 'light' : 'dark';
+        var nextTheme = currentTheme === 'light' ? 'dark' : 'light';
+        applyTheme(nextTheme);
+      });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTheme);
+  } else {
+    initTheme();
+  }
+})();
+</script>

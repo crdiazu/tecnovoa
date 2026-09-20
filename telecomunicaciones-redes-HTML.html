@@ -1,0 +1,401 @@
+<div class="tecnovoa-wp-component tn-interactive-dashboard">
+    <!-- Mesh Background Light Element -->
+    <div class="tn-hero-mesh"></div>
+
+    <!-- Header Section -->
+    <div class="tn-hero">
+        <div class="tn-badge">
+            <span class="tn-badge-dot"></span>
+            <span>Infraestructura y Conectividad</span>
+        </div>
+        <h1>Telecomunicaciones y Redes</h1>
+        <p>Explore nuestro portafolio tecnológico interactivo. Pase el cursor sobre los puntos del mapa para obtener una vista rápida, o haga clic para ver detalles completos, marcas y casos de éxito.</p>
+    </div>
+
+    <!-- Interactive Navigation Menu -->
+    <div class="tn-menu-nav">
+        <button class="tn-menu-btn active" data-target="cabling">
+            <span class="tn-menu-icon">🔌</span>
+            <span class="tn-menu-label">Cableado Estructurado</span>
+        </button>
+        <button class="tn-menu-btn" data-target="fiber">
+            <span class="tn-menu-icon">🧪</span>
+            <span class="tn-menu-label">Fibra Óptica</span>
+        </button>
+        <button class="tn-menu-btn" data-target="wireless">
+            <span class="tn-menu-icon">🌐</span>
+            <span class="tn-menu-label">Antenas y Enlaces</span>
+        </button>
+        <button class="tn-menu-btn" data-target="networking">
+            <span class="tn-menu-icon">📶</span>
+            <span class="tn-menu-label">Redes y Conectividad</span>
+        </button>
+        <button class="tn-menu-btn" data-target="monitoring">
+            <span class="tn-menu-icon">🖥️</span>
+            <span class="tn-menu-label">Monitoreo y Gestión</span>
+        </button>
+    </div>
+
+    <!-- Main Workspace -->
+    <div class="tn-dashboard-workspace">
+        
+        <!-- Left: Image Display with Highlight pulse overlays -->
+        <div class="tn-media-panel">
+            <div class="tn-image-container" id="tn-map-container">
+                <!-- Imagen base .webp resuelta desde la biblioteca de medios -->
+                <img id="tn-main-diagram" src="https://tecnovoa.cl/wp-content/uploads/2026/07/telecomunicaciones-y-redes.webp" alt="Infraestructura de Telecomunicaciones y Redes" class="tn-dashboard-img">
+                
+                <!-- Hotspots interactivos con pulsos y SVGs integrados -->
+                
+                <!-- Hotspot: Antenas y Enlaces -->
+                <div class="tn-hotspot wireless" style="top: 22%; left: 33%;" 
+                     data-target="wireless"
+                     data-title="Antenas y Enlaces" 
+                     data-desc="Enlaces inalámbricos punto a punto y multipunto de largo alcance con tecnología Carrier Class. Clic para ver detalles.">
+                    <div class="tn-pulse"></div>
+                    <div class="tn-icon-wrapper">
+                        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8.464 14.464a7.072 7.072 0 017.072 0M5.636 11.636a11 11 0 0111.364 0M3 9a15 15 0 0118 0"/></svg>
+                    </div>
+                </div>
+
+                <!-- Hotspot: Fibra Óptica -->
+                <div class="tn-hotspot fiber" style="top: 68%; left: 28%;" 
+                     data-target="fiber"
+                     data-title="Fibra Óptica" 
+                     data-desc="Tendido de fibra monomodo y multimodo para backbones de alta velocidad. Clic para ver detalles.">
+                    <div class="tn-pulse"></div>
+                    <div class="tn-icon-wrapper">
+                        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                    </div>
+                </div>
+
+                <!-- Hotspot: Cableado Estructurado -->
+                <div class="tn-hotspot cabling active" style="top: 48%; left: 52%;" 
+                     data-target="cabling"
+                     data-title="Cableado Estructurado" 
+                     data-desc="Diseño y montaje de cableado en cobre Cat 6, 6A y 7. Certificaciones con Fluke Networks. Clic para ver detalles.">
+                    <div class="tn-pulse"></div>
+                    <div class="tn-icon-wrapper">
+                        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                    </div>
+                </div>
+
+                <!-- Hotspot: Redes y Conectividad -->
+                <div class="tn-hotspot networking" style="top: 38%; left: 45%;" 
+                     data-target="networking"
+                     data-title="Redes y Conectividad" 
+                     data-desc="Configuración avanzada de switching, routing perimetral y firewalls UTM de seguridad. Clic para ver detalles.">
+                    <div class="tn-pulse"></div>
+                    <div class="tn-icon-wrapper">
+                        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
+                    </div>
+                </div>
+
+                <!-- Hotspot: Monitoreo y Gestión -->
+                <div class="tn-hotspot monitoring" style="top: 55%; left: 78%;" 
+                     data-target="monitoring"
+                     data-title="Monitoreo y Gestión" 
+                     data-desc="Supervisión centralizada 24/7 de su infraestructura de red con consolas en tiempo real. Clic para ver detalles.">
+                    <div class="tn-pulse"></div>
+                    <div class="tn-icon-wrapper">
+                        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10a2 2 0 01-2 2h-2a2 2 0 01-2-2zm9-1v-4a2 2 0 00-2-2h-2a2 2 0 00-2 2v4a2 2 0 002 2h2a2 2 0 002-2z"/></svg>
+                    </div>
+                </div>
+
+                <!-- Caja de Detalle Flotante (Glassmorphism Tooltip) -->
+                <div class="tn-tooltip" id="tn-tooltip">
+                    <div class="tn-tooltip-header">
+                        <span class="tn-tooltip-dot"></span>
+                        <h4 class="tn-tooltip-title"></h4>
+                    </div>
+                    <p class="tn-tooltip-desc"></p>
+                </div>
+            </div>
+            
+            <div class="tn-image-caption">
+                <span class="tn-caption-dot"></span>
+                <span id="tn-caption-text">Visualizando: Área de Cuarto de Cableado (Cabling)</span>
+            </div>
+        </div>
+
+        <!-- Right: Interactive Info Panels -->
+        <div class="tn-info-panel">
+            
+            <!-- Panel: Cableado Estructurado -->
+            <div class="tn-tab-content active" id="cabling">
+                <div class="tn-panel-header">
+                    <span class="tn-panel-number">01</span>
+                    <h2>Cableado Estructurado</h2>
+                </div>
+                <p class="tn-panel-desc">Diseñamos e implementamos sistemas de cableado estructurado para voz, datos y video. Aseguramos que la columna vertebral física de su empresa cumpla con las normas de rendimiento más estrictas.</p>
+                
+                <div class="tn-features-list">
+                    <div class="tn-feature-item">✓ Redes de cobre Cat 6, 6A y 7 certificadas</div>
+                    <div class="tn-feature-item">✓ Peinado, ordenamiento y rotulado de Racks</div>
+                    <div class="tn-feature-item">✓ Canalizaciones metálicas, bandejas y ductos</div>
+                    <div class="tn-feature-item">✓ Certificación de nodos con Fluke Networks</div>
+                </div>
+
+                <!-- Brand Logos Group -->
+                <div class="tn-brands-section">
+                    <h4>Socios Tecnológicos</h4>
+                    <div class="tn-brands-grid">
+                        <div class="tn-brand-badge brand-panduit">Panduit</div>
+                        <div class="tn-brand-badge brand-leviton">Leviton</div>
+                        <div class="tn-brand-badge brand-furukawa">Furukawa</div>
+                        <div class="tn-brand-badge brand-apc">APC by Schneider</div>
+                    </div>
+                </div>
+
+                <!-- Success Case Card -->
+                <div class="tn-case-card">
+                    <div class="tn-case-header">
+                        <span class="tn-case-tag">Caso de Éxito</span>
+                        <h5>Saneamiento y Certificación de Racks</h5>
+                    </div>
+                    <p>Reorganizamos y certificamos más de 180 puntos críticos de datos para un importante centro logístico, reduciendo la latencia de red interna en un 38% y eliminando desconexiones aleatorias.</p>
+                </div>
+
+                <div class="tn-panel-cta">
+                    <a href="https://wa.me/56997051793?text=Hola,%20quiero%20cotizar%20Cableado%20Estructurado" target="_blank" class="btn-grad">Cotizar Solución</a>
+                </div>
+            </div>
+
+            <!-- Panel: Fibra Óptica -->
+            <div class="tn-tab-content" id="fiber">
+                <div class="tn-panel-header">
+                    <span class="tn-panel-number">02</span>
+                    <h2>Fibra Óptica</h2>
+                </div>
+                <p class="tn-panel-desc">Conexiones ultrarrápidas de larga distancia inmunes al ruido electromagnético. Diseñamos e instalamos backbones de fibra aérea, subterránea o interna.</p>
+                
+                <div class="tn-features-list">
+                    <div class="tn-feature-item">✓ Fusiones de fibra monomodo y multimodo</div>
+                    <div class="tn-feature-item">✓ Tendido de fibra para naves industriales</div>
+                    <div class="tn-feature-item">✓ Certificación de enlaces de fibra óptica OTDR</div>
+                    <div class="tn-feature-item">✓ Conversores de medios y transceptores ópticos</div>
+                </div>
+
+                <div class="tn-brands-section">
+                    <h4>Socios Tecnológicos</h4>
+                    <div class="tn-brands-grid">
+                        <div class="tn-brand-badge brand-furukawa">Furukawa</div>
+                        <div class="tn-brand-badge brand-panduit">Panduit</div>
+                        <div class="tn-brand-badge brand-corning">Corning</div>
+                    </div>
+                </div>
+
+                <div class="tn-case-card">
+                    <div class="tn-case-header">
+                        <span class="tn-case-tag">Caso de Éxito</span>
+                        <h5>Backbone de Fibra Subterránea</h5>
+                    </div>
+                    <p>Instalación de un anillo de fibra óptica subterráneo de 2.2 km para interconectar 4 naves de manufactura. Logramos velocidades estables de 10 Gbps redundantes entre switches centrales.</p>
+                </div>
+
+                <div class="tn-panel-cta">
+                    <a href="https://wa.me/56997051793?text=Hola,%20quiero%20cotizar%20Fibra%20Optica" target="_blank" class="btn-grad">Cotizar Fibra Óptica</a>
+                </div>
+            </div>
+
+            <!-- Panel: Antenas y Enlaces -->
+            <div class="tn-tab-content" id="wireless">
+                <div class="tn-panel-header">
+                    <span class="tn-panel-number">03</span>
+                    <h2>Antenas y Enlaces Inalámbricos</h2>
+                </div>
+                <p class="tn-panel-desc">Interconecte sucursales, oficinas o faenas remotas a kilómetros de distancia mediante enlaces inalámbricos punto a punto de alto rendimiento.</p>
+                
+                <div class="tn-features-list">
+                    <div class="tn-feature-item">✓ Enlaces inalámbricos redundantes de alta velocidad</div>
+                    <div class="tn-feature-item">✓ Cobertura WiFi corporativa interior/exterior</div>
+                    <div class="tn-feature-item">✓ Torres de comunicación y mástiles portantes</div>
+                    <div class="tn-feature-item">✓ Estudio de factibilidad técnica y línea de vista</div>
+                </div>
+
+                <div class="tn-brands-section">
+                    <h4>Socios Tecnológicos</h4>
+                    <div class="tn-brands-grid">
+                        <div class="tn-brand-badge brand-ubiquiti">Ubiquiti</div>
+                        <div class="tn-brand-badge brand-mikrotik">MikroTik</div>
+                        <div class="tn-brand-badge brand-cambium">Cambium Networks</div>
+                        <div class="tn-brand-badge brand-cisco">Cisco</div>
+                    </div>
+                </div>
+
+                <div class="tn-case-card">
+                    <div class="tn-case-header">
+                        <span class="tn-case-tag">Caso de Éxito</span>
+                        <h5>Conectividad WiFi de Faena Remota</h5>
+                    </div>
+                    <p>Despliegue de enlace inalámbrico de 14 km y cobertura WiFi mesh en terreno para campamento de ingenieros en el norte de Chile, logrando 99.9% de uptime para tráfico de datos y voz IP.</p>
+                </div>
+
+                <div class="tn-panel-cta">
+                    <a href="https://wa.me/56997051793?text=Hola,%20quiero%20cotizar%20Enlaces%20Inalambricos" target="_blank" class="btn-grad">Cotizar Enlace</a>
+                </div>
+            </div>
+
+            <!-- Panel: Redes y Conectividad -->
+            <div class="tn-tab-content" id="networking">
+                <div class="tn-panel-header">
+                    <span class="tn-panel-number">04</span>
+                    <h2>Redes, Switching y Seguridad</h2>
+                </div>
+                <p class="tn-panel-desc">Implementación y configuración de switches capa 2/3, routers perimetrales y firewalls que segmentan, optimizan y aseguran el tráfico de datos corporativos.</p>
+                
+                <div class="tn-features-list">
+                    <div class="tn-feature-item">✓ Configuración de VLANs y segmentación de red</div>
+                    <div class="tn-feature-item">✓ Seguridad perimetral con Firewalls Fortinet</div>
+                    <div class="tn-feature-item">✓ Redes SD-WAN para sucursales corporativas</div>
+                    <div class="tn-feature-item">✓ Políticas Zero Trust y control de accesos</div>
+                </div>
+
+                <div class="tn-brands-section">
+                    <h4>Socios Tecnológicos</h4>
+                    <div class="tn-brands-grid">
+                        <div class="tn-brand-badge brand-cisco">Cisco Systems</div>
+                        <div class="tn-brand-badge brand-fortinet">Fortinet</div>
+                        <div class="tn-brand-badge brand-aruba">Aruba Networks</div>
+                    </div>
+                </div>
+
+                <div class="tn-case-card">
+                    <div class="tn-case-header">
+                        <span class="tn-case-tag">Caso de Éxito</span>
+                        <h5>Segmentación y Firewall Corporativo</h5>
+                    </div>
+                    <p>Migración de red corporativa para 300 usuarios. Implementamos segmentación VLAN e instalamos políticas UTM en firewall centralizado, previniendo ciberataques y aislando fallos de red en segundos.</p>
+                </div>
+
+                <div class="tn-panel-cta">
+                    <a href="https://wa.me/56997051793?text=Hola,%20quiero%20cotizar%20Redes%20y%20Seguridad" target="_blank" class="btn-grad">Cotizar Networking</a>
+                </div>
+            </div>
+
+            <!-- Panel: Monitoreo y Gestión -->
+            <div class="tn-tab-content" id="monitoring">
+                <div class="tn-panel-header">
+                    <span class="tn-panel-number">05</span>
+                    <h2>Monitoreo y Gestión TI</h2>
+                </div>
+                <p class="tn-panel-desc">Supervisión en tiempo real de su infraestructura de red. Detecte cuellos de botella, caídas de enlaces o fallas de hardware antes de que afecten la operación.</p>
+                
+                <div class="tn-features-list">
+                    <div class="tn-feature-item">✓ Consolas centralizadas (Zabbix, PRTG, Meraki)</div>
+                    <div class="tn-feature-item">✓ Alertas automatizadas por Email y Telegram</div>
+                    <div class="tn-feature-item">✓ Análisis de ancho de banda y tráfico anómalo</div>
+                    <div class="tn-feature-item">✓ Informes mensuales de rendimiento y SLA</div>
+                </div>
+
+                <div class="tn-brands-section">
+                    <h4>Socios Tecnológicos</h4>
+                    <div class="tn-brands-grid">
+                        <div class="tn-brand-badge brand-cisco">Cisco Meraki</div>
+                        <div class="tn-brand-badge brand-zabbix">Zabbix</div>
+                        <div class="tn-brand-badge brand-prtg">PRTG Monitor</div>
+                    </div>
+                </div>
+
+                <div class="tn-case-card">
+                    <div class="tn-case-header">
+                        <span class="tn-case-tag">Caso de Éxito</span>
+                        <h5>Monitoreo Centralizado de Multi-sucursales</h5>
+                    </div>
+                    <p>Despliegue de paneles de monitoreo en tiempo real para rastrear 28 enlaces de sucursales a lo largo de Chile, reduciendo el tiempo de detección de caídas de 45 minutos a solo 10 segundos.</p>
+                </div>
+
+                <div class="tn-panel-cta">
+                    <a href="https://wa.me/56997051793?text=Hola,%20quiero%20cotizar%20Monitoreo%20y%20Gestion" target="_blank" class="btn-grad">Cotizar Gestión</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- DOUBLE ROW INFINITE LOGO MARQUEE (CAROUSEL) -->
+    <div class="tn-marquee-section">
+        <div class="tn-marquee-group">
+            <h4 class="tn-marquee-label">Socios Tecnológicos</h4>
+            <div class="tn-marquee tn-marquee-left">
+                <div class="tn-marquee-track">
+                    <!-- Set 1 (Imágenes de la biblioteca de medios + badgetext estilizados) -->
+                    <div class="tn-marquee-item"><img src="https://tecnovoa.cl/wp-content/uploads/2023/04/Cisco.png" alt="Cisco"></div>
+                    <div class="tn-marquee-item"><img src="https://tecnovoa.cl/wp-content/uploads/2023/04/Fortinet.png" alt="Fortinet"></div>
+                    <div class="tn-marquee-item"><img src="https://tecnovoa.cl/wp-content/uploads/2025/03/Logo-Furukawa-Small.png" alt="Furukawa"></div>
+                    <div class="tn-marquee-item"><img src="https://tecnovoa.cl/wp-content/uploads/2025/03/Ubiquiti_U-Logo_New-7-large.png" alt="Ubiquiti"></div>
+                    <div class="tn-marquee-item brand-badge-text">Panduit</div>
+                    <div class="tn-marquee-item brand-badge-text">Leviton</div>
+                    <div class="tn-marquee-item brand-badge-text">APC by Schneider</div>
+                    <div class="tn-marquee-item brand-badge-text">MikroTik</div>
+                    <div class="tn-marquee-item brand-badge-text">Zabbix</div>
+                    <div class="tn-marquee-item brand-badge-text">PRTG</div>
+                    
+                    <!-- Set 2 (Duplicado idéntico para loop continuo) -->
+                    <div class="tn-marquee-item"><img src="https://tecnovoa.cl/wp-content/uploads/2023/04/Cisco.png" alt="Cisco"></div>
+                    <div class="tn-marquee-item"><img src="https://tecnovoa.cl/wp-content/uploads/2023/04/Fortinet.png" alt="Fortinet"></div>
+                    <div class="tn-marquee-item"><img src="https://tecnovoa.cl/wp-content/uploads/2025/03/Logo-Furukawa-Small.png" alt="Furukawa"></div>
+                    <div class="tn-marquee-item"><img src="https://tecnovoa.cl/wp-content/uploads/2025/03/Ubiquiti_U-Logo_New-7-large.png" alt="Ubiquiti"></div>
+                    <div class="tn-marquee-item brand-badge-text">Panduit</div>
+                    <div class="tn-marquee-item brand-badge-text">Leviton</div>
+                    <div class="tn-marquee-item brand-badge-text">APC by Schneider</div>
+                    <div class="tn-marquee-item brand-badge-text">MikroTik</div>
+                    <div class="tn-marquee-item brand-badge-text">Zabbix</div>
+                    <div class="tn-marquee-item brand-badge-text">PRTG</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tn-marquee-group">
+            <h4 class="tn-marquee-label">Casos de Éxito y Clientes</h4>
+            <div class="tn-marquee tn-marquee-right">
+                <div class="tn-marquee-track">
+                    <!-- Set 1 (Clientes de Tecnovoa) -->
+                    <div class="tn-marquee-item client-badge-text">EFE Trenes de Chile</div>
+                    <div class="tn-marquee-item client-badge-text">Duoc UC</div>
+                    <div class="tn-marquee-item client-badge-text">Hospital Militar</div>
+                    <div class="tn-marquee-item client-badge-text">Megamedia</div>
+                    <div class="tn-marquee-item client-badge-text">Minera Valle Central</div>
+                    <div class="tn-marquee-item client-badge-text">COMASA</div>
+                    <div class="tn-marquee-item client-badge-text">Maclean</div>
+                    <div class="tn-marquee-item client-badge-text">BCI Seguros</div>
+                    <div class="tn-marquee-item client-badge-text">COPERGO</div>
+                    
+                    <!-- Set 2 (Duplicado idéntico para loop continuo) -->
+                    <div class="tn-marquee-item client-badge-text">EFE Trenes de Chile</div>
+                    <div class="tn-marquee-item client-badge-text">Duoc UC</div>
+                    <div class="tn-marquee-item client-badge-text">Hospital Militar</div>
+                    <div class="tn-marquee-item client-badge-text">Megamedia</div>
+                    <div class="tn-marquee-item client-badge-text">Minera Valle Central</div>
+                    <div class="tn-marquee-item client-badge-text">COMASA</div>
+                    <div class="tn-marquee-item client-badge-text">Maclean</div>
+                    <div class="tn-marquee-item client-badge-text">BCI Seguros</div>
+                    <div class="tn-marquee-item client-badge-text">COPERGO</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enlaces Relacionados -->
+    <div class="tn-seo-links">
+        <div class="tn-seo-grid">
+            <div class="tn-seo-col">
+                <h4>Servicios Relacionados</h4>
+                <ul class="tn-seo-list">
+                    <li class="tn-seo-link-item"><a href="https://tecnovoa.cl/servicios-ti/virtualizacion/">Virtualización</a></li>
+                    <li class="tn-seo-link-item"><a href="https://tecnovoa.cl/servicios-cloud/">Servicios Cloud</a></li>
+                    <li class="tn-seo-link-item"><a href="https://tecnovoa.cl/ciberseguridad/">Ciberseguridad</a></li>
+                    <li class="tn-seo-link-item"><a href="https://tecnovoa.cl/energia/">Energía y Respaldo</a></li>
+                </ul>
+            </div>
+            <div class="tn-seo-col">
+                <h4>Soporte Técnico</h4>
+                <ul class="tn-seo-list">
+                    <li class="tn-seo-link-item"><a href="mailto:Ventas@tecnovoa.cl">Ventas@tecnovoa.cl</a></li>
+                    <li class="tn-seo-link-item"><a href="tel:+56997051793">+56997051793</a></li>
+                    <li class="tn-seo-link-item"><a href="https://tecnovoa.cl/contacto/">Contacto Directo</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,72 @@
+<div class="mapa-tec-wrapper">
+    <div class="mapa-tec-container" id="mapa-tec-main">
+        <!-- 1. IMAGEN BASE DEL ESCENARIO (Ilustración 3D ya subida en formato .webp) -->
+        <img src="https://tecnovoa.cl/wp-content/uploads/2026/07/telecomunicaciones-y-redes.webp" alt="Mapa de Infraestructura de Telecomunicaciones y Redes" class="mapa-tec-base-img" />
+
+        <!-- 2. HOTSPOTS INTERACTIVOS CON ICONOS SVG INTEGRADOS -->
+        
+        <!-- Hotspot: Antenas y Enlaces -->
+        <div class="mapa-tec-hotspot" style="top: 22%; left: 33%;" 
+             data-title="Antenas y Enlaces" 
+             data-desc="Enlaces inalámbricos punto a punto y multipunto de largo alcance con tecnología Carrier Class. Conectividad estable y redundante para faenas, sucursales y plantas.">
+            <div class="mapa-tec-pulse"></div>
+            <div class="mapa-tec-icon-wrapper">
+                <!-- SVG: Wireless Signal Icon -->
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8.464 14.464a7.072 7.072 0 017.072 0M5.636 11.636a11 11 0 0111.364 0M3 9a15 15 0 0118 0"/></svg>
+            </div>
+        </div>
+
+        <!-- Hotspot: Fibra Óptica -->
+        <div class="mapa-tec-hotspot" style="top: 68%; left: 28%;" 
+             data-title="Fibra Óptica" 
+             data-desc="Tendido de fibra monomodo y multimodo para backbones de alta velocidad. Fusiones por arco voltáico e inmunidad absoluta contra ruidos electromagnéticos.">
+            <div class="mapa-tec-pulse"></div>
+            <div class="mapa-tec-icon-wrapper">
+                <!-- SVG: Fiber/Cable Strand Icon -->
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+            </div>
+        </div>
+
+        <!-- Hotspot: Cableado Estructurado -->
+        <div class="mapa-tec-hotspot" style="top: 48%; left: 52%;" 
+             data-title="Cableado Estructurado" 
+             data-desc="Diseño y montaje de cableado estructurado en cobre Cat 6, 6A y 7. Certificaciones oficiales de red con analizadores Fluke Networks, peinado de racks y organización lógica.">
+            <div class="mapa-tec-pulse"></div>
+            <div class="mapa-tec-icon-wrapper">
+                <!-- SVG: Ethernet Plug Icon -->
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+            </div>
+        </div>
+
+        <!-- Hotspot: Redes y Conectividad -->
+        <div class="mapa-tec-hotspot" style="top: 38%; left: 45%;" 
+             data-title="Redes y Conectividad" 
+             data-desc="Configuración avanzada de switching, routing perimetral y firewalls UTM. Políticas Zero Trust y segmentación VLAN para proteger los datos corporativos frente a amenazas.">
+            <div class="mapa-tec-pulse"></div>
+            <div class="mapa-tec-icon-wrapper">
+                <!-- SVG: Network Nodes Icon -->
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
+            </div>
+        </div>
+
+        <!-- Hotspot: Monitoreo y Gestión -->
+        <div class="mapa-tec-hotspot" style="top: 55%; left: 78%;" 
+             data-title="Monitoreo y Gestión" 
+             data-desc="Supervisión centralizada 24/7 de su infraestructura con consolas en tiempo real (Zabbix, Meraki, PRTG). Alertas automáticas para anticipar incidentes y asegurar la continuidad operativa.">
+            <div class="mapa-tec-pulse"></div>
+            <div class="mapa-tec-icon-wrapper">
+                <!-- SVG: Dashboard/Chart Icon -->
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10a2 2 0 01-2 2h-2a2 2 0 01-2-2zm9-1v-4a2 2 0 00-2-2h-2a2 2 0 00-2 2v4a2 2 0 002 2h2a2 2 0 002-2z"/></svg>
+            </div>
+        </div>
+
+        <!-- 3. CAJA DE DETALLE FLOTANTE (GLOSSMORPHISM TOOLTIP) -->
+        <div class="mapa-tec-tooltip" id="mapa-tec-tooltip">
+            <div class="mapa-tec-tooltip-header">
+                <span class="mapa-tec-tooltip-dot"></span>
+                <h4 class="mapa-tec-tooltip-title"></h4>
+            </div>
+            <p class="mapa-tec-tooltip-desc"></p>
+        </div>
+    </div>
+</div>

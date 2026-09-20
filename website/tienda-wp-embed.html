@@ -1,0 +1,454 @@
+<!--
+  ╔══════════════════════════════════════════════════════════════════╗
+  ║  TECNOVOA — Tienda / WooCommerce Landing                         ║
+  ║  Versión: WordPress Embed (sin navbar, sin footer, sin breadcrumb)║
+  ║  Pegar en: Bloque "HTML Personalizado" de WordPress             ║
+  ╚══════════════════════════════════════════════════════════════════╝
+-->
+
+<!--
+  =============================================================================
+  GUÍA PARA OPTIMIZAR YOAST SEO EN ESTA PÁGINA
+  =============================================================================
+  1. Frase Clave Objetivo:
+     Tienda de Tecnología y Equipamiento TI
+
+  2. Título SEO:
+     Tienda Online de Equipamiento y Soluciones TI | TECNOVOA Chile
+
+  3. Slug:
+     tienda
+
+  4. Meta Descripción:
+     Catálogo corporativo Tecnovoa: Servidores, Networking, Computación, UPS, Climatización y Licencias. Pagos seguros y despachos a todo Chile.
+  =============================================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+.tv-landing-page *,
+.tv-landing-page *::before,
+.tv-landing-page *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.tv-landing-page {
+  --bg:        #080d1a;
+  --bg-2:      #0c1224;
+  --bg-3:      #111829;
+  --surface:   rgba(255, 255, 255, 0.02);
+  --border:    rgba(255, 255, 255, 0.05);
+  --border-h:  rgba(42, 115, 255, 0.4);
+  --text:      #f0f4ff;
+  --text-2:    #8b9ab5;
+  --accent:    #2a73ff;
+  --accent-2:  #00c8ff;
+  --accent-g:  linear-gradient(135deg, #2a73ff 0%, #00c8ff 100%);
+  --radius-md: 14px;
+  --radius-lg: 22px;
+
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  overflow-x: hidden;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+.tv-landing-page a { color: inherit; text-decoration: none; }
+.tv-landing-page ul { list-style: none; }
+
+.tv-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* HERO */
+.tv-hero {
+  padding: 75px 0 50px;
+  background: radial-gradient(circle at 50% 0%, rgba(42, 115, 255, 0.15) 0%, rgba(8, 13, 26, 0) 70%);
+  text-align: center;
+}
+
+.tv-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: rgba(42, 115, 255, 0.1);
+  border: 1px solid rgba(42, 115, 255, 0.3);
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent-2);
+  margin-bottom: 20px;
+}
+.tv-badge-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent-2);
+  border-radius: 50%;
+}
+
+.tv-hero h1 {
+  font-size: clamp(32px, 5vw, 50px);
+  font-weight: 800;
+  margin-bottom: 16px;
+  background: linear-gradient(180deg, #ffffff 0%, #b0c4de 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tv-hero p {
+  font-size: 17px;
+  color: var(--text-2);
+  max-width: 750px;
+  margin: 0 auto 30px;
+}
+
+/* QUICK LINKS WOOCOMMERCE */
+.tv-woo-links {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+.tv-woo-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: var(--bg-2);
+  border: 1px solid var(--border-h);
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  transition: all 0.3s ease;
+}
+.tv-woo-btn:hover {
+  background: rgba(42, 115, 255, 0.15);
+  border-color: var(--accent-2);
+  color: var(--accent-2);
+}
+
+.tv-section {
+  padding: 50px 0;
+}
+.tv-section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.tv-section-title {
+  font-size: 30px;
+  font-weight: 700;
+}
+.tv-title-grad {
+  background: var(--accent-g);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* CATEGORIAS GRID */
+.tv-cat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.tv-cat-card {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 30px 24px;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+.tv-cat-card:hover {
+  border-color: var(--border-h);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+}
+
+.tv-cat-icon {
+  font-size: 36px;
+  margin-bottom: 14px;
+}
+.tv-cat-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--text);
+}
+.tv-cat-card p {
+  font-size: 14px;
+  color: var(--text-2);
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+.tv-cat-link {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent-2);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* FOOTER BANNER BENEFITS */
+.tv-benefits-banner {
+  background: var(--bg-2);
+  border: 1px solid var(--border-h);
+  border-radius: var(--radius-lg);
+  padding: 40px 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  text-align: center;
+  margin: 60px 0;
+}
+.tv-benefit-item h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--accent-2);
+  margin-bottom: 6px;
+}
+.tv-benefit-item p {
+  font-size: 13px;
+  color: var(--text-2);
+}
+
+  /* ─── THEME SWITCHER OVERRIDES ─── */
+  [data-theme="light"],
+  .tv-av-page[data-theme="light"],
+  .tv-landing-page[data-theme="light"] {
+    --bg:        #ffffff !important;
+    --bg-2:      #f8fafc !important;
+    --bg-3:      #f1f5f9 !important;
+    --surface:   #ffffff !important;
+    --surface-h: #f1f5f9 !important;
+    --border:    #e2e8f0 !important;
+    --border-h:  #cbd5e1 !important;
+    --text:      #0f172a !important;
+    --text-2:    #475569 !important;
+    --text-3:    #64748b !important;
+    --accent:    #1d4ed8 !important;
+    --accent-2:  #2563eb !important;
+    --accent-g:  linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%) !important;
+    --cyan:      #1d4ed8 !important;
+    --orange:    #1d4ed8 !important;
+    --orange-g:  linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%) !important;
+    color-scheme: light;
+  }
+
+  /* Theme Toggle Button Styles */
+  .tv-theme-toggle-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 99999;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.88);
+    color: #f0f4ff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  [data-theme="light"] .tv-theme-toggle-btn,
+  .tv-av-page[data-theme="light"] .tv-theme-toggle-btn,
+  .tv-landing-page[data-theme="light"] .tv-theme-toggle-btn {
+    background: rgba(255, 255, 255, 0.92);
+    color: #0f172a;
+    border-color: rgba(15, 23, 42, 0.15);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.15);
+  }
+
+  .tv-theme-toggle-btn:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+  }
+
+  .theme-icon-sun { display: inline-block; }
+  .theme-icon-moon { display: none; }
+
+  [data-theme="light"] .theme-icon-sun,
+  .tv-av-page[data-theme="light"] .theme-icon-sun,
+  .tv-landing-page[data-theme="light"] .theme-icon-sun { display: none; }
+
+  [data-theme="light"] .theme-icon-moon,
+  .tv-av-page[data-theme="light"] .theme-icon-moon,
+  .tv-landing-page[data-theme="light"] .theme-icon-moon { display: inline-block; }
+
+</style>
+
+<div class="tv-landing-page">
+  <!-- HERO -->
+  <div class="tv-hero">
+    <div class="tv-container">
+      <div class="tv-badge">
+        <span class="tv-badge-dot"></span>
+        <span>CATÁLOGO CORPORATIVO TECNOVOA</span>
+      </div>
+      <h1>Tienda Online de Soluciones & Equipamiento TI</h1>
+      <p>Encuentra equipamiento de hardware, servidores, networking, energía, ciberseguridad y licencias con despacho rápido a todo Chile.</p>
+
+      <!-- ACCESOS RÁPIDOS WOOCOMMERCE -->
+      <div class="tv-woo-links">
+        <a href="https://tecnovoa.cl/carrito/" class="tv-woo-btn">🛒 Ver Carrito</a>
+        <a href="https://tecnovoa.cl/checkout/" class="tv-woo-btn">📑 Finalizar Compra</a>
+        <a href="https://tecnovoa.cl/mi-cuenta/" class="tv-woo-btn">👤 Mi Cuenta</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="tv-container">
+    <!-- GRID DE CATEGORÍAS -->
+    <div class="tv-section">
+      <div class="tv-section-header">
+        <h2 class="tv-section-title">Explora las <span class="tv-title-grad">Categorías de Productos</span></h2>
+      </div>
+
+      <div class="tv-cat-grid">
+        <a href="https://tecnovoa.cl/categoria-producto/redes/" class="tv-cat-card">
+          <div class="tv-cat-icon">📡</div>
+          <h3>Redes y Conectividad</h3>
+          <p>Switches, Routers, Access Points, cableado estructurado y módulos SFP.</p>
+          <span class="tv-cat-link">Ver Productos →</span>
+        </a>
+
+        <a href="https://tecnovoa.cl/categoria-producto/servidores-almacenamiento/" class="tv-cat-card">
+          <div class="tv-cat-icon">🖥️</div>
+          <h3>Servidores y Almacenamiento</h3>
+          <p>Servidores Rack y Tower, cabezales SAN/NAS, memorias y discos enterprise.</p>
+          <span class="tv-cat-link">Ver Productos →</span>
+        </a>
+
+        <a href="https://tecnovoa.cl/categoria-producto/computacion/" class="tv-cat-card">
+          <div class="tv-cat-icon">💻</div>
+          <h3>Equipamiento y Computación</h3>
+          <p>Laptops corporativas, Workstations, PCs de escritorio y monitores.</p>
+          <span class="tv-cat-link">Ver Productos →</span>
+        </a>
+
+        <a href="https://tecnovoa.cl/categoria-producto/software-licencias/" class="tv-cat-card">
+          <div class="tv-cat-icon">🛡️</div>
+          <h3>Licencias y Software</h3>
+          <p>Firewalls, antivirus corporativos y licencias Microsoft y Veeam.</p>
+          <span class="tv-cat-link">Ver Productos →</span>
+        </a>
+
+        <a href="https://tecnovoa.cl/categoria-producto/audio-video/" class="tv-cat-card">
+          <div class="tv-cat-icon">🎥</div>
+          <h3>Audio, Video y Colaboración</h3>
+          <p>Cámaras de videoconferencia, kits Logitech/Jabra, parlantes y micrófonos.</p>
+          <span class="tv-cat-link">Ver Productos →</span>
+        </a>
+
+        <a href="https://tecnovoa.cl/categoria-producto/energia-ups/" class="tv-cat-card">
+          <div class="tv-cat-icon">⚡</div>
+          <h3>Energía y UPS</h3>
+          <p>UPS monofásicas, trifásicas, bancos de batería, PDU y accesorios.</p>
+          <span class="tv-cat-link">Ver Productos →</span>
+        </a>
+
+        <a href="https://tecnovoa.cl/categoria-producto/climatizacion-racks/" class="tv-cat-card">
+          <div class="tv-cat-icon">❄️</div>
+          <h3>Climatización y Racks</h3>
+          <p>Gabinetes de piso y muro 42U, organizadores de cableado y fan de aire.</p>
+          <span class="tv-cat-link">Ver Productos →</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- BANNER BENEFICIOS DE COMPRA -->
+    <div class="tv-benefits-banner">
+      <div class="tv-benefit-item">
+        <h4>💳 Medios de Pago Seguros</h4>
+        <p>Aceptamos tarjetas de crédito, débito y transferencia bancaria.</p>
+      </div>
+      <div class="tv-benefit-item">
+        <h4>📅 Opción en Cuotas</h4>
+        <p>Financiamiento flexible para las compras de tu empresa.</p>
+      </div>
+      <div class="tv-benefit-item">
+        <h4>🚚 Despachos A Todo Chile</h4>
+        <p>Envíos garantizados y seguros a todas las regiones del país.</p>
+      </div>
+      <div class="tv-benefit-item">
+        <h4>🔒 Productos Originales</h4>
+        <p>Garantía directa de fabricante con respaldo de marcas líderes.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Theme Toggle Button -->
+<button id="tv-theme-toggle" class="tv-theme-toggle-btn" aria-label="Cambiar tema de color" type="button">
+  <span class="theme-icon-sun" aria-hidden="true">☀️</span>
+  <span class="theme-icon-moon" aria-hidden="true">🌙</span>
+  <span class="theme-toggle-text">Modo Claro</span>
+</button>
+
+
+<script>
+(function() {
+  'use strict';
+  function initTheme() {
+    var toggleBtn = document.getElementById('tv-theme-toggle');
+    var targets = [document.documentElement, document.querySelector('.tv-av-page'), document.querySelector('.tv-landing-page')].filter(Boolean);
+
+    function applyTheme(theme) {
+      targets.forEach(function(el) {
+        el.setAttribute('data-theme', theme);
+      });
+      if (toggleBtn) {
+        var textSpan = toggleBtn.querySelector('.theme-toggle-text');
+        if (textSpan) {
+          textSpan.textContent = theme === 'light' ? 'Modo Oscuro' : 'Modo Claro';
+        }
+      }
+      try { localStorage.setItem('tecnovoa-theme', theme); } catch(e) {}
+    }
+
+    var savedTheme = 'dark';
+    try { savedTheme = localStorage.getItem('tecnovoa-theme') || 'dark'; } catch(e) {}
+    applyTheme(savedTheme);
+
+    if (toggleBtn && !toggleBtn.dataset.themeBound) {
+      toggleBtn.dataset.themeBound = 'true';
+      toggleBtn.addEventListener('click', function() {
+        var currentTheme = (document.documentElement.getAttribute('data-theme') || 'dark') === 'light' ? 'light' : 'dark';
+        var nextTheme = currentTheme === 'light' ? 'dark' : 'light';
+        applyTheme(nextTheme);
+      });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTheme);
+  } else {
+    initTheme();
+  }
+})();
+</script>

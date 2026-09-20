@@ -1,0 +1,1756 @@
+<!--
+  ╔══════════════════════════════════════════════════════════════════╗
+  ║  TECNOVOA — Climatización y Aire de Precisión                    ║
+  ║  Versión: WordPress Embed (sin navbar, sin footer, sin breadcrumb)║
+  ║  Pegar en: Bloque "HTML Personalizado" de WordPress             ║
+  ╚══════════════════════════════════════════════════════════════════╝
+-->
+
+<!--
+  =============================================================================
+  GUÍA PARA OPTIMIZAR YOAST SEO EN ESTA PÁGINA
+  =============================================================================
+  1. Frase Clave Objetivo:
+     Climatización y Aire de Precisión
+
+  2. Título SEO:
+     Climatización y Aire de Precisión para Data Center y Salas TI | TECNOVOA
+
+  3. Slug:
+     climatizacion-aire-precision
+
+  4. Meta Descripción:
+     Soluciones avanzadas de Climatización y Aire de Precisión para salas de servidores, data centers y entornos corporativos. Marcas: Vertiv, Schneider, FORZA, Rittal y Tripp Lite.
+  =============================================================================
+-->
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+/* ─────────────────────────────────────────────────────────────────
+   SCOPE: Todo el CSS está limitado al wrapper .tv-landing-page
+   para no interferir con el tema de WordPress.
+───────────────────────────────────────────────────────────────── */
+
+.tv-landing-page *,
+.tv-landing-page *::before,
+.tv-landing-page *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.tv-landing-page {
+  --bg:        #080d1a;
+  --bg-2:      #0c1224;
+  --bg-3:      #111829;
+  --surface:   rgba(255, 255, 255, 0.02);
+  --surface-h: rgba(255, 255, 255, 0.06);
+  --border:    rgba(255, 255, 255, 0.05);
+  --border-h:  rgba(42, 115, 255, 0.4);
+  --text:      #f0f4ff;
+  --text-2:    #8b9ab5;
+  --text-3:    #5a6a84;
+  --accent:    #2a73ff;
+  --accent-2:  #00c8ff;
+  --accent-g:  linear-gradient(135deg, #2a73ff 0%, #00c8ff 100%);
+  --cyan:      #00c8ff;
+  --orange:    #00c8ff;
+  --orange-g:  linear-gradient(135deg, #00c8ff 0%, #2a73ff 100%);
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  overflow-x: hidden;
+
+  /* Margen negativo para anular el padding del contenedor de WP */
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+.tv-landing-page .problem-card,
+.tv-landing-page .portfolio-card,
+.tv-landing-page .process-step,
+.tv-landing-page .partner-card,
+.tv-landing-page .service-item,
+.tv-landing-page .related-card {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.tv-landing-page img { max-width: 100%; display: block; }
+.tv-landing-page a   { color: inherit; text-decoration: none; }
+.tv-landing-page ul,
+.tv-landing-page ol  { list-style: none; }
+
+.tv-landing-page .container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ─── HERO ─────────────────────────────────────────────── */
+.tv-landing-page #climatizacion-hero {
+  position: relative;
+  padding: 72px 0 100px;
+  overflow: hidden;
+}
+
+.tv-landing-page .hero-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.tv-landing-page .hero-stock-img {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1581092335397-9583fe92d232?w=1600&auto=format&fit=crop&q=60');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.07;
+  mix-blend-mode: luminosity;
+}
+
+.tv-landing-page .hero-bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,200,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,200,255,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 30%, transparent 100%);
+}
+
+.tv-landing-page .hero-blob {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(90px);
+  opacity: 0.12;
+}
+
+.tv-landing-page .hero-blob-1 { width:550px; height:550px; background:#00c8ff; top:-120px; left:-80px; }
+.tv-landing-page .hero-blob-2 { width:350px; height:350px; background:#2a73ff; bottom:0; right:-60px; }
+
+.tv-landing-page .hero-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.tv-landing-page .hero-title {
+  font-size: clamp(34px, 4vw, 56px);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  margin-bottom: 22px;
+  overflow: visible;
+  word-break: break-word;
+}
+
+.tv-landing-page .hero-visual-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0,200,255,0.2);
+}
+
+.tv-landing-page .grad-orange {
+  background: var(--orange-g);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.tv-landing-page .grad-blue {
+  background: var(--accent-g);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.tv-landing-page .hero-lead {
+  font-size: 16px;
+  color: var(--text-2);
+  line-height: 1.7;
+  margin-bottom: 36px;
+  max-width: 540px;
+}
+
+.tv-landing-page .hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+.tv-landing-page .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: var(--accent-g);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 99px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 0 28px rgba(42,115,255,0.4);
+  text-decoration: none;
+}
+
+.tv-landing-page .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 36px rgba(42,115,255,0.5); }
+
+.tv-landing-page .btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 26px;
+  background: transparent;
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 99px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+  text-decoration: none;
+}
+
+.tv-landing-page .btn-secondary:hover { background: var(--surface-h); border-color: var(--border-h); transform: translateY(-2px); }
+
+/* Hero KPIs */
+.tv-landing-page .hero-kpis {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.tv-landing-page .hero-kpi {
+  padding: 22px 16px;
+  text-align: center;
+  border-right: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.tv-landing-page .hero-kpi:last-child { border-right: 0; }
+
+.tv-landing-page .hero-kpi-val {
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  background: var(--orange-g);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.tv-landing-page .hero-kpi-label { font-size: 11px; color: var(--text-2); line-height: 1.4; }
+
+/* Hero visual derecho */
+.tv-landing-page .hero-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tv-landing-page .problem-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 16px 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  transition: border-color 0.3s, background 0.3s;
+  animation: tv-slideIn 0.5s ease backwards;
+}
+
+.tv-landing-page .problem-card:hover { border-color: rgba(0,200,255,0.35); background: var(--surface-h); }
+.tv-landing-page .problem-card:nth-child(1) { animation-delay: 0.1s; }
+.tv-landing-page .problem-card:nth-child(2) { animation-delay: 0.2s; }
+.tv-landing-page .problem-card:nth-child(3) { animation-delay: 0.3s; }
+.tv-landing-page .problem-card:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes tv-slideIn {
+  from { opacity: 0; transform: translateX(24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.tv-landing-page .problem-icon {
+  width: 36px; height: 36px;
+  border-radius: var(--radius-sm);
+  display: grid;
+  place-items: center;
+  font-size: 16px;
+  flex-shrink: 0;
+  background: rgba(0,200,255,0.1);
+}
+
+.tv-landing-page .problem-card strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+
+.tv-landing-page .problem-card span {
+  font-size: 12px;
+  color: var(--text-2);
+  line-height: 1.4;
+}
+
+/* ─── SECCIÓN GENÉRICA ─────────────────────────────────── */
+.tv-landing-page .section { padding: 90px 0; }
+.tv-landing-page .section-alt { background: var(--bg-2); }
+
+.tv-landing-page .section-tag {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(0,200,255,0.1);
+  border: 1px solid rgba(0,200,255,0.25);
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 16px;
+}
+
+.tv-landing-page .section-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.tv-landing-page .section-title {
+  font-size: clamp(26px, 3.2vw, 40px);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  margin-bottom: 14px;
+  color: var(--text);
+}
+
+.tv-landing-page .section-sub {
+  font-size: 16px;
+  color: var(--text-2);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ─── PORTAFOLIO GRID ──────────────────────────────────── */
+.tv-landing-page .portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 20px;
+}
+
+.tv-landing-page .portfolio-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: border-color 0.3s, background 0.3s, transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.tv-landing-page .portfolio-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--orange-g);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tv-landing-page .portfolio-card:hover {
+  border-color: rgba(0,200,255,0.3);
+  background: var(--surface-h);
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(0,200,255,0.15);
+}
+
+.tv-landing-page .portfolio-card:hover::before { opacity: 1; }
+
+.tv-landing-page .portfolio-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.tv-landing-page .portfolio-icon {
+  width: 48px; height: 48px;
+  border-radius: var(--radius-md);
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  flex-shrink: 0;
+  background: rgba(0,200,255,0.1);
+}
+
+.tv-landing-page .portfolio-title {
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--text);
+}
+
+.tv-landing-page .portfolio-cat {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-top: 2px;
+}
+
+.tv-landing-page .portfolio-desc {
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.65;
+}
+
+.tv-landing-page .product-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+.tv-landing-page .product-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.tv-landing-page .product-dot {
+  width: 6px; height: 6px;
+  background: var(--cyan);
+  border-radius: 99px;
+  flex-shrink: 0;
+  margin-top: 7px;
+}
+
+.tv-landing-page .product-item-text {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-2);
+}
+
+.tv-landing-page .product-item-text strong { color: var(--text); font-weight: 700; }
+
+.tv-landing-page .brand-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+.tv-landing-page .brand-tag {
+  padding: 4px 10px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-2);
+  white-space: nowrap;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.tv-landing-page .portfolio-card:hover .brand-tag {
+  background: rgba(0,200,255,0.07);
+  border-color: rgba(0,200,255,0.2);
+  color: var(--cyan);
+}
+
+/* ─── PROCESO ──────────────────────────────────────────── */
+.tv-landing-page .process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.tv-landing-page .process-step {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px 22px;
+  text-align: center;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.tv-landing-page .process-step:hover { border-color: rgba(0,200,255,0.3); transform: translateY(-4px); }
+
+.tv-landing-page .process-number {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 14px;
+}
+
+.tv-landing-page .process-icon { font-size: 28px; margin-bottom: 12px; display: block; }
+
+.tv-landing-page .process-step-title {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 10px;
+  color: var(--text);
+}
+
+.tv-landing-page .process-desc { font-size: 13px; color: var(--text-2); line-height: 1.6; }
+
+/* ─── PARTNERS ─────────────────────────────────────────── */
+.tv-landing-page .partners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.tv-landing-page .partner-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: border-color 0.3s, background 0.3s, transform 0.3s;
+}
+
+.tv-landing-page .partner-card:hover {
+  border-color: rgba(0,200,255,0.3);
+  background: var(--surface-h);
+  transform: translateY(-3px);
+}
+
+.tv-landing-page .partner-card.top-partner {
+  border-color: rgba(0,200,255,0.3);
+  background: rgba(0,200,255,0.05);
+}
+
+.tv-landing-page .partner-emoji { font-size: 28px; flex-shrink: 0; }
+
+.tv-landing-page .partner-info-name {
+  font-size: 15px;
+  font-weight: 800;
+  margin-bottom: 4px;
+  color: var(--text);
+}
+
+.tv-landing-page .partner-info-desc { font-size: 12px; color: var(--text-2); line-height: 1.5; }
+
+.tv-landing-page .partner-badge {
+  display: inline-block;
+  padding: 3px 8px;
+  background: rgba(0,200,255,0.15);
+  border: 1px solid rgba(0,200,255,0.3);
+  border-radius: 99px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-top: 6px;
+}
+
+/* ─── SERVICIOS ────────────────────────────────────────── */
+.tv-landing-page .services-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.tv-landing-page .service-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  transition: border-color 0.3s, background 0.3s, transform 0.3s;
+}
+
+.tv-landing-page .service-item:hover {
+  border-color: rgba(42,115,255,0.3);
+  background: var(--surface-h);
+  transform: translateY(-3px);
+}
+
+.tv-landing-page .service-item-icon {
+  width: 44px; height: 44px;
+  border-radius: var(--radius-md);
+  background: rgba(42,115,255,0.1);
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.tv-landing-page .service-item-title {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+
+.tv-landing-page .service-item-desc { font-size: 13px; color: var(--text-2); line-height: 1.6; }
+
+/* ─── UNIDADES RELACIONADAS ────────────────────────────── */
+.tv-landing-page .related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.tv-landing-page .related-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color 0.3s, background 0.3s, transform 0.3s;
+  text-decoration: none;
+}
+
+.tv-landing-page .related-card:hover {
+  border-color: rgba(42,115,255,0.35);
+  background: var(--surface-h);
+  transform: translateY(-4px);
+}
+
+.tv-landing-page .related-card-icon {
+  font-size: 26px;
+  width: 50px; height: 50px;
+  background: rgba(42,115,255,0.1);
+  border-radius: var(--radius-md);
+  display: grid;
+  place-items: center;
+}
+
+.tv-landing-page .related-card-title {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.tv-landing-page .related-card-desc { font-size: 13px; color: var(--text-2); line-height: 1.55; }
+
+.tv-landing-page .related-card-link {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--cyan);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: auto;
+}
+
+/* ─── CTA FINAL ────────────────────────────────────────── */
+.tv-landing-page #climatizacion-cta-final {
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-2);
+}
+
+.tv-landing-page #climatizacion-cta-final::before {
+  content: '';
+  position: absolute;
+  width: 700px; height: 700px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(0,200,255,0.1) 0%, transparent 70%);
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  pointer-events: none;
+}
+
+.tv-landing-page .cta-inner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.tv-landing-page .cta-title {
+  font-size: clamp(26px, 3.5vw, 42px);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  margin-bottom: 18px;
+  color: var(--text);
+}
+
+.tv-landing-page .cta-sub {
+  font-size: 16px;
+  color: var(--text-2);
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+.tv-landing-page .cta-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.tv-landing-page .cta-contact-strip {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 36px;
+  padding-top: 36px;
+  border-top: 1px solid var(--border);
+}
+
+.tv-landing-page .cta-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text-2);
+  transition: color 0.2s;
+  text-decoration: none;
+}
+
+.tv-landing-page .cta-contact-item:hover { color: var(--text); }
+.tv-landing-page .cta-contact-item .icon { font-size: 18px; }
+
+/* ─── CAROUSEL DE MARCAS ───────────────────────────────── */
+.tv-landing-page .brand-carousel-section {
+  padding: 30px 0;
+  background: var(--bg-2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+}
+
+.tv-landing-page .brand-carousel-wrapper {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.tv-landing-page .brand-carousel-track {
+  display: flex;
+  gap: 80px;
+  width: max-content;
+  animation: tv-carousel-scroll 25s linear infinite;
+}
+
+.tv-landing-page .brand-carousel-track:hover {
+  animation-play-state: paused;
+}
+
+.tv-landing-page .brand-carousel-item {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-2);
+  letter-spacing: 1px;
+  transition: color 0.3s, transform 0.3s;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tv-landing-page .brand-carousel-item:hover {
+  color: var(--cyan);
+  transform: scale(1.08);
+}
+
+@keyframes tv-carousel-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 40px)); }
+}
+
+/* ─── ARQUITECTURA TÉCNICA 3D SHOWCASE ─────────────────── */
+.tv-landing-page .arch-showcase-section {
+  padding: 80px 0;
+  background: var(--bg-2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+.tv-landing-page .arch-showcase-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.18fr 0.82fr;
+  align-items: stretch;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+
+.tv-landing-page .arch-showcase-visual {
+  background: #060a14;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.tv-landing-page .arch-showcase-visual img {
+  width: 100%;
+  height: 100%;
+  max-height: 480px;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  transition: transform 0.3s ease;
+}
+
+.tv-landing-page .arch-showcase-visual:hover img {
+  transform: scale(1.02);
+}
+
+.tv-landing-page .arch-showcase-badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(15, 23, 42, 0.88);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #fff;
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 6px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tv-landing-page .arch-showcase-badge-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+}
+
+.tv-landing-page .arch-showcase-content {
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tv-landing-page .arch-showcase-cat {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 8px;
+}
+
+.tv-landing-page .arch-showcase-title {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+
+.tv-landing-page .arch-showcase-desc {
+  font-size: 14.5px;
+  color: var(--text-2);
+  line-height: 1.65;
+  margin-bottom: 24px;
+}
+
+.tv-landing-page .arch-showcase-points {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 26px;
+}
+
+.tv-landing-page .arch-showcase-point {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13.5px;
+  color: var(--text);
+}
+
+.tv-landing-page .arch-showcase-point svg {
+  color: var(--cyan);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.tv-landing-page .arch-showcase-point strong {
+  color: var(--text);
+  font-weight: 700;
+}
+
+/* ─── SCROLL ANIMATIONS ────────────────────────────────── */
+.tv-landing-page .fade-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.tv-landing-page .fade-delay-1 { transition-delay: 0.08s; }
+.tv-landing-page .fade-delay-2 { transition-delay: 0.16s; }
+.tv-landing-page .fade-delay-3 { transition-delay: 0.24s; }
+.tv-landing-page .fade-delay-4 { transition-delay: 0.32s; }
+
+/* ─── RESPONSIVE ───────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .tv-landing-page .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+  .tv-landing-page .hero-visual { display: none; }
+  .tv-landing-page .related-grid { grid-template-columns: 1fr 1fr; }
+  .tv-landing-page .arch-showcase-card { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .tv-landing-page .portfolio-grid { grid-template-columns: 1fr; }
+  .tv-landing-page .services-list { grid-template-columns: 1fr; }
+  .tv-landing-page .related-grid { grid-template-columns: 1fr; }
+  .tv-landing-page .hero-kpis { grid-template-columns: 1fr; border-radius: var(--radius-md); }
+  .tv-landing-page .hero-kpi { border-right: 0; border-bottom: 1px solid var(--border); }
+  .tv-landing-page .hero-kpi:last-child { border-bottom: 0; }
+  .tv-landing-page .process-grid { grid-template-columns: 1fr 1fr; }
+  .tv-landing-page .section { padding: 70px 0; }
+  .tv-landing-page #climatizacion-hero { padding: 48px 0 80px; }
+  .tv-landing-page .hero-title { font-size: 28px; }
+}
+
+@media (max-width: 480px) {
+  .tv-landing-page .process-grid { grid-template-columns: 1fr; }
+  .tv-landing-page .hero-actions { flex-direction: column; }
+  .tv-landing-page .btn-primary,
+  .tv-landing-page .btn-secondary { width: 100%; justify-content: center; }
+  .tv-landing-page .cta-actions { flex-direction: column; align-items: center; }
+}
+
+  /* ─── THEME SWITCHER OVERRIDES ─── */
+  [data-theme="light"],
+  .tv-av-page[data-theme="light"],
+  .tv-landing-page[data-theme="light"] {
+    --bg:        #ffffff !important;
+    --bg-2:      #f8fafc !important;
+    --bg-3:      #f1f5f9 !important;
+    --surface:   #ffffff !important;
+    --surface-h: #f1f5f9 !important;
+    --border:    #e2e8f0 !important;
+    --border-h:  #cbd5e1 !important;
+    --text:      #0f172a !important;
+    --text-2:    #475569 !important;
+    --text-3:    #64748b !important;
+    --accent:    #1d4ed8 !important;
+    --accent-2:  #2563eb !important;
+    --accent-g:  linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%) !important;
+    --cyan:      #1d4ed8 !important;
+    --orange:    #1d4ed8 !important;
+    --orange-g:  linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%) !important;
+    color-scheme: light;
+  }
+
+  /* Theme Toggle Button Styles */
+  .tv-theme-toggle-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 99999;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.88);
+    color: #f0f4ff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  [data-theme="light"] .tv-theme-toggle-btn,
+  .tv-av-page[data-theme="light"] .tv-theme-toggle-btn,
+  .tv-landing-page[data-theme="light"] .tv-theme-toggle-btn {
+    background: rgba(255, 255, 255, 0.92);
+    color: #0f172a;
+    border-color: rgba(15, 23, 42, 0.15);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.15);
+  }
+
+  .tv-theme-toggle-btn:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+  }
+
+  .theme-icon-sun { display: inline-block; }
+  .theme-icon-moon { display: none; }
+
+  [data-theme="light"] .theme-icon-sun,
+  .tv-av-page[data-theme="light"] .theme-icon-sun,
+  .tv-landing-page[data-theme="light"] .theme-icon-sun { display: none; }
+
+  [data-theme="light"] .theme-icon-moon,
+  .tv-av-page[data-theme="light"] .theme-icon-moon,
+  .tv-landing-page[data-theme="light"] .theme-icon-moon { display: inline-block; }
+
+</style>
+
+<!-- ════════════════════════════════════════════════════════════
+     INICIO DEL CONTENIDO — Pegar todo esto en WordPress
+═════════════════════════════════════════════════════════════ -->
+<div class="tv-landing-page" id="tv-climatizacion-top">
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!--  HERO SECTION                                          -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <section id="climatizacion-hero" aria-labelledby="climatizacion-hero-title">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hero-stock-img"></div>
+      <div class="hero-bg-grid"></div>
+      <div class="hero-blob hero-blob-1"></div>
+      <div class="hero-blob hero-blob-2"></div>
+    </div>
+
+    <div class="container">
+      <div class="hero-inner">
+
+        <!-- Copy izquierdo -->
+        <div>
+          <h1 class="hero-title" id="climatizacion-hero-title">
+            Climatización y Aire de Precisión<br><span class="grad-orange">para continuidad crítica</span>
+          </h1>
+
+          <p class="hero-lead">
+            Aseguramos el control térmico de su Data Center y salas TI con sistemas de Climatización y Aire de Precisión 24/7, garantizando rangos exactos de temperatura y humedad para proteger su hardware sensible.
+          </p>
+
+          <div class="hero-actions">
+            <a href="https://tecnovoa.cl/contacto/" class="btn-primary" id="climatizacion-hero-cta">
+              Cotizar soluciones
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#climatizacion-portafolio" class="btn-secondary">
+              Ver soluciones
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10M4 9l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+
+          <!-- KPIs -->
+          <div class="hero-kpis" role="list" aria-label="Métricas de la unidad">
+            <div class="hero-kpi" role="listitem">
+              <div class="hero-kpi-val">24/7</div>
+              <div class="hero-kpi-label">Control térmico continuo</div>
+            </div>
+            <div class="hero-kpi" role="listitem">
+              <div class="hero-kpi-val">5+</div>
+              <div class="hero-kpi-label">Marcas de aire de precisión</div>
+            </div>
+            <div class="hero-kpi" role="listitem">
+              <div class="hero-kpi-val">99.99%</div>
+              <div class="hero-kpi-label">Uptime en salas críticas</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual derecho: problemas que resolvemos -->
+        <div class="hero-visual" role="list" aria-label="Problemas que podemos resolver">
+          <div class="hero-visual-label">Problemas que podemos resolver</div>
+          <div class="problem-card" role="listitem">
+            <div class="problem-icon" aria-hidden="true">🌡️</div>
+            <div>
+              <strong>Sobrecalentamiento de servidores</strong>
+              <span>Puntos calientes en racks que provocan apagados preventivos y fallas críticas en los procesadores.</span>
+            </div>
+          </div>
+          <div class="problem-card" role="listitem">
+            <div class="problem-icon" aria-hidden="true">💧</div>
+            <div>
+              <strong>Humedad y condensación</strong>
+              <span>Desequilibrios de humedad que generan condensación dañina o descargas electrostáticas estáticas.</span>
+            </div>
+          </div>
+          <div class="problem-card" role="listitem">
+            <div class="problem-icon" aria-hidden="true">⚡</div>
+            <div>
+              <strong>Consumo energético ineficiente</strong>
+              <span>Equipos HVAC tradicionales no diseñados para cargas térmicas de TI que incrementan la factura eléctrica.</span>
+            </div>
+          </div>
+          <div class="problem-card" role="listitem">
+            <div class="problem-icon" aria-hidden="true">⚙️</div>
+            <div>
+              <strong>Falta de redundancia N+1</strong>
+              <span>Riesgo de falla total por falta de unidades de enfriamiento de respaldo en caso de avería de un compresor.</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!--  CARRUSEL DE MARCAS                                    -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <section class="brand-carousel-section" aria-label="Nuestras marcas asociadas">
+    <div class="container">
+      <div class="brand-carousel-wrapper">
+        <div class="brand-carousel-track">
+          <div class="brand-carousel-item">Vertiv</div>
+          <div class="brand-carousel-item">Schneider Electric</div>
+          <div class="brand-carousel-item">Stulz</div>
+          <div class="brand-carousel-item">Rittal</div>
+          <div class="brand-carousel-item">APC</div>
+          <div class="brand-carousel-item">Tripp Lite</div>
+          <div class="brand-carousel-item">FORZA</div>
+          <div class="brand-carousel-item">Liebert</div>
+          <!-- Repetición para ciclo infinito -->
+          <div class="brand-carousel-item">Vertiv</div>
+          <div class="brand-carousel-item">Schneider Electric</div>
+          <div class="brand-carousel-item">Stulz</div>
+          <div class="brand-carousel-item">Rittal</div>
+          <div class="brand-carousel-item">APC</div>
+          <div class="brand-carousel-item">Tripp Lite</div>
+          <div class="brand-carousel-item">FORZA</div>
+          <div class="brand-carousel-item">Liebert</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!--  SHOWCASE ARQUITECTURA TÉCNICA 3D                     -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <section class="arch-showcase-section" id="climatizacion-arquitectura" aria-label="Arquitectura de Climatización 3D">
+    <div class="container">
+      <div class="section-header fade-in" style="margin-bottom: 36px;">
+        <div class="section-tag">Infraestructura Térmica</div>
+        <h2 class="section-title">
+          Control de Temperatura InRow y <span class="grad-orange">Confinamiento de Pasillos</span>
+        </h2>
+        <p class="section-sub">
+          Protección térmica avanzada dirigida exactamente a las zonas de alta densidad calorífica de su Data Center.
+        </p>
+      </div>
+
+      <div class="arch-showcase-card fade-in">
+        <div class="arch-showcase-visual">
+          <div class="arch-showcase-badge">
+            <span class="arch-showcase-badge-dot" aria-hidden="true"></span>
+            <span>Aire de Precisión &amp; InRow</span>
+          </div>
+          <img src="img/energia-seguridad-acceso-isometric.jpg" alt="Topología Isométrica 3D de Climatización de Precisión TECNOVOA" loading="lazy">
+        </div>
+
+        <div class="arch-showcase-content">
+          <div class="arch-showcase-cat">Eficiencia Energética PUE</div>
+          <h3 class="arch-showcase-title">Sistemas InRow, Perimetrales y Monitoreo Térmico</h3>
+          <p class="arch-showcase-desc">
+            Optimizamos la eficiencia energética (PUE) confinando pasillos calientes/fríos y aplicando climatización modular InRow de expansión directa o agua helada con regulación automática de velocidad.
+          </p>
+
+          <div class="arch-showcase-points">
+            <div class="arch-showcase-point">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <div><strong>Unidades InRow Directas:</strong> Enfriamiento ubicado entre racks para disipación de calor inmediata.</div>
+            </div>
+            <div class="arch-showcase-point">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <div><strong>Confinamiento de Pasillos:</strong> Separación física de aire frío y caliente para máximo rendimiento energético.</div>
+            </div>
+            <div class="arch-showcase-point">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <div><strong>Monitoreo de Humedad y Temperatura:</strong> Sensores IP continuos con alertas automáticas.</div>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 14px; align-items: center; flex-wrap: wrap;">
+            <a href="https://tecnovoa.cl/contacto/" class="btn-primary" style="padding: 11px 22px; font-size: 13.5px;">
+              Solicitar estudio térmico de Data Center gratis
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!--  PORTAFOLIO                                            -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <section id="climatizacion-portafolio" class="section section-alt" aria-labelledby="climatizacion-portafolio-title">
+    <div class="container">
+
+      <div class="section-header fade-in">
+        <div class="section-tag">Portafolio</div>
+        <h2 class="section-title" id="climatizacion-portafolio-title">
+          Nuestras soluciones en<br><span class="grad-orange">Climatización y Aire de Precisión</span>
+        </h2>
+        <p class="section-sub">
+          Equipamiento de grado industrial para garantizar temperatura constante y control de humedad 24/7/365.
+        </p>
+      </div>
+
+      <div class="portfolio-grid" role="list">
+        <!-- 1. Enfriamiento InRow -->
+        <article class="portfolio-card fade-in fade-delay-1" role="listitem">
+          <div class="portfolio-header">
+            <div class="portfolio-icon" aria-hidden="true">❄️</div>
+            <div>
+              <div class="portfolio-cat">Categoría 01</div>
+              <h3 class="portfolio-title">Enfriamiento InRow</h3>
+            </div>
+          </div>
+          <p class="portfolio-desc">
+            Climatización de alta densidad instalada directamente entre los racks de servidores para capturar el calor en la fuente.
+          </p>
+          <ul class="product-list" role="list">
+            <li class="product-item" role="listitem">
+              <div class="product-dot" aria-hidden="true"></div>
+              <div class="product-item-text"><strong>InRow Expansión Directa (DX)</strong> — Compresores de velocidad variable para alta eficiencia</div>
+            </li>
+            <li class="product-item" role="listitem">
+              <div class="product-dot" aria-hidden="true"></div>
+              <div class="product-item-text"><strong>InRow Chilled Water (CW)</strong> — Integración con sistemas de agua helada centralizados</div>
+            </li>
+            <li class="product-item" role="listitem">
+              <div class="product-dot" aria-hidden="true"></div>
+              <div class="product-item-text"><strong>Diseño Autónomo Modular</strong> — Crecimiento escalable según la demanda de los servidores</div>
+            </li>
+          </ul>
+          <div class="brand-tags" aria-label="Marcas asociadas">
+            <a href="https://www.vertiv.com" class="brand-tag" target="_blank" rel="noopener">Vertiv</a>
+            <a href="https://www.apc.com" class="brand-tag" target="_blank" rel="noopener">APC</a>
+            <a href="https://www.stulz.com" class="brand-tag" target="_blank" rel="noopener">Stulz</a>
+            <a href="https://www.se.com" class="brand-tag" target="_blank" rel="noopener">Schneider</a>
+          </div>
+        </article>
+
+        <!-- 2. Unidades Perimetrales (CRAC/CRAH) -->
+        <article class="portfolio-card fade-in fade-delay-2" role="listitem">
+          <div class="portfolio-header">
+            <div class="portfolio-icon" aria-hidden="true">🏢</div>
+            <div>
+              <div class="portfolio-cat">Categoría 02</div>
+              <h3 class="portfolio-title">Unidades Perimetrales</h3>
+            </div>
+          </div>
+          <p class="portfolio-desc">
+            Equipos perimetrales CRAC/CRAH para climatización de salas completas de Datacenter y cuartos de telecomunicaciones.
+          </p>
+          <ul class="product-list" role="list">
+            <li class="product-item" role="listitem">
+              <div class="product-dot" aria-hidden="true"></div>
+              <div class="product-item-text"><strong>Flujo Downflow / Upflow</strong> — Distribución por piso técnico elevado o plenum superior</div>
+            </li>
+            <li class="product-item" role="listitem">
+              <div class="product-dot" aria-hidden="true"></div>
+              <div class="product-item-text"><strong>Ventiladores EC</strong> — Ajuste automático de caudal de aire y menor consumo</div>
+            </li>
+            <li class="product-item" role="listitem">
+              <div class="product-dot" aria-hidden="true"></div>
+              <div class="product-item-text"><strong>Redundancia N+1 Integrada</strong> — Funcionamiento en grupo con rotación automática</div>
+            </li>
+          </ul>
+          <div class="brand-tags" aria-label="Marcas asociadas">
+            <a href="https://www.vertiv.com" class="brand-tag" target="_blank" rel="noopener">Vertiv</a>
+            <a href="https://www.stulz.com" class="brand-tag" target="_blank" rel="noopener">Stulz</a>
+            <a href="https://www.se.com" class="brand-tag" target="_blank" rel="noopener">Schneider</a>
+            <a href="https://www.rittal.com" class="brand-tag" target="_blank" rel="noopener">Rittal</a>
+          </div>
+        </article>
+
+        <!-- 3. Chillers y Agua Helada -->
+        <article class="portfolio-card fade-in fade-delay-3" role="listitem">
+          <div class="portfolio-header">
+            <div class="portfolio-icon" aria-hidden="true">💧</div>
+            <div>
+              <div class="portfolio-cat">Categoría 03</div>
+              <h3 class="portfolio-title">Chillers y Agua Helada</h3>
+            </div>
+          </div>
+          <p class="portfolio-desc">
+            Enfriadoras de agua industriales con tecnología Free-Cooling para instalaciones de gran escala y máximo ahorro.
+          </p>
+          <ul class="product-list" role="list">
+            <li class="product-item" role="listitem">
+              <div class="product-dot" aria-hidden="true"></div>
+              <div class="product-item-text"><strong>Chillers Free-Cooling</strong> — Aprovechamiento del aire exterior para reducir el uso de compresores</div>
+            </li>
+            <li class="product-item" role="listitem">
+              <div class="product-dot" aria-hidden="true"></div>
+              <div class="product-item-text"><strong>Bombas de Agua Redundantes</strong> — Circuito hidráulico doble para cero puntos únicos de falla</div>
+            </li>
+            <li class="product-item" role="listitem">
+              <div class="product-dot" aria-hidden="true"></div>
+              <div class="product-item-text"><strong>Refrigerantes Ecológicos</strong> — Cumplimiento de normativas medioambientales internacionales</div>
+            </li>
+          </ul>
+          <div class="brand-tags" aria-label="Marcas asociadas">
+            <a href="https://www.stulz.com" class="brand-tag" target="_blank" rel="noopener">Stulz</a>
+            <a href="https://www.vertiv.com" class="brand-tag" target="_blank" rel="noopener">Vertiv</a>
+            <a href="https://www.se.com" class="brand-tag" target="_blank" rel="noopener">Schneider</a>
+          </div>
+        </article>
+
+        <!-- 4. Confinamiento de Pasillos -->
+        <article class="portfolio-card fade-in fade-delay-1" role="listitem">
+          <div class="portfolio-header">
+            <div class="portfolio-icon" aria-hidden="true">🚪</div>
+            <div>
+              <div class="portfolio-cat">Categoría 04</div>
+              <h3 class="portfolio-title">Confinamiento de Pasillos</h3>
+            </div>
+          </div>
+          <p class="portfolio-desc">
+            Cerramientos físicos para aislar el aire frío o caliente en filas de racks, eliminando la mezcla térmica.
+          </p>
+          <ul class="product-list" role="list">
+            <li class="product-item" role="listitem">
+              <div class="product-dot" aria-hidden="true"></div>
+              <div class="product-item-text"><strong>Confinamiento de Pasillo Frío (CAC)</strong> — Canalización directa hacia las tomas frontales de los equipos</div>
+            </li>
+            <li class="product-item" role="listitem">
+              <div class="product-dot" aria-hidden="true"></div>
+              <div class="product-item-text"><strong>Confinamiento de Pasillo Caliente (HAC)</strong> — Extracción del aire caliente sin afectar la sala</div>
+            </li>
+            <li class="product-item" role="listitem">
+              <div class="product-dot" aria-hidden="true"></div>
+              <div class="product-item-text"><strong>Puertas Correderas y Techos Transparentes</strong> — Estructuras modulares ignífugas</div>
+            </li>
+          </ul>
+          <div class="brand-tags" aria-label="Marcas asociadas">
+            <a href="https://www.rittal.com" class="brand-tag" target="_blank" rel="noopener">Rittal</a>
+            <a href="https://www.apc.com" class="brand-tag" target="_blank" rel="noopener">APC</a>
+            <a href="https://www.vertiv.com" class="brand-tag" target="_blank" rel="noopener">Vertiv</a>
+          </div>
+        </article>
+
+        <!-- 5. Monitoreo Ambiental -->
+        <article class="portfolio-card fade-in fade-delay-2" role="listitem">
+          <div class="portfolio-header">
+            <div class="portfolio-icon" aria-hidden="true">📊</div>
+            <div>
+              <div class="portfolio-cat">Categoría 05</div>
+              <h3 class="portfolio-title">Monitoreo Ambiental</h3>
+            </div>
+          </div>
+          <p class="portfolio-desc">
+            Sensores y plataformas de gestión para supervisar temperatura, humedad, humo y fugas de agua en tiempo real.
+          </p>
+          <ul class="product-list" role="list">
+            <li class="product-item" role="listitem">
+              <div class="product-dot" aria-hidden="true"></div>
+              <div class="product-item-text"><strong>Sensores de Punto Caliente</strong> — Medición a nivel de U en la parte frontal y trasera de racks</div>
+            </li>
+            <li class="product-item" role="listitem">
+              <div class="product-dot" aria-hidden="true"></div>
+              <div class="product-item-text"><strong>Detección de Fugas de Agua</strong> — Cables sensores perimetrales bajo piso técnico</div>
+            </li>
+            <li class="product-item" role="listitem">
+              <div class="product-dot" aria-hidden="true"></div>
+              <div class="product-item-text"><strong>Alertas SNMP / Email / SMS</strong> — Notificaciones instantáneas ante desviaciones térmicas</div>
+            </li>
+          </ul>
+          <div class="brand-tags" aria-label="Marcas asociadas">
+            <a href="https://www.apc.com" class="brand-tag" target="_blank" rel="noopener">APC NetBotz</a>
+            <a href="https://www.vertiv.com" class="brand-tag" target="_blank" rel="noopener">Vertiv</a>
+            <a href="https://www.hw-group.com" class="brand-tag" target="_blank" rel="noopener">HW Group</a>
+          </div>
+        </article>
+
+        <!-- 6. Mantenimiento HVAC -->
+        <article class="portfolio-card fade-in fade-delay-3" role="listitem">
+          <div class="portfolio-header">
+            <div class="portfolio-icon" aria-hidden="true">🛠️</div>
+            <div>
+              <div class="portfolio-cat">Categoría 06</div>
+              <h3 class="portfolio-title">Mantenimiento HVAC</h3>
+            </div>
+          </div>
+          <p class="portfolio-desc">
+            Servicios preventivos y correctivos continuos para asegurar la durabilidad y eficiencia de sus equipos de clima.
+          </p>
+          <ul class="product-list" role="list">
+            <li class="product-item" role="listitem">
+              <div class="product-dot" aria-hidden="true"></div>
+              <div class="product-item-text"><strong>Revisión de Compresores y Gas</strong> — Control de presión y recarga de refrigerante</div>
+            </li>
+            <li class="product-item" role="listitem">
+              <div class="product-dot" aria-hidden="true"></div>
+              <div class="product-item-text"><strong>Limpieza de Filtros y Condensadores</strong> — Mantenimiento higiénico y térmico periódico</div>
+            </li>
+            <li class="product-item" role="listitem">
+              <div class="product-dot" aria-hidden="true"></div>
+              <div class="product-item-text"><strong>Contratos de Soporte 24/7</strong> — Atención de emergencias con repuestos originales en Chile</div>
+            </li>
+          </ul>
+          <div class="brand-tags" aria-label="Marcas asociadas">
+            <a href="https://www.vertiv.com" class="brand-tag" target="_blank" rel="noopener">Vertiv</a>
+            <a href="https://www.stulz.com" class="brand-tag" target="_blank" rel="noopener">Stulz</a>
+            <a href="https://www.se.com" class="brand-tag" target="_blank" rel="noopener">Schneider</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!--  CÓMO LO HACEMOS                                       -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <section id="climatizacion-proceso" class="section" aria-labelledby="climatizacion-proceso-title">
+    <div class="container">
+
+      <div class="section-header fade-in">
+        <div class="section-tag blue">Metodología</div>
+        <h2 class="section-title" id="climatizacion-proceso-title">
+          Planificación de <span class="grad-blue">climatización crítica</span>
+        </h2>
+        <p class="section-sub">
+          Diseñamos y equilibramos el flujo de aire de su sala de servidores para máxima resiliencia.
+        </p>
+      </div>
+
+      <div class="process-grid fade-in" role="list">
+        <div class="process-step fade-in fade-delay-1" role="listitem">
+          <div class="process-number">Paso 01</div>
+          <span class="process-icon" aria-hidden="true">🔍</span>
+          <h3 class="process-step-title">Levantamiento térmico</h3>
+          <p class="process-desc">Cálculo de cargas en BTU/kW y análisis termográfico de puntos calientes en salas.</p>
+        </div>
+        <div class="process-step fade-in fade-delay-2" role="listitem">
+          <div class="process-number">Paso 02</div>
+          <span class="process-icon" aria-hidden="true">📐</span>
+          <h3 class="process-step-title">Diseño de flujo de aire</h3>
+          <p class="process-desc">Dimensionamiento InRow o perimetral con trazado de ductos y confinamiento de pasillos.</p>
+        </div>
+        <div class="process-step fade-in fade-delay-3" role="listitem">
+          <div class="process-number">Paso 03</div>
+          <span class="process-icon" aria-hidden="true">🔧</span>
+          <h3 class="process-step-title">Instalación y tuberías</h3>
+          <p class="process-desc">Montaje de condesadoras, tendido de cañerías de cobre y puesta en marcha sin detener el servicio.</p>
+        </div>
+        <div class="process-step fade-in fade-delay-4" role="listitem">
+          <div class="process-number">Paso 04</div>
+          <span class="process-icon" aria-hidden="true">🎓</span>
+          <h3 class="process-step-title">Calibración y mantenimiento</h3>
+          <p class="process-desc">Ajuste de humedad/temperatura objetivo y rutinas preventivas para rendimiento PUE óptimo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!--  SERVICIOS TECNOVOA                                    -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <section id="climatizacion-servicios" class="section section-alt" aria-labelledby="climatizacion-servicios-title">
+    <div class="container">
+
+      <div class="section-header fade-in">
+        <div class="section-tag">Lo que hacemos</div>
+        <h2 class="section-title" id="climatizacion-servicios-title">
+          Servicios <span class="grad-orange">TECNOVOA</span><br>para control climático TI
+        </h2>
+        <p class="section-sub">
+          Brindamos la tranquilidad de que su entorno TI está a la temperatura y humedad idónea.
+        </p>
+      </div>
+
+      <div class="services-list fade-in" role="list">
+        <div class="service-item fade-in fade-delay-1" role="listitem">
+          <div class="service-item-icon" aria-hidden="true">🏗️</div>
+          <div>
+            <h3 class="service-item-title">Diseño térmico para Data Centers</h3>
+            <p class="service-item-desc">Arquitecturas de enfriamiento N+1 para garantizar continuidad sin paradas.</p>
+          </div>
+        </div>
+        <div class="service-item fade-in fade-delay-2" role="listitem">
+          <div class="service-item-icon" aria-hidden="true">🌡️</div>
+          <div>
+            <h3 class="service-item-title">Auditoría termográfica de racks</h3>
+            <p class="service-item-desc">Detección preventiva de hotspots y desbalance en la distribución de aire.</p>
+          </div>
+        </div>
+        <div class="service-item fade-in fade-delay-3" role="listitem">
+          <div class="service-item-icon" aria-hidden="true">🛠️</div>
+          <div>
+            <h3 class="service-item-title">Mantenimiento preventivo HVAC</h3>
+            <p class="service-item-desc">Limpieza de serpentines, recarga de gas y pruebas de unidades de compresión.</p>
+          </div>
+        </div>
+        <div class="service-item fade-in fade-delay-4" role="listitem">
+          <div class="service-item-icon" aria-hidden="true">📊</div>
+          <div>
+            <h3 class="service-item-title">Integración de monitoreo ambiental</h3>
+            <p class="service-item-desc">Despliegue de sensores de temperatura, humedad y agua en tiempo real.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!--  PARTNERS TECNOLÓGICOS                                 -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <section id="climatizacion-partners" class="section" aria-labelledby="climatizacion-partners-title">
+    <div class="container">
+
+      <div class="section-header fade-in">
+        <div class="section-tag">Partners Tecnológicos</div>
+        <h2 class="section-title" id="climatizacion-partners-title">
+          Nuestros aliados en<br><span class="grad-orange">climatización e infraestructura</span>
+        </h2>
+        <p class="section-sub">
+          Eficiencia energética y tecnología de refrigeración de clase mundial.
+        </p>
+      </div>
+
+      <div class="partners-grid fade-in" role="list">
+        <div class="partner-card top-partner fade-in fade-delay-1" role="listitem">
+          <div class="partner-emoji" aria-hidden="true">❄️</div>
+          <div>
+            <div class="partner-info-name">Vertiv Liebert</div>
+            <p class="partner-info-desc">Líder mundial en sistemas de aire de precisión, InRow y monitoreo térmico.</p>
+            <span class="partner-badge">Partner Estratégico</span>
+          </div>
+        </div>
+        <div class="partner-card fade-in fade-delay-2" role="listitem">
+          <div class="partner-emoji" aria-hidden="true">🏢</div>
+          <div>
+            <div class="partner-info-name">Schneider Electric / APC</div>
+            <p class="partner-info-desc">Soluciones integradas InRow y contención de pasillos de alta eficiencia.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!--  UNIDADES RELACIONADAS                                 -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <section id="climatizacion-relacionadas" class="section section-alt" aria-labelledby="climatizacion-relacionadas-title">
+    <div class="container">
+
+      <div class="section-header fade-in">
+        <div class="section-tag blue">Complementa tu proyecto</div>
+        <h2 class="section-title" id="climatizacion-relacionadas-title">
+          Servicios que<br><span class="grad-blue">potencian tu proyecto</span>
+        </h2>
+        <p class="section-sub">
+          Complete su infraestructura física y lógica.
+        </p>
+      </div>
+
+      <div class="related-grid fade-in" role="list">
+        <a href="https://tecnovoa.cl/servicios-ti/respaldo-de-energia/" class="related-card fade-in fade-delay-1" role="listitem">
+          <div class="related-card-icon" aria-hidden="true">🔋</div>
+          <h3 class="related-card-title">Respaldo de Energía</h3>
+          <p class="related-card-desc">Proteja sus equipos de aire de precisión y servidores con sistemas UPS trifásicos.</p>
+          <span class="related-card-link">
+            Ver unidad
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <a href="https://tecnovoa.cl/servicios-ti/datacenter-y-cloud/" class="related-card fade-in fade-delay-2" role="listitem">
+          <div class="related-card-icon" aria-hidden="true">🖥️</div>
+          <h3 class="related-card-title">Datacenter y Cloud</h3>
+          <p class="related-card-desc">Infraestructura física y lógica lista para sostener operaciones de misión crítica.</p>
+          <span class="related-card-link">
+            Ver unidad
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <a href="https://tecnovoa.cl/servicios-ti/telecomunicaciones-y-redes/" class="related-card fade-in fade-delay-3" role="listitem">
+          <div class="related-card-icon" aria-hidden="true">🖧</div>
+          <h3 class="related-card-title">Telecomunicaciones y Redes</h3>
+          <p class="related-card-desc">Mantenga sus armarios de cableado y switches a la temperatura operacional recomendada.</p>
+          <span class="related-card-link">
+            Ver unidad
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!--  CTA FINAL                                             -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <section id="climatizacion-cta-final" aria-labelledby="climatizacion-cta-title">
+    <div class="container">
+      <div class="cta-inner fade-in">
+        <div class="section-tag" style="margin-bottom:20px">Conversemos</div>
+        <h2 class="cta-title" id="climatizacion-cta-title">
+          ¿Está su Data Center<br><span class="grad-orange">operando a la temperatura ideal?</span>
+        </h2>
+        <p class="cta-sub">
+          Evite caídas de servicio por sobrecalentamiento. Contáctenos para dimensionar el sistema de Aire de Precisión correcto para sus salas técnicas.
+        </p>
+        <div class="cta-actions">
+          <a href="https://tecnovoa.cl/contacto/" class="btn-primary" id="climatizacion-cta-final-btn">
+            Solicitar propuesta gratis
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="https://tecnovoa.cl/servicios-ti/" class="btn-secondary" id="climatizacion-cta-back-btn">
+            Ver todos los servicios
+          </a>
+        </div>
+        <div class="cta-contact-strip" role="list" aria-label="Datos de contacto">
+          <a href="tel:+56997051793" class="cta-contact-item" role="listitem">
+            <span class="icon" aria-hidden="true">📞</span>+56 9 9705 1793
+          </a>
+          <a href="mailto:ventas@tecnovoa.cl" class="cta-contact-item" role="listitem">
+            <span class="icon" aria-hidden="true">✉️</span>ventas@tecnovoa.cl
+          </a>
+          <div class="cta-contact-item" role="listitem">
+            <span class="icon" aria-hidden="true">📍</span>Providencia, Santiago de Chile
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<!-- Theme Toggle Button -->
+<button id="tv-theme-toggle" class="tv-theme-toggle-btn" aria-label="Cambiar tema de color" type="button">
+  <span class="theme-icon-sun" aria-hidden="true">☀️</span>
+  <span class="theme-icon-moon" aria-hidden="true">🌙</span>
+  <span class="theme-toggle-text">Modo Claro</span>
+</button>
+
+</div><!-- /.tv-landing-page -->
+
+<script>
+(function() {
+  'use strict';
+  var fadeEls = document.querySelectorAll('.fade-in');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) { 
+          e.target.classList.add('visible'); 
+          io.unobserve(e.target); 
+        }
+      });
+    }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+    fadeEls.forEach(function(el) { io.observe(el); });
+  } else {
+    fadeEls.forEach(function(el) { el.classList.add('visible'); });
+  }
+
+  /* ── Smooth anchor scroll ──── */
+  document.querySelectorAll('.tv-landing-page a[href^="#"]').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+      var target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 40, behavior: 'smooth' });
+      }
+    });
+  });
+})();
+</script>
+
+
+<script>
+(function() {
+  'use strict';
+  function initTheme() {
+    var toggleBtn = document.getElementById('tv-theme-toggle');
+    var targets = [document.documentElement, document.querySelector('.tv-av-page'), document.querySelector('.tv-landing-page')].filter(Boolean);
+
+    function applyTheme(theme) {
+      targets.forEach(function(el) {
+        el.setAttribute('data-theme', theme);
+      });
+      if (toggleBtn) {
+        var textSpan = toggleBtn.querySelector('.theme-toggle-text');
+        if (textSpan) {
+          textSpan.textContent = theme === 'light' ? 'Modo Oscuro' : 'Modo Claro';
+        }
+      }
+      try { localStorage.setItem('tecnovoa-theme', theme); } catch(e) {}
+    }
+
+    var savedTheme = 'dark';
+    try { savedTheme = localStorage.getItem('tecnovoa-theme') || 'dark'; } catch(e) {}
+    applyTheme(savedTheme);
+
+    if (toggleBtn && !toggleBtn.dataset.themeBound) {
+      toggleBtn.dataset.themeBound = 'true';
+      toggleBtn.addEventListener('click', function() {
+        var currentTheme = (document.documentElement.getAttribute('data-theme') || 'dark') === 'light' ? 'light' : 'dark';
+        var nextTheme = currentTheme === 'light' ? 'dark' : 'light';
+        applyTheme(nextTheme);
+      });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTheme);
+  } else {
+    initTheme();
+  }
+})();
+</script>
