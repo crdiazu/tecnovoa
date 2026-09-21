@@ -1,14 +1,11 @@
 /* ─────────────────────────────────────────────────────────────────
-   TECNOVOA — Master Global CSS
-   Uso: Cargar este archivo globalmente en WordPress (en el plugin
-   de CSS global o tema Astra) para dar soporte unificado a todas
-   las páginas de servicios de TECNOVOA.
+   TECNOVOA — Master Global Design System & Master CSS
+   Versión: Modular & Reusable (Para todas las páginas de servicios)
 ───────────────────────────────────────────────────────────────── */
 
 /* ── 1. DESIGN TOKENS (TEMA OSCURO DEFAULT) ───────────────────── */
 :root,
 [data-theme="dark"],
-.tv-av-page,
 .tv-landing-page {
   --bg:        #080d1a;
   --bg-2:      #0c1224;
@@ -33,7 +30,6 @@
 
 /* ── 2. DESIGN TOKENS (MODO CLARO OVERRIDES) ────────────────── */
 [data-theme="light"],
-.tv-av-page[data-theme="light"],
 .tv-landing-page[data-theme="light"] {
   --bg:        #f4f7fc !important;
   --bg-2:      #ffffff !important;
@@ -51,10 +47,10 @@
   --cyan:      #0284c7 !important;
   --orange:    #1d4ed8 !important;
   --orange-g:  linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%) !important;
+  color-scheme: light;
 }
 
 /* ── 3. BASE SCOPING & RESETS ───────────────────────────────── */
-.tv-av-page,
 .tv-landing-page {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   background: var(--bg);
@@ -66,18 +62,19 @@
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.tv-av-page *, .tv-av-page *::before, .tv-av-page *::after,
-.tv-landing-page *, .tv-landing-page *::before, .tv-landing-page *::after {
+.tv-landing-page *, 
+.tv-landing-page *::before, 
+.tv-landing-page *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-.tv-av-page img, .tv-landing-page img { max-width: 100%; display: block; }
-.tv-av-page a, .tv-landing-page a   { color: inherit; text-decoration: none; }
-.tv-av-page ul, .tv-av-page ol, .tv-landing-page ul, .tv-landing-page ol { list-style: none; }
+.tv-landing-page img { max-width: 100%; display: block; }
+.tv-landing-page a   { color: inherit; text-decoration: none; }
+.tv-landing-page ul, 
+.tv-landing-page ol  { list-style: none; }
 
-.tv-av-page .container,
 .tv-landing-page .container {
   width: 100%;
   max-width: 1200px;
@@ -85,10 +82,395 @@
   padding: 0 24px;
 }
 
-/* ── 4. BOTONES GLOBALES ───────────────────────────────────── */
-.tv-av-page .btn-primary,
-.tv-landing-page .btn-primary,
-.btn-grad {
+/* ── 4. SISTEMA DE MATRICES MÚLTIPLOS DE 2 (1x2, 2x2, 2x4) ──── */
+.tv-grid-1x2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  align-items: center;
+}
+
+.tv-grid-2x2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.tv-grid-2x4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 992px) {
+  .tv-grid-2x4 { grid-template-columns: repeat(2, 1fr); }
+  .tv-grid-1x2 { gap: 28px; }
+}
+
+@media (max-width: 768px) {
+  .tv-grid-1x2,
+  .tv-grid-2x2,
+  .tv-grid-2x4 {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* ── 5. CLASES MODULARES PARA SECCIONES REUTILIZABLES ───────── */
+
+/* 5.1 SECCIÓN HERO (.tv-sec-hero) */
+.tv-sec-hero {
+  position: relative;
+  padding: 72px 0 100px;
+  overflow: hidden;
+}
+
+.tv-sec-hero .hero-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.tv-sec-hero .hero-bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,200,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,200,255,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 30%, transparent 100%);
+}
+
+.tv-sec-hero .hero-blob {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(90px);
+  opacity: 0.12;
+}
+
+.tv-sec-hero .hero-blob-1 { width:550px; height:550px; background:#00c8ff; top:-120px; left:-80px; }
+.tv-sec-hero .hero-blob-2 { width:350px; height:350px; background:#2a73ff; bottom:0; right:-60px; }
+
+.tv-sec-hero .hero-title {
+  font-size: clamp(34px, 4vw, 56px);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  margin-bottom: 20px;
+}
+
+.tv-sec-hero .grad-orange {
+  background: var(--orange-g);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.tv-sec-hero .hero-lead {
+  font-size: 16px;
+  color: var(--text-2);
+  line-height: 1.7;
+  margin-bottom: 32px;
+  max-width: 540px;
+}
+
+.tv-sec-hero .hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+/* KPIs de Hero */
+.tv-sec-hero .hero-kpis {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.tv-sec-hero .hero-kpi {
+  padding: 18px 12px;
+  text-align: center;
+  border-right: 1px solid var(--border);
+}
+
+.tv-sec-hero .hero-kpi:last-child { border-right: 0; }
+
+.tv-sec-hero .hero-kpi-val {
+  font-size: 26px;
+  font-weight: 900;
+  background: var(--orange-g);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.tv-sec-hero .hero-kpi-label {
+  font-size: 11px;
+  color: var(--text-2);
+  margin-top: 4px;
+}
+
+/* Hero Visual / Problemas */
+.tv-sec-hero .hero-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.tv-sec-hero .hero-visual-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.tv-sec-hero .problem-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.tv-sec-hero .problem-card:hover {
+  transform: translateX(4px);
+  border-color: var(--border-h);
+}
+
+.tv-sec-hero .problem-icon {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.tv-sec-hero .problem-card strong {
+  display: block;
+  font-size: 14px;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+
+.tv-sec-hero .problem-card span {
+  font-size: 12px;
+  color: var(--text-2);
+}
+
+/* 5.2 SECCIÓN CARRUSEL DE MARCAS (.tv-sec-carousel) */
+.tv-sec-carousel {
+  padding: 30px 0;
+  background: var(--bg-2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.tv-sec-carousel .brand-carousel-wrapper {
+  display: flex;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.tv-sec-carousel .brand-carousel-track {
+  display: flex;
+  gap: 60px;
+  width: max-content;
+  animation: tv-carousel-scroll 30s linear infinite;
+}
+
+.tv-sec-carousel .brand-carousel-track:hover { animation-play-state: paused; }
+
+.tv-sec-carousel .brand-carousel-item {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-2);
+  transition: color 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+
+.tv-sec-carousel .brand-carousel-item:hover {
+  color: var(--cyan);
+  transform: scale(1.06);
+}
+
+@keyframes tv-carousel-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* 5.3 SECCIÓN PORTAFOLIO (.tv-sec-portfolio) */
+.tv-sec-portfolio {
+  padding: 90px 0;
+}
+
+.tv-sec-portfolio .section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.tv-sec-portfolio .section-tag {
+  display: inline-block;
+  padding: 4px 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 12px;
+}
+
+.tv-sec-portfolio .section-title {
+  font-size: clamp(26px, 3vw, 40px);
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.tv-sec-portfolio .portfolio-card {
+  padding: 32px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tv-sec-portfolio .portfolio-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-h);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+}
+
+.tv-sec-portfolio .portfolio-icon {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+.tv-sec-portfolio .portfolio-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.tv-sec-portfolio .portfolio-card p {
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.6;
+}
+
+/* 5.4 SECCIÓN PROCESOS (.tv-sec-process) */
+.tv-sec-process {
+  padding: 80px 0;
+  background: var(--bg-2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.tv-sec-process .process-card {
+  padding: 28px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.tv-sec-process .process-card:hover { transform: translateY(-3px); }
+
+.tv-sec-process .process-step {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--cyan);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+/* 5.5 SECCIÓN PREGUNTAS FRECUENTES (.tv-sec-faq) */
+.tv-sec-faq {
+  padding: 90px 0;
+}
+
+.tv-sec-faq .faq-item {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  margin-bottom: 14px;
+  background: var(--bg-2);
+  overflow: hidden;
+}
+
+.tv-sec-faq .faq-question {
+  width: 100%;
+  padding: 20px 24px;
+  background: transparent;
+  border: none;
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tv-sec-faq .faq-answer {
+  padding: 0 24px 20px;
+  color: var(--text-2);
+  font-size: 14px;
+  line-height: 1.65;
+  display: none;
+}
+
+.tv-sec-faq .faq-item.active .faq-answer { display: block; }
+
+/* 5.6 SECCIÓN CTA BANNER (.tv-sec-cta) */
+.tv-sec-cta {
+  padding: 80px 0;
+  background: var(--bg-2);
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.tv-sec-cta .cta-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.tv-sec-cta h2 {
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 900;
+  margin-bottom: 16px;
+}
+
+.tv-sec-cta p {
+  font-size: 16px;
+  color: var(--text-2);
+  margin-bottom: 32px;
+}
+
+.tv-sec-cta .cta-contact-strip {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  font-size: 14px;
+  color: var(--text-2);
+}
+
+/* ── 6. BOTONES GLOBALES ───────────────────────────────────── */
+.btn-primary, .tv-landing-page .btn-primary {
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -102,19 +484,14 @@
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   box-shadow: 0 0 28px rgba(42,115,255,0.4);
-  text-decoration: none;
 }
 
-.tv-av-page .btn-primary:hover,
-.tv-landing-page .btn-primary:hover,
-.btn-grad:hover {
+.btn-primary:hover, .tv-landing-page .btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 36px rgba(42,115,255,0.5);
 }
 
-.tv-av-page .btn-secondary,
-.tv-landing-page .btn-secondary,
-.btn-outline {
+.btn-secondary, .tv-landing-page .btn-secondary {
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -127,18 +504,15 @@
   border: 1px solid var(--border);
   cursor: pointer;
   transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
-  text-decoration: none;
 }
 
-.tv-av-page .btn-secondary:hover,
-.tv-landing-page .btn-secondary:hover,
-.btn-outline:hover {
+.btn-secondary:hover, .tv-landing-page .btn-secondary:hover {
   background: var(--surface-h);
   border-color: var(--border-h);
   transform: translateY(-2px);
 }
 
-/* ── 5. BOTÓN FLOTANTE MODO CLARO / OSCURO ─────────────────── */
+/* ── 7. BOTÓN FLOTANTE MODO CLARO / OSCURO ─────────────────── */
 .tv-theme-toggle-btn {
   position: fixed;
   bottom: 24px;
@@ -148,7 +522,7 @@
   align-items: center;
   gap: 8px;
   padding: 10px 18px;
-  background: rgba(15, 23, 42, 0.85);
+  background: rgba(15, 23, 42, 0.88);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -158,51 +532,50 @@
   font-weight: 600;
   cursor: pointer;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.36);
-  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-.tv-theme-toggle-btn:hover {
-  transform: translateY(-2px) scale(1.02);
-  border-color: var(--accent);
-}
+.tv-theme-toggle-btn:hover { transform: translateY(-2px) scale(1.02); }
 
 .theme-icon-sun { display: inline-block; }
 .theme-icon-moon { display: none; }
 
 [data-theme="light"] .theme-icon-sun,
-.tv-av-page[data-theme="light"] .theme-icon-sun,
-.tv-landing-page[data-theme="light"] .theme-icon-sun {
-  display: none;
-}
+.tv-landing-page[data-theme="light"] .theme-icon-sun { display: none; }
 
 [data-theme="light"] .theme-icon-moon,
-.tv-av-page[data-theme="light"] .theme-icon-moon,
-.tv-landing-page[data-theme="light"] .theme-icon-moon {
-  display: inline-block;
-}
+.tv-landing-page[data-theme="light"] .theme-icon-moon { display: inline-block; }
 
 [data-theme="light"] .tv-theme-toggle-btn,
-.tv-av-page[data-theme="light"] .tv-theme-toggle-btn,
 .tv-landing-page[data-theme="light"] .tv-theme-toggle-btn {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.92);
   color: #0f172a;
   border: 1px solid rgba(0, 0, 0, 0.15);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
 }
 
-/* ── 6. ANIMACIONES Y FADE-IN ──────────────────────────────── */
-.fade-in {
+/* ── 8. HOOKS DE ANIMACIÓN MODULARES Y EXTENSIBLES ─────────── */
+.tv-anim-fade-in,
+.tv-anim-slide-up,
+.tv-anim-scale,
+.tv-anim-stagger {
   opacity: 0;
-  transform: translateY(20px);
   transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.fade-in.visible {
+.tv-anim-slide-up { transform: translateY(30px); }
+.tv-anim-scale    { transform: scale(0.94); }
+.tv-anim-fade-in  { transform: translateY(15px); }
+
+.tv-anim-fade-in.visible,
+.tv-anim-slide-up.visible,
+.tv-anim-scale.visible,
+.tv-anim-stagger.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
 
-.fade-delay-1 { transition-delay: 0.1s; }
-.fade-delay-2 { transition-delay: 0.2s; }
-.fade-delay-3 { transition-delay: 0.3s; }
-.fade-delay-4 { transition-delay: 0.4s; }
+/* Stagger delays */
+.tv-delay-1 { transition-delay: 0.1s; }
+.tv-delay-2 { transition-delay: 0.2s; }
+.tv-delay-3 { transition-delay: 0.3s; }
+.tv-delay-4 { transition-delay: 0.4s; }

@@ -1,7 +1,6 @@
 /* ─────────────────────────────────────────────────────────────────
    TECNOVOA — Master Global JavaScript
-   Uso: Cargar este archivo JS en WordPress para controlar el tema
-   Light/Dark, animaciones IntersectionObserver y scroll suave.
+   Versión: Modular & Extensible (Control de Tema, Animaciones, FAQ)
 ───────────────────────────────────────────────────────────────── */
 (function() {
   'use strict';
@@ -11,7 +10,6 @@
     var toggleBtn = document.getElementById('tv-theme-toggle');
     var targets = [
       document.documentElement,
-      document.querySelector('.tv-av-page'),
       document.querySelector('.tv-landing-page')
     ].filter(Boolean);
 
@@ -42,10 +40,11 @@
     }
   }
 
-  /* ── 2. ANIMACIONES EN SCROLL (INTERSECTION OBSERVER) ────────── */
+  /* ── 2. OBSERVER DE ANIMACIONES MODULARES ───────────────────── */
   function initAnimations() {
-    var fadeEls = document.querySelectorAll('.fade-in');
-    if (!fadeEls.length) return;
+    var animSelector = '.tv-anim-fade-in, .tv-anim-slide-up, .tv-anim-scale, .tv-anim-stagger, .fade-in';
+    var animEls = document.querySelectorAll(animSelector);
+    if (!animEls.length) return;
 
     if ('IntersectionObserver' in window) {
       var io = new IntersectionObserver(function(entries) {
@@ -57,15 +56,34 @@
         });
       }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
 
-      fadeEls.forEach(function(el) { io.observe(el); });
+      animEls.forEach(function(el) { io.observe(el); });
     } else {
-      fadeEls.forEach(function(el) { el.classList.add('visible'); });
+      animEls.forEach(function(el) { el.classList.add('visible'); });
     }
   }
 
-  /* ── 3. NAVEGACIÓN SUAVE DE ANCLAS (#) ────────────────────────── */
+  /* ── 3. ACORDEÓN DE PREGUNTAS FRECUENTES (FAQ) ──────────────── */
+  function initFAQ() {
+    document.querySelectorAll('.tv-sec-faq .faq-question').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = btn.closest('.faq-item');
+        if (!item) return;
+        var isActive = item.classList.contains('active');
+        // Cerrar otros del mismo acordeón
+        var parent = item.parentElement;
+        if (parent) {
+          parent.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('active'); });
+        }
+        if (!isActive) {
+          item.classList.add('active');
+        }
+      });
+    });
+  }
+
+  /* ── 4. NAVEGACIÓN SUAVE DE ANCLAS (#) ────────────────────────── */
   function initSmoothScroll() {
-    document.querySelectorAll('.tv-av-page a[href^="#"], .tv-landing-page a[href^="#"]').forEach(function(a) {
+    document.querySelectorAll('.tv-landing-page a[href^="#"]').forEach(function(a) {
       a.addEventListener('click', function(e) {
         var href = a.getAttribute('href');
         if (href && href.length > 1) {
@@ -79,19 +97,12 @@
     });
   }
 
-  /* ── 4. HELPER DE GRID SPAN ─────────────────────────────────── */
-  function fixSpan() {
-    var span2 = document.querySelector('.tv-span-2');
-    if (!span2) return;
-    span2.style.gridColumn = window.innerWidth <= 480 ? '' : 'span 2';
-  }
-
   /* ── INICIALIZACIÓN GLOBAL ───────────────────────────────────── */
   function initAll() {
     initTheme();
     initAnimations();
+    initFAQ();
     initSmoothScroll();
-    fixSpan();
   }
 
   if (document.readyState === 'loading') {
@@ -99,6 +110,4 @@
   } else {
     initAll();
   }
-
-  window.addEventListener('resize', fixSpan, { passive: true });
 })();
