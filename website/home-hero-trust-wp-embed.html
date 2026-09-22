@@ -15,6 +15,39 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
+<style>
+/* TECNOVOA Master CSS Embedded for Standalone & WP Embed Independence */
+:root, [data-theme="dark"], .tv-home-b2b-embed {
+  --bg: #080d1a; --bg-2: #0c1224; --bg-3: #111829;
+  --surface: rgba(255,255,255,0.02); --surface-h: rgba(255,255,255,0.06);
+  --border: rgba(255,255,255,0.05); --border-h: rgba(42,115,255,0.4);
+  --text: #f0f4ff; --text-2: #8b9ab5; --text-3: #5a6a84;
+  --accent: #2a73ff; --accent-2: #00c8ff;
+  --accent-g: linear-gradient(135deg, #2a73ff 0%, #00c8ff 100%);
+  --cyan: #00c8ff; --orange: #00c8ff;
+  --orange-g: linear-gradient(135deg, #00c8ff 0%, #2a73ff 100%);
+  --radius-sm: 8px; --radius-md: 14px; --radius-lg: 22px;
+}
+[data-theme="light"], .tv-home-b2b-embed[data-theme="light"] {
+  --bg: #f4f7fc !important; --bg-2: #ffffff !important; --bg-3: #e9eff8 !important;
+  --surface: rgba(0,0,0,0.03) !important; --surface-h: rgba(0,0,0,0.06) !important;
+  --border: rgba(0,0,0,0.08) !important; --border-h: rgba(29,78,216,0.4) !important;
+  --text: #0f172a !important; --text-2: #475569 !important; --text-3: #64748b !important;
+  --accent: #1d4ed8 !important; --accent-2: #0284c7 !important;
+  --accent-g: linear-gradient(135deg, #1d4ed8 0%, #0284c7 100%) !important;
+  --cyan: #0284c7 !important; --orange: #1d4ed8 !important;
+  --orange-g: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%) !important;
+  color-scheme: light;
+}
+.tv-theme-toggle-btn { position: fixed; bottom: 24px; right: 24px; z-index: 9999; display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; background: rgba(15, 23, 42, 0.88); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 99px; color: #f8fafc; font-size: 13px; font-weight: 600; cursor: pointer; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.36); transition: transform 0.2s ease, background-color 0.2s ease; }
+.tv-theme-toggle-btn:hover { transform: translateY(-2px) scale(1.02); }
+.theme-icon-sun { display: inline-block; }
+.theme-icon-moon { display: none; }
+[data-theme="light"] .theme-icon-sun, .tv-home-b2b-embed[data-theme="light"] .theme-icon-sun { display: none; }
+[data-theme="light"] .theme-icon-moon, .tv-home-b2b-embed[data-theme="light"] .theme-icon-moon { display: inline-block; }
+[data-theme="light"] .tv-theme-toggle-btn, .tv-home-b2b-embed[data-theme="light"] .tv-theme-toggle-btn { background: rgba(255, 255, 255, 0.92); color: #0f172a; border: 1px solid rgba(0, 0, 0, 0.15); }
+</style>
+
 <div class="tv-home-b2b-embed" id="tv-home-root">
 
   <!-- SECCIÓN 1: HERO -->
@@ -277,4 +310,176 @@
   
 </div>
 
-<!-- Theme Toggle Button -->
+  <button class="tv-theme-toggle-btn" id="tv-theme-toggle" aria-label="Cambiar tema claro/oscuro">
+    <span class="theme-icon-sun">☀️</span>
+    <span class="theme-icon-moon">🌙</span>
+    <span class="theme-toggle-text">Modo Claro</span>
+  </button>
+
+<script>
+(function() {
+  var archData = {
+    redes: {
+      badgeText: "Topología LAN / WiFi 6",
+      img: "img/telecomunicaciones-redes-isometric.jpg",
+      alt: "Arquitectura Técnica de Telecomunicaciones y Redes TECNOVOA",
+      tag: "Unidad de Negocio 01",
+      title: "Redes Empresariales, WiFi de Alta Densidad y Fibra Óptica",
+      desc: "Diseñamos e implementamos infraestructuras de red de alta disponibilidad con topología de doble núcleo, segmentación por VLAN y monitoreo centralizado en la nube para garantizar cero caídas en tu operación.",
+      specs: [
+        "<strong>Core & Switching:</strong> Cisco Catalyst, Meraki y Extreme Networks con redundancia L3.",
+        "<strong>WiFi Empresarial:</strong> Ubiquiti UniFi y Meraki con Site Survey predictivo Ekahau.",
+        "<strong>Cableado Estructurado:</strong> Cat 6A / Fibra óptica con certificación Fluke Networks AS-BUILT."
+      ],
+      link: "https://tecnovoa.cl/servicios-ti/telecomunicaciones-y-redes/",
+      linkText: "Ver catálogo técnico de redes",
+      partners: "Partners: <strong>Cisco</strong> · <strong>Ubiquiti</strong> · <strong>Extreme</strong> · <strong>Fluke</strong>"
+    },
+    av: {
+      badgeText: "Salas Híbridas & Ecosistema AV",
+      img: "img/audio-video-colaboracion-isometric.jpg",
+      alt: "Arquitectura Técnica de Audio y Video Colaboración TECNOVOA",
+      tag: "Unidad de Negocio 03",
+      title: "Audio & Video Colaboración y Salas de Reunión Inteligentes",
+      desc: "Transformamos espacios corporativos en centros de colaboración híbrida con tecnologías de videoconferencia de alta definición, cancelación de ruido con IA y automatización táctil.",
+      specs: [
+        "<strong>Pantallas Interactivas:</strong> HUAWEI IdeaHub 4K con pizarra inteligente y doble SO.",
+        "<strong>Sistemas de Videoconferencia:</strong> Logitech Rally Bar, Tap Controller y Neat Bar.",
+        "<strong>Audio Profesional:</strong> Microfonía de techo Shure Microflex Advance y procesadores QSC."
+      ],
+      link: "https://tecnovoa.cl/servicios-ti/audio-y-video-colaboracion/",
+      linkText: "Ver soluciones de Audio & Video",
+      partners: "Partners: <strong>HUAWEI</strong> · <strong>Logitech</strong> · <strong>Neat</strong> · <strong>Shure</strong> · <strong>QSC</strong>"
+    },
+    ciber: {
+      badgeText: "Perímetro Zero Trust & SOC",
+      img: "img/ciberseguridad-isometric.jpg",
+      alt: "Arquitectura Técnica de Ciberseguridad TECNOVOA",
+      tag: "Unidad de Negocio 04",
+      title: "Ciberseguridad Perimetral, Endpoint & Cumplimiento Normativo",
+      desc: "Protegemos la infraestructura digital de tu empresa contra amenazas avanzadas, ransomware y accesos no autorizados con un enfoque multicapa y políticas de Zero Trust.",
+      specs: [
+        "<strong>Firewalls de Próxima Generación:</strong> Fortinet FortiGate con inspección SSL y SD-WAN.",
+        "<strong>Protección Endpoint & XDR:</strong> Sophos Intercept X con EDR asistido por IA.",
+        "<strong>Cumplimiento & Auditoría:</strong> Evaluaciones de vulnerabilidad y alineación ISO 27001."
+      ],
+      link: "https://tecnovoa.cl/servicios-ti/ciberseguridad/",
+      linkText: "Ver soluciones de Ciberseguridad",
+      partners: "Partners: <strong>Fortinet</strong> · <strong>Sophos</strong> · <strong>Veeam</strong> · <strong>Microsoft</strong>"
+    },
+    enduser: {
+      badgeText: "Flotas Corporativas & Cloud Workspace",
+      img: "img/enduser-computing-isometric.jpg",
+      alt: "Arquitectura Técnica de End-User Computing TECNOVOA",
+      tag: "Unidad de Negocio 06",
+      title: "Hardware End-User, Movilidad & Licenciamiento Corporativo",
+      desc: "Equipamos a tus colaboradores con hardware de alto rendimiento, despliegue automatizado en la nube y licencias oficiales organizadas para el trabajo moderno.",
+      specs: [
+        "<strong>Equipamiento Computacional:</strong> Notebooks Lenovo ThinkPad, Dell Latitude y Workstations HP.",
+        "<strong>Licenciamiento Empresarial:</strong> Microsoft 365 Enterprise, Google Workspace y Adobe.",
+        "<strong>Gestión de Dispositivos:</strong> MDM / Intune para provisión remota y borrado seguro."
+      ],
+      link: "https://tecnovoa.cl/servicios-ti/end-user-computing/",
+      linkText: "Ver catálogo de End-User Computing",
+      partners: "Partners: <strong>Lenovo</strong> · <strong>Dell</strong> · <strong>Microsoft</strong> · <strong>HP</strong>"
+    },
+    energia: {
+      badgeText: "Respaldo Eléctrico & Vigilancia IP",
+      img: "img/energia-seguridad-isometric.jpg",
+      alt: "Arquitectura Técnica de Energía y Seguridad TECNOVOA",
+      tag: "Unidad de Negocio 07",
+      title: "Energía Crítica UPS, Climatización de Datacenter & CCTV IP",
+      desc: "Aseguramos el suministro continuo de energía limpia para tus equipos críticos y la protección física de tus instalaciones con analítica de video avanzada.",
+      specs: [
+        "<strong>Sistemas UPS Corporativos:</strong> Eaton y Legrand de doble conversión para racks y datacenters.",
+        "<strong>Climatización de Precisión:</strong> Sistemas in-row e in-rack para control térmico 24/7.",
+        "<strong>Seguridad Física & CCTV:</strong> Cámaras IP de alta resolución, NVRs redundantes y control de acceso."
+      ],
+      link: "https://tecnovoa.cl/servicios-ti/energia-y-seguridad/",
+      linkText: "Ver soluciones de Energía & Seguridad",
+      partners: "Partners: <strong>Eaton</strong> · <strong>Legrand</strong> · <strong>Schneider</strong> · <strong>Hikvision</strong>"
+    }
+  };
+
+  function init3DExplorer() {
+    var tabs = document.querySelectorAll('.tv-arch-tab');
+    if (!tabs.length) return;
+    tabs.forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        var unitKey = this.getAttribute('data-unit');
+        var data = archData[unitKey];
+        if (!data) return;
+
+        tabs.forEach(function(t) {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        this.classList.add('active');
+        this.setAttribute('aria-selected', 'true');
+
+        var badgeTextEl = document.getElementById('tv-arch-badge-text');
+        var imgEl = document.getElementById('tv-arch-image');
+        var tagEl = document.getElementById('tv-arch-tag');
+        var titleEl = document.getElementById('tv-arch-title');
+        var descEl = document.getElementById('tv-arch-desc');
+        var specsEl = document.getElementById('tv-arch-specs');
+        var linkEl = document.getElementById('tv-arch-link');
+        var partnersEl = document.getElementById('tv-arch-partners');
+
+        if (badgeTextEl) badgeTextEl.textContent = data.badgeText;
+        if (imgEl) {
+          imgEl.src = data.img;
+          imgEl.alt = data.alt;
+        }
+        if (tagEl) tagEl.textContent = data.tag;
+        if (titleEl) titleEl.textContent = data.title;
+        if (descEl) descEl.textContent = data.desc;
+        if (specsEl) {
+          specsEl.innerHTML = data.specs.map(function(s) {
+            return '<div class="tv-arch-spec-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg><div>' + s + '</div></div>';
+          }).join('');
+        }
+        if (linkEl) {
+          linkEl.href = data.link;
+          linkEl.innerHTML = data.linkText + ' <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+        }
+        if (partnersEl) partnersEl.innerHTML = data.partners;
+      });
+    });
+  }
+
+  function applyTheme(theme) {
+    var targets = [document.documentElement, document.body];
+    document.querySelectorAll('.tv-home-b2b-embed, .tv-landing-page').forEach(function(el) { targets.push(el); });
+    targets.forEach(function(el) { el.setAttribute('data-theme', theme); });
+    var toggleBtn = document.getElementById('tv-theme-toggle');
+    if (toggleBtn) {
+      var textSpan = toggleBtn.querySelector('.theme-toggle-text');
+      if (textSpan) textSpan.textContent = theme === 'light' ? 'Modo Oscuro' : 'Modo Claro';
+    }
+    try { localStorage.setItem('tecnovoa-theme', theme); } catch(e) {}
+  }
+
+  function initTheme() {
+    var toggleBtn = document.getElementById('tv-theme-toggle');
+    var savedTheme = 'dark';
+    try { savedTheme = localStorage.getItem('tecnovoa-theme') || 'dark'; } catch(e) {}
+    applyTheme(savedTheme);
+    if (toggleBtn && !toggleBtn.dataset.themeBound) {
+      toggleBtn.dataset.themeBound = 'true';
+      toggleBtn.addEventListener('click', function() {
+        var currentTheme = (document.documentElement.getAttribute('data-theme') || 'dark') === 'light' ? 'light' : 'dark';
+        applyTheme(currentTheme === 'light' ? 'dark' : 'light');
+      });
+    }
+  }
+
+  function initAll() {
+    initTheme();
+    init3DExplorer();
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initAll);
+  else initAll();
+})();
+</script>

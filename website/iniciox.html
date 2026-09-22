@@ -1,8 +1,15 @@
 <!--
   ╔══════════════════════════════════════════════════════════════════╗
-  ║  TECNOVOA — Unidades de Negocio (Página Menú / Servicios TI)     ║
-  ║  Versión: WordPress Embed (sin navbar, sin footer, sin breadcrumb)║
-  ║  Pegar en: Bloque "HTML Personalizado" de WordPress             ║
+  ║  TECNOVOA — Página Inicio / Home Corporativa B2B                ║
+  ║  Versión: WordPress Embed Completo (Sin Navbar / Sin Footer)     ║
+  ║  Pegar en: Bloque "HTML Personalizado" de WordPress              ║
+  ║  Incluye:                                                        ║
+  ║    1. Hero B2B (Propuesta Paraguas + 7 Unidades de Negocio)      ║
+  ║    2. Barra Minimalista de Confianza, Clientes y Partners       ║
+  ║    3. Explorador Interactivo de Arquitecturas 3D de Solución     ║
+  ║    4. Catálogo de las 8 Unidades de Negocio                     ║
+  ║    5. Acordeón Interactivo de Preguntas Frecuentes (FAQ)        ║
+  ║    6. Banner CTA de Contacto y Asesoría Técnica                 ║
   ╚══════════════════════════════════════════════════════════════════╝
 -->
 
@@ -11,20 +18,20 @@
   GUÍA PARA OPTIMIZAR YOAST SEO EN ESTA PÁGINA
   =============================================================================
   1. Frase Clave Objetivo:
-     Servicios de Infraestructura TI
+     Soluciones TI y Comunicaciones para Empresas en Chile
 
   2. Título SEO:
-     8 Unidades de Negocio en Servicios de Infraestructura TI | TECNOVOA
+     TECNOVOA | Integrador Tecnológico Empresarial en Chile
 
   3. Slug:
-     servicios-ti
+     inicio / home
 
   4. Meta Descripción:
-     Descubre las 8 Unidades de Negocio de TECNOVOA: Datacenter, Redes, Audio/Video, Ciberseguridad, Respaldo de Datos, EndUser, Energía y Virtualización.
+     Integrador estratégico de soluciones TI para empresas en Chile: Networking, Datacenter, Ciberseguridad, Audio/Video, Respaldo y Energía Crítica.
   =============================================================================
 -->
 
-<!-- Google Fonts -->
+<!-- Google Fonts Inter -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -1574,608 +1581,662 @@
 }
 </style>
 
-<div class="tv-landing-page" id="tv-unidades-top">
+<div class="tv-home-b2b-embed" id="tv-home-root">
 
-  <!-- ══════════════════════════════════════════════════════ -->
-  <!--  HERO SECTION                                          -->
-  <!-- ══════════════════════════════════════════════════════ -->
-  <section id="unidades-hero" aria-labelledby="unidades-hero-title">
-    <div class="hero-bg" aria-hidden="true">
-      <div class="hero-stock-img"></div>
-      <div class="hero-bg-grid"></div>
-      <div class="hero-blob hero-blob-1"></div>
-      <div class="hero-blob hero-blob-2"></div>
-    </div>
+  <!-- SECCIÓN 1: HERO B2B -->
+  <section class="tv-hero-section" aria-label="Soluciones TI TECNOVOA">
+    <div class="tv-hero-subtle-grid" aria-hidden="true"></div>
 
-    <div class="container">
-      <div class="hero-inner">
+    <div class="tv-container">
+      <div class="tv-hero-grid">
+        <!-- Columna Izquierda: Mensaje Paraguas B2B -->
+        <div class="tv-hero-content">
+          <div class="tv-hero-eyebrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            Integrador Tecnológico Empresarial · Chile
+          </div>
 
-        <!-- Copy izquierdo -->
-        <div>
-          <h1 class="hero-title" id="unidades-hero-title">
-            8 Unidades de Negocio<br><span class="grad-blue">especializadas en TI</span>
+          <h1 class="tv-hero-title">
+            Soluciones tecnológicas integrales y continuidad para <span class="tv-blue-accent">empresas en Chile</span>
           </h1>
 
-          <p class="hero-lead">
-            Soluciones integradas de infraestructura tecnológica, comunicaciones, energía crítica, ciberseguridad y servicios gestionados para respaldar la continuidad operacional de su empresa en todo Chile.
+          <p class="tv-hero-lead">
+            Un único socio estratégico para diseñar, equipar y operar toda tu infraestructura de TI y comunicaciones. Integramos hardware, software y soporte de misión crítica con acompañamiento experto y tiempos de respuesta garantizados.
           </p>
 
-          <div class="hero-actions">
-            <a href="https://tecnovoa.cl/contacto/" class="btn-primary" id="unidades-hero-cta">
-              Cotizar soluciones
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="tv-hero-actions">
+            <a href="https://tecnovoa.cl/contacto/" class="tv-btn-primary">
+              Solicitar asesoría técnica
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
-            <a href="#unidades-grid-section" class="btn-secondary">
-              Ver unidades de negocio
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10M4 9l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <a href="#arquitecturas-3d" class="tv-btn-secondary">
+              Explorar arquitecturas 3D
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
           </div>
 
-          <!-- KPIs -->
-          <div class="hero-kpis" role="list" aria-label="Métricas del portafolio">
-            <div class="hero-kpi" role="listitem">
-              <div class="hero-kpi-val">8</div>
-              <div class="hero-kpi-label">Divisiones especializadas</div>
+          <div class="tv-hero-pillars">
+            <div class="tv-pillar-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+              Respuesta SLA &lt; 2h garantizada
             </div>
-            <div class="hero-kpi" role="listitem">
-              <div class="hero-kpi-val">100%</div>
-              <div class="hero-kpi-label">Cobertura en todo Chile</div>
+            <div class="tv-pillar-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+              Ingenieros certificados en Chile
             </div>
-            <div class="hero-kpi" role="listitem">
-              <div class="hero-kpi-val">15+</div>
-              <div class="hero-kpi-label">Marcas aliadas globales</div>
+            <div class="tv-pillar-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+              Alianzas directas con fabricantes
             </div>
           </div>
         </div>
 
-        <!-- Visual derecho: problemas que resolvemos -->
-        <div class="hero-visual" role="list" aria-label="Beneficios de integrar con TECNOVOA">
-          <div class="hero-visual-label">Por qué elegir TECNOVOA</div>
-          <div class="problem-card" role="listitem">
-            <div class="problem-icon" aria-hidden="true">🏢</div>
+        <!-- Columna Derecha: Selector de las 7 Unidades -->
+        <div class="tv-units-card" aria-label="Ecosistema de soluciones TECNOVOA">
+          <div class="tv-units-header">
             <div>
-              <strong>Proveedor Único de TI</strong>
-              <span>Evite coordinar múltiples contratistas; centralizamos redes, servidores, energía y ciberseguridad.</span>
+              <span class="tv-units-tag">Ecosistema Integral</span>
+              <h3 class="tv-units-title">7 Unidades de Negocio</h3>
+            </div>
+            <div class="tv-units-status">
+              <span class="tv-status-dot" aria-hidden="true"></span>
+              <span>Operación Activa</span>
             </div>
           </div>
-          <div class="problem-card" role="listitem">
-            <div class="problem-icon" aria-hidden="true">⚡</div>
-            <div>
-              <strong>Alta Disponibilidad 24/7</strong>
-              <span>Infraestructura diseñada con redundancia para evitar caídas de servicio y paradas no planificadas.</span>
-            </div>
-          </div>
-          <div class="problem-card" role="listitem">
-            <div class="problem-icon" aria-hidden="true">📐</div>
-            <div>
-              <strong>Ingeniería Right-Sizing</strong>
-              <span>Dimensionamiento exacto según su demanda actual y proyección de crecimiento futuro.</span>
-            </div>
-          </div>
-          <div class="problem-card" role="listitem">
-            <div class="problem-icon" aria-hidden="true">🤝</div>
-            <div>
-              <strong>Garantía Oficial de Fábrica</strong>
-              <span>Respaldados directamente por las marcas más prestigiosas de la industria de la tecnología.</span>
-            </div>
+
+          <div class="tv-units-list">
+            <!-- 1. Redes -->
+            <a href="https://tecnovoa.cl/servicios-ti/telecomunicaciones-y-redes/" class="tv-unit-row">
+              <div class="tv-unit-row-icon" style="background:#eff6ff;color:#2563eb" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+              </div>
+              <div class="tv-unit-row-body">
+                <div class="tv-unit-row-title">Telecomunicaciones y Redes</div>
+                <div class="tv-unit-row-desc">Cisco, Extreme, WiFi empresarial, Fibra óptica y cableado</div>
+              </div>
+              <svg class="tv-unit-row-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </a>
+
+            <!-- 2. Datacenter -->
+            <a href="https://tecnovoa.cl/servicios-ti/datacenter-y-cloud/" class="tv-unit-row">
+              <div class="tv-unit-row-icon" style="background:#f0fdf4;color:#16a34a" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+              </div>
+              <div class="tv-unit-row-body">
+                <div class="tv-unit-row-title">Datacenter y Cloud</div>
+                <div class="tv-unit-row-desc">Servidores Lenovo/Dell, Proxmox VE, Nube híbrida y HCI</div>
+              </div>
+              <svg class="tv-unit-row-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </a>
+
+            <!-- 3. Audio Video -->
+            <a href="https://tecnovoa.cl/servicios-ti/audio-y-video-colaboracion/" class="tv-unit-row">
+              <div class="tv-unit-row-icon" style="background:#fff7ed;color:#ea580c" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+              </div>
+              <div class="tv-unit-row-body">
+                <div class="tv-unit-row-title">Audio Video Colaboración</div>
+                <div class="tv-unit-row-desc">Salas híbridas, Pantallas interactivas HUAWEI IdeaHub, Logitech</div>
+              </div>
+              <svg class="tv-unit-row-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </a>
+
+            <!-- 4. Ciberseguridad -->
+            <a href="https://tecnovoa.cl/servicios-ti/ciberseguridad/" class="tv-unit-row">
+              <div class="tv-unit-row-icon" style="background:#fef2f2;color:#dc2626" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div class="tv-unit-row-body">
+                <div class="tv-unit-row-title">Ciberseguridad y Cumplimiento</div>
+                <div class="tv-unit-row-desc">Fortinet FortiGate NGFW, Sophos, Zero Trust, ISO 27001</div>
+              </div>
+              <svg class="tv-unit-row-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </a>
+
+            <!-- 5. Respaldo -->
+            <a href="https://tecnovoa.cl/servicios-ti/respaldo-y-archivo/" class="tv-unit-row">
+              <div class="tv-unit-row-icon" style="background:#f5f3ff;color:#7c3aed" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+              </div>
+              <div class="tv-unit-row-body">
+                <div class="tv-unit-row-title">Respaldo y Archivo</div>
+                <div class="tv-unit-row-desc">Veeam, Pure Storage, Western Digital, Bóvedas inmutables anti-ransomware</div>
+              </div>
+              <svg class="tv-unit-row-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </a>
+
+            <!-- 6. EndUser -->
+            <a href="https://tecnovoa.cl/servicios-ti/end-user-computing/" class="tv-unit-row">
+              <div class="tv-unit-row-icon" style="background:#f0f9ff;color:#0284c7" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              </div>
+              <div class="tv-unit-row-body">
+                <div class="tv-unit-row-title">Hardware y Software EndUser</div>
+                <div class="tv-unit-row-desc">Flotas Lenovo ThinkPad, Microsoft 365, licenciamiento empresarial</div>
+              </div>
+              <svg class="tv-unit-row-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </a>
+
+            <!-- 7. Energía -->
+            <a href="https://tecnovoa.cl/servicios-ti/energia-y-seguridad/" class="tv-unit-row">
+              <div class="tv-unit-row-icon" style="background:#fefce8;color:#ca8a04" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </div>
+              <div class="tv-unit-row-body">
+                <div class="tv-unit-row-title">Energía Crítica y Seguridad Física</div>
+                <div class="tv-unit-row-desc">UPS Eaton y Legrand, Climatización de racks, CCTV IP y accesos</div>
+              </div>
+              <svg class="tv-unit-row-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </a>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════════════ -->
-  <!--  CARRUSEL DE MARCAS                                    -->
-  <!-- ══════════════════════════════════════════════════════ -->
-  <section class="brand-carousel-section" aria-label="Nuestras marcas asociadas">
-    <div class="container">
-      <div class="brand-carousel-wrapper">
-        <div class="brand-carousel-track">
-          <div class="brand-carousel-item">Lenovo</div>
-          <div class="brand-carousel-item">Microsoft</div>
-          <div class="brand-carousel-item">Cisco</div>
-          <div class="brand-carousel-item">Fortinet</div>
-          <div class="brand-carousel-item">Veeam</div>
-          <div class="brand-carousel-item">Eaton</div>
-          <div class="brand-carousel-item">Legrand</div>
-          <div class="brand-carousel-item">APC</div>
-          <div class="brand-carousel-item">Vertiv</div>
-          <div class="brand-carousel-item">HPE</div>
-          <div class="brand-carousel-item">Logitech</div>
-          <div class="brand-carousel-item">Shure</div>
-          <!-- Repetición para ciclo infinito -->
-          <div class="brand-carousel-item">Lenovo</div>
-          <div class="brand-carousel-item">Microsoft</div>
-          <div class="brand-carousel-item">Cisco</div>
-          <div class="brand-carousel-item">Fortinet</div>
-          <div class="brand-carousel-item">Veeam</div>
-          <div class="brand-carousel-item">Eaton</div>
-          <div class="brand-carousel-item">Legrand</div>
-          <div class="brand-carousel-item">APC</div>
-          <div class="brand-carousel-item">Vertiv</div>
-          <div class="brand-carousel-item">HPE</div>
-          <div class="brand-carousel-item">Logitech</div>
-          <div class="brand-carousel-item">Shure</div>
+  <!-- SECCIÓN 2: PRUEBA SOCIAL Y CONFIANZA -->
+  <section class="tv-trust-bar" aria-label="Clientes y certificaciones">
+    <div class="tv-container">
+      <div class="tv-trust-bar-inner">
+        <div class="tv-trust-caption">Empresas e instituciones que confían en TECNOVOA</div>
+        <div class="tv-trust-clients">
+          <span class="tv-client-badge">Hospital Militar</span>
+          <span class="tv-trust-sep" aria-hidden="true">·</span>
+          <span class="tv-client-badge">Megamedia</span>
+          <span class="tv-trust-sep" aria-hidden="true">·</span>
+          <span class="tv-client-badge">COMBANC</span>
+          <span class="tv-trust-sep" aria-hidden="true">·</span>
+          <span class="tv-client-badge">COMASA</span>
+          <span class="tv-trust-sep" aria-hidden="true">·</span>
+          <span class="tv-client-badge">DUOC UC</span>
+          <span class="tv-trust-sep" aria-hidden="true">·</span>
+          <span class="tv-client-badge">EFE Trenes</span>
+        </div>
+        <div class="tv-trust-partners-line">
+          <span>Alianzas y certificaciones oficiales:</span>
+          <strong>Cisco</strong> · <strong>Fortinet</strong> · <strong>Lenovo</strong> · <strong>Proxmox VE</strong> · <strong>Western Digital</strong> · <strong>Morpheus</strong> · <strong>Veeam</strong> · <strong>Microsoft</strong> · <strong>Logitech</strong>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════════════ -->
-  <!--  SHOWCASE ARQUITECTURA TÉCNICA 3D                     -->
-  <!-- ══════════════════════════════════════════════════════ -->
-  <section class="arch-showcase-section" id="unidades-showcase" aria-label="Ecosistema de Soluciones TI">
-    <div class="container">
-      <div class="section-header fade-in" style="margin-bottom: 36px;">
-        <div class="section-tag">Ecosistema Tecnológico</div>
-        <h2 class="section-title">
-          Arquitectura Multicapa <span class="grad-blue">Integrada</span>
-        </h2>
-        <p class="section-sub">
-          Desde la capa física de climatización y energía hasta la virtualización, almacenamiento y protección en la nube.
-        </p>
+  <!-- SECCIÓN 3: EXPLORADOR INTERACTIVO 3D DE ARQUITECTURAS -->
+  <section class="tv-arch-section" id="arquitecturas-3d" aria-label="Explorador de Arquitectura Técnica">
+    <div class="tv-container">
+      <div class="tv-arch-header tv-anim-fade-in">
+        <div class="tv-arch-eyebrow">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+          Arquitectura Técnica B2B
+        </div>
+        <h2 class="tv-arch-title">Soluciones diseñadas para la continuidad y escalabilidad de tu empresa</h2>
+        <p class="tv-arch-lead">Explora cómo integramos cada componente físico y lógico en infraestructuras de misión crítica en Chile.</p>
       </div>
 
-      <div class="arch-showcase-card fade-in">
-        <div class="arch-showcase-visual">
-          <div class="arch-showcase-badge">
-            <span class="arch-showcase-badge-dot" aria-hidden="true"></span>
-            <span>Infraestructura 360°</span>
+      <!-- Pestañas interactivas -->
+      <div class="tv-arch-tabs tv-anim-fade-in" role="tablist">
+        <button class="tv-arch-tab active" data-unit="redes" role="tab" aria-selected="true">
+          <span>🖧</span> Redes &amp; Conectividad
+        </button>
+        <button class="tv-arch-tab" data-unit="av" role="tab" aria-selected="false">
+          <span>📽️</span> Salas Híbridas &amp; AV
+        </button>
+        <button class="tv-arch-tab" data-unit="ciber" role="tab" aria-selected="false">
+          <span>🔒</span> Ciberseguridad &amp; SOC
+        </button>
+        <button class="tv-arch-tab" data-unit="enduser" role="tab" aria-selected="false">
+          <span>💻</span> Oficinas &amp; End-User
+        </button>
+        <button class="tv-arch-tab" data-unit="energia" role="tab" aria-selected="false">
+          <span>⚡</span> Energía Crítica &amp; CCTV
+        </button>
+      </div>
+
+      <!-- Contenedor Visual y Desglose Técnico -->
+      <div class="tv-arch-display tv-anim-fade-in" id="tv-arch-display-container">
+        <!-- Visual Izquierdo con la Infografía Isométrica -->
+        <div class="tv-arch-visual">
+          <div class="tv-arch-visual-badge">
+            <span class="tv-arch-visual-badge-dot" aria-hidden="true"></span>
+            <span id="tv-arch-badge-text">Topología LAN / WiFi 6</span>
           </div>
-          <img src="img/energia-seguridad-acceso-isometric.jpg" alt="Ecosistema de Soluciones Integradas TECNOVOA" loading="lazy">
+          <img id="tv-arch-image" src="img/telecomunicaciones-redes-isometric.jpg" alt="Arquitectura Técnica de Telecomunicaciones y Redes TECNOVOA" loading="lazy">
         </div>
 
-        <div class="arch-showcase-content">
-          <div class="arch-showcase-cat">Visión Holística</div>
-          <h3 class="arch-showcase-title">Soluciones Modulares y Escalables</h3>
-          <p class="arch-showcase-desc">
-            En TECNOVOA conectamos cada unidad de negocio para construir ecosistemas de tecnología confiables. Su empresa obtiene un diseño unificado sin cuellos de botella ni incompatibilidades.
+        <!-- Panel Informativo Derecho -->
+        <div class="tv-arch-content">
+          <div class="tv-arch-unit-tag" id="tv-arch-tag">Unidad de Negocio 01</div>
+          <h3 class="tv-arch-content-title" id="tv-arch-title">Redes Empresariales, WiFi de Alta Densidad y Fibra Óptica</h3>
+          <p class="tv-arch-content-desc" id="tv-arch-desc">
+            Diseñamos e implementamos infraestructuras de red de alta disponibilidad con topología de doble núcleo, segmentación por VLAN y monitoreo centralizado en la nube para garantizar cero caídas en tu operación.
           </p>
 
-          <div class="arch-showcase-points">
-            <div class="arch-showcase-point">
+          <div class="tv-arch-specs" id="tv-arch-specs">
+            <div class="tv-arch-spec-item">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <div><strong>Capa Física &amp; Energía:</strong> UPS, tableros, PDUs y aire de precisión.</div>
+              <div><strong>Core &amp; Switching:</strong> Cisco Catalyst, Meraki y Extreme Networks con redundancia L3.</div>
             </div>
-            <div class="arch-showcase-point">
+            <div class="tv-arch-spec-item">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <div><strong>Conectividad &amp; Cómputo:</strong> Switching Cisco/Extreme, servidores Dell/HPE y WiFi Ekahau.</div>
+              <div><strong>WiFi Empresarial:</strong> Ubiquiti UniFi y Meraki con Site Survey predictivo Ekahau.</div>
             </div>
-            <div class="arch-showcase-point">
+            <div class="tv-arch-spec-item">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <div><strong>Seguridad &amp; Nube:</strong> Next-Gen Firewalls Fortinet, Veeam backup inmutable y Azure/Microsoft 365.</div>
+              <div><strong>Cableado Estructurado:</strong> Cat 6A / Fibra óptica con certificación Fluke Networks AS-BUILT.</div>
             </div>
           </div>
 
-          <div style="display: flex; gap: 14px; align-items: center; flex-wrap: wrap;">
-            <a href="https://tecnovoa.cl/contacto/" class="btn-primary" style="padding: 11px 22px; font-size: 13.5px;">
-              Solicitar Asesoría de Arquitectura TI
+          <div class="tv-arch-footer">
+            <a href="https://tecnovoa.cl/servicios-ti/telecomunicaciones-y-redes/" class="tv-arch-btn" id="tv-arch-link">
+              Ver catálogo técnico de redes
               <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
+            <div class="tv-arch-partners" id="tv-arch-partners">
+              Partners: <strong>Cisco</strong> · <strong>Ubiquiti</strong> · <strong>Extreme</strong> · <strong>Fluke</strong>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════════════ -->
-  <!--  GRID DE LAS 8 UNIDADES DE NEGOCIO                    -->
-  <!-- ══════════════════════════════════════════════════════ -->
-  <section id="unidades-grid-section" class="section section-alt" aria-labelledby="unidades-grid-title">
-    <div class="container">
-
-      <div class="section-header fade-in">
-        <div class="section-tag">Portafolio Completo</div>
-        <h2 class="section-title" id="unidades-grid-title">
-          Nuestras 8 Unidades de <span class="grad-blue">Negocio Especializadas</span>
-        </h2>
-        <p class="section-sub">
-          Haz clic en cualquiera de nuestras unidades para conocer en detalle sus soluciones y marcas asociadas.
-        </p>
+  <!-- SECCIÓN 4: CATÁLOGO COMPLETO DE UNIDADES DE NEGOCIO -->
+  <section class="tv-sec-portfolio" aria-label="Nuestras 8 Unidades de Negocio">
+    <div class="tv-container">
+      <div class="tv-arch-header tv-anim-fade-in">
+        <div class="tv-arch-eyebrow">Catálogo Especializado</div>
+        <h2 class="tv-arch-title">8 Unidades de Negocio en Servicios de Infraestructura TI</h2>
+        <p class="tv-arch-lead">Soluciones modulares e integrables adaptadas a los estándares corporativos en Chile.</p>
       </div>
 
-      <div class="portfolio-grid" role="list">
+      <div class="tv-portfolio-grid tv-anim-fade-in">
+        <!-- 1. Telecomunicaciones & Redes -->
+        <div class="portfolio-card">
+          <div>
+            <div class="portfolio-icon">🖧</div>
+            <h3>Telecomunicaciones &amp; Redes</h3>
+            <p>Diseño e instalación de redes corporativas LAN, WiFi 6 de alta densidad, fibra óptica y enlaces de alta velocidad.</p>
+          </div>
+          <a href="https://tecnovoa.cl/servicios-ti/telecomunicaciones-y-redes/" class="portfolio-link">
+            Explorar Unidad
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </a>
+        </div>
 
-        <!-- UN 01: Datacenter y Cloud -->
-        <a href="https://tecnovoa.cl/servicios-ti/datacenter-y-cloud/" class="portfolio-card fade-in fade-delay-1" role="listitem">
-          <div class="portfolio-header">
-            <div class="portfolio-icon" aria-hidden="true">☁️</div>
-            <div>
-              <div class="portfolio-cat">Unidad 01</div>
-              <h3 class="portfolio-title">Datacenter y Cloud</h3>
-            </div>
+        <!-- 2. Datacenter & Cloud -->
+        <div class="portfolio-card">
+          <div>
+            <div class="portfolio-icon">☁️</div>
+            <h3>Datacenter &amp; Cloud</h3>
+            <p>Servidores dedicados Lenovo/Dell, migración de infraestructura, nubes híbridas y almacenamiento HCI.</p>
           </div>
-          <p class="portfolio-desc">
-            Diseño e implementación de infraestructura de Datacenter y plataformas de nube híbrida con consolidación de servidores.
-          </p>
-          <ul class="product-list" role="list">
-            <li class="product-item" role="listitem">
-              <div class="product-dot" aria-hidden="true"></div>
-              <div class="product-item-text"><strong>Servidores y Storage</strong> — Dell PowerEdge, HPE ProLiant y Pure Storage</div>
-            </li>
-            <li class="product-item" role="listitem">
-              <div class="product-dot" aria-hidden="true"></div>
-              <div class="product-item-text"><strong>Nube Híbrida</strong> — Migraciones seguras a Microsoft Azure y AWS</div>
-            </li>
-          </ul>
-          <div class="brand-tags" aria-label="Marcas asociadas">
-            <span class="brand-tag">Nutanix</span>
-            <span class="brand-tag">Dell</span>
-            <span class="brand-tag">HPE</span>
-            <span class="brand-tag">Azure</span>
-          </div>
-          <div class="card-link-btn">
-            Ver detalles de unidad
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-        </a>
+          <a href="https://tecnovoa.cl/servicios-ti/datacenter-y-cloud/" class="portfolio-link">
+            Explorar Unidad
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </a>
+        </div>
 
-        <!-- UN 02: Telecomunicaciones y Redes -->
-        <a href="https://tecnovoa.cl/servicios-ti/telecomunicaciones-y-redes/" class="portfolio-card fade-in fade-delay-2" role="listitem">
-          <div class="portfolio-header">
-            <div class="portfolio-icon" aria-hidden="true">🖧</div>
-            <div>
-              <div class="portfolio-cat">Unidad 02</div>
-              <h3 class="portfolio-title">Telecomunicaciones y Redes</h3>
-            </div>
+        <!-- 3. Audio & Video Colaboración -->
+        <div class="portfolio-card">
+          <div>
+            <div class="portfolio-icon">📽️</div>
+            <h3>Audio &amp; Video Colaboración</h3>
+            <p>Equipamiento de salas de reunión híbridas, pantallas interactivas HUAWEI IdeaHub y videoconferencia Logitech.</p>
           </div>
-          <p class="portfolio-desc">
-            Redes LAN/WAN corporativas, cableado estructurado, fibra óptica y auditoría inalámbrica Site Survey con Ekahau.
-          </p>
-          <ul class="product-list" role="list">
-            <li class="product-item" role="listitem">
-              <div class="product-dot" aria-hidden="true"></div>
-              <div class="product-item-text"><strong>WiFi Corporativo</strong> — Estudio de cobertura con Ekahau Sidekick 2</div>
-            </li>
-            <li class="product-item" role="listitem">
-              <div class="product-dot" aria-hidden="true"></div>
-              <div class="product-item-text"><strong>Switching y Routing</strong> — Cisco Catalyst y Extreme Networks</div>
-            </li>
-          </ul>
-          <div class="brand-tags" aria-label="Marcas asociadas">
-            <span class="brand-tag">Cisco</span>
-            <span class="brand-tag">Extreme</span>
-            <span class="brand-tag">Ekahau</span>
-            <span class="brand-tag">Panduit</span>
-          </div>
-          <div class="card-link-btn">
-            Ver detalles de unidad
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-        </a>
+          <a href="https://tecnovoa.cl/servicios-ti/audio-y-video-colaboracion/" class="portfolio-link">
+            Explorar Unidad
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </a>
+        </div>
 
-        <!-- UN 03: Audio Video Colaboración -->
-        <a href="https://tecnovoa.cl/servicios-ti/audio-video-colaboracion/" class="portfolio-card fade-in fade-delay-3" role="listitem">
-          <div class="portfolio-header">
-            <div class="portfolio-icon" aria-hidden="true">📽️</div>
-            <div>
-              <div class="portfolio-cat">Unidad 03</div>
-              <h3 class="portfolio-title">Audio Video Colaboración</h3>
-            </div>
+        <!-- 4. Ciberseguridad -->
+        <div class="portfolio-card">
+          <div>
+            <div class="portfolio-icon">🔒</div>
+            <h3>Ciberseguridad &amp; SOC</h3>
+            <p>Protección perimetral con Fortinet FortiGate, Sophos XDR, auditorías de seguridad y arquitectura Zero Trust.</p>
           </div>
-          <p class="portfolio-desc">
-            Salas de reuniones inteligentes, pantallas interactivas y ecosistemas profesionales para trabajo híbrido.
-          </p>
-          <ul class="product-list" role="list">
-            <li class="product-item" role="listitem">
-              <div class="product-dot" aria-hidden="true"></div>
-              <div class="product-item-text"><strong>Pantallas Interactivas</strong> — HUAWEI IdeaHub y MAXHUB</div>
-            </li>
-            <li class="product-item" role="listitem">
-              <div class="product-dot" aria-hidden="true"></div>
-              <div class="product-item-text"><strong>Audio Profesional</strong> — Microfonía de techo Shure y Nureva</div>
-            </li>
-          </ul>
-          <div class="brand-tags" aria-label="Marcas asociadas">
-            <span class="brand-tag">HUAWEI</span>
-            <span class="brand-tag">Logitech</span>
-            <span class="brand-tag">Shure</span>
-            <span class="brand-tag">MAXHUB</span>
-          </div>
-          <div class="card-link-btn">
-            Ver detalles de unidad
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-        </a>
+          <a href="https://tecnovoa.cl/servicios-ti/ciberseguridad/" class="portfolio-link">
+            Explorar Unidad
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </a>
+        </div>
 
-        <!-- UN 04: Ciberseguridad -->
-        <a href="https://tecnovoa.cl/servicios-ti/ciberseguridad-para-empresas/" class="portfolio-card fade-in fade-delay-1" role="listitem">
-          <div class="portfolio-header">
-            <div class="portfolio-icon" aria-hidden="true">🛡️</div>
-            <div>
-              <div class="portfolio-cat">Unidad 04</div>
-              <h3 class="portfolio-title">Ciberseguridad y Cumplimiento</h3>
-            </div>
+        <!-- 5. Respaldo & Archivo -->
+        <div class="portfolio-card">
+          <div>
+            <div class="portfolio-icon">💾</div>
+            <h3>Respaldo &amp; Archivo</h3>
+            <p>Planes de recuperación ante desastres (DRP), copias inmutables con Veeam y sistemas de archivo seguro.</p>
           </div>
-          <p class="portfolio-desc">
-            Protección perimetral, Next-Gen Firewalls, protección de endpoints y cumplimiento de normativas de seguridad.
-          </p>
-          <ul class="product-list" role="list">
-            <li class="product-item" role="listitem">
-              <div class="product-dot" aria-hidden="true"></div>
-              <div class="product-item-text"><strong>Firewalls NGFW</strong> — Fortinet FortiGate y licencias UTM</div>
-            </li>
-            <li class="product-item" role="listitem">
-              <div class="product-dot" aria-hidden="true"></div>
-              <div class="product-item-text"><strong>Protección Endpoint</strong> — EDR Kaspersky y análisis Checkmarx</div>
-            </li>
-          </ul>
-          <div class="brand-tags" aria-label="Marcas asociadas">
-            <span class="brand-tag">Fortinet</span>
-            <span class="brand-tag">Kaspersky</span>
-            <span class="brand-tag">Checkmarx</span>
-            <span class="brand-tag">Veeam</span>
-          </div>
-          <div class="card-link-btn">
-            Ver detalles de unidad
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-        </a>
+          <a href="https://tecnovoa.cl/servicios-ti/respaldo-y-archivo/" class="portfolio-link">
+            Explorar Unidad
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </a>
+        </div>
 
-        <!-- UN 05: Respaldo y Archivo / EndUser -->
-        <a href="https://tecnovoa.cl/servicios-ti/respaldo-y-archivo/" class="portfolio-card fade-in fade-delay-2" role="listitem">
-          <div class="portfolio-header">
-            <div class="portfolio-icon" aria-hidden="true">💾</div>
-            <div>
-              <div class="portfolio-cat">Unidad 05</div>
-              <h3 class="portfolio-title">Respaldo y Archivo</h3>
-            </div>
+        <!-- 6. End-User Computing -->
+        <div class="portfolio-card">
+          <div>
+            <div class="portfolio-icon">💻</div>
+            <h3>Hardware &amp; Software EndUser</h3>
+            <p>Flotas corporativas de notebooks Lenovo ThinkPad, licenciamiento Microsoft 365 y aprovisionamiento MDM.</p>
           </div>
-          <p class="portfolio-desc">
-            Backups inmutables a prueba de ransomware con Object First Ootbi, Veeam Backup &amp; Replication y DRaaS.
-          </p>
-          <ul class="product-list" role="list">
-            <li class="product-item" role="listitem">
-              <div class="product-dot" aria-hidden="true"></div>
-              <div class="product-item-text"><strong>Almacenamiento Inmutable</strong> — Object First Ootbi appliance</div>
-            </li>
-            <li class="product-item" role="listitem">
-              <div class="product-dot" aria-hidden="true"></div>
-              <div class="product-item-text"><strong>Recuperación de Desastres</strong> — Disaster Recovery as a Service (DRaaS)</div>
-            </li>
-          </ul>
-          <div class="brand-tags" aria-label="Marcas asociadas">
-            <span class="brand-tag">Object First</span>
-            <span class="brand-tag">Veeam</span>
-            <span class="brand-tag">Commvault</span>
-          </div>
-          <div class="card-link-btn">
-            Ver detalles de unidad
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-        </a>
+          <a href="https://tecnovoa.cl/servicios-ti/end-user-computing/" class="portfolio-link">
+            Explorar Unidad
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </a>
+        </div>
 
-        <!-- UN 06: SW y HW EndUser -->
-        <a href="https://tecnovoa.cl/servicios-ti/sw-y-hw-enduser/" class="portfolio-card fade-in fade-delay-3" role="listitem">
-          <div class="portfolio-header">
-            <div class="portfolio-icon" aria-hidden="true">💻</div>
-            <div>
-              <div class="portfolio-cat">Unidad 06</div>
-              <h3 class="portfolio-title">Software y Hardware EndUser</h3>
-            </div>
+        <!-- 7. Energía Crítica & CCTV -->
+        <div class="portfolio-card">
+          <div>
+            <div class="portfolio-icon">⚡</div>
+            <h3>Energía Crítica &amp; CCTV IP</h3>
+            <p>UPS industriales Eaton/Legrand, respaldo eléctrico para datacenters, videovigilancia IP y control biométrico.</p>
           </div>
-          <p class="portfolio-desc">
-            Equipamiento corporativo, licitaciones HaaS, licencias Microsoft 365, escritorios virtuales VDI y workstations.
-          </p>
-          <ul class="product-list" role="list">
-            <li class="product-item" role="listitem">
-              <div class="product-dot" aria-hidden="true"></div>
-              <div class="product-item-text"><strong>Workstations y Laptops</strong> — ASUS ProArt, Lenovo ThinkPad y Dell</div>
-            </li>
-            <li class="product-item" role="listitem">
-              <div class="product-dot" aria-hidden="true"></div>
-              <div class="product-item-text"><strong>Licenciamiento Corporativo</strong> — Microsoft 365, Azure y Citrix</div>
-            </li>
-          </ul>
-          <div class="brand-tags" aria-label="Marcas asociadas">
-            <span class="brand-tag">Microsoft</span>
-            <span class="brand-tag">Lenovo</span>
-            <span class="brand-tag">ASUS</span>
-            <span class="brand-tag">Citrix</span>
-          </div>
-          <div class="card-link-btn">
-            Ver detalles de unidad
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-        </a>
+          <a href="https://tecnovoa.cl/servicios-ti/energia-y-seguridad/" class="portfolio-link">
+            Explorar Unidad
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </a>
+        </div>
 
-        <!-- UN 07: Respaldo de Energía y Climatización -->
-        <a href="https://tecnovoa.cl/servicios-ti/respaldo-de-energia/" class="portfolio-card fade-in fade-delay-1" role="listitem">
-          <div class="portfolio-header">
-            <div class="portfolio-icon" aria-hidden="true">🔋</div>
-            <div>
-              <div class="portfolio-cat">Unidad 07</div>
-              <h3 class="portfolio-title">Respaldo de Energía y Climatización</h3>
-            </div>
+        <!-- 8. Virtualización Proxmox -->
+        <div class="portfolio-card">
+          <div>
+            <div class="portfolio-icon">📦</div>
+            <h3>Virtualización Proxmox VE</h3>
+            <p>Migración de licenciamientos tradicionales a clústeres Open-Source Proxmox VE de alto rendimiento y cero costo de suscripción.</p>
           </div>
-          <p class="portfolio-desc">
-            Sistemas UPS trifásicos y monofásicos, tableros eléctricos, PDUs monitoreables y aire de precisión InRow.
-          </p>
-          <ul class="product-list" role="list">
-            <li class="product-item" role="listitem">
-              <div class="product-dot" aria-hidden="true"></div>
-              <div class="product-item-text"><strong>Sistemas UPS On-Line</strong> — Eaton, APC, Legrand y Vertiv</div>
-            </li>
-            <li class="product-item" role="listitem">
-              <div class="product-dot" aria-hidden="true"></div>
-              <div class="product-item-text"><strong>Aire de Precisión</strong> — Climatización perimetral e InRow 24/7</div>
-            </li>
-          </ul>
-          <div class="brand-tags" aria-label="Marcas asociadas">
-            <span class="brand-tag">Eaton</span>
-            <span class="brand-tag">APC</span>
-            <span class="brand-tag">Vertiv</span>
-            <span class="brand-tag">Legrand</span>
-          </div>
-          <div class="card-link-btn">
-            Ver detalles de unidad
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-        </a>
-
-        <!-- UN 08: Virtualización de Servidores -->
-        <a href="https://tecnovoa.cl/servicios-ti/virtualizacion-de-servidores/" class="portfolio-card fade-in fade-delay-2" role="listitem">
-          <div class="portfolio-header">
-            <div class="portfolio-icon" aria-hidden="true">📦</div>
-            <div>
-              <div class="portfolio-cat">Unidad 08</div>
-              <h3 class="portfolio-title">Virtualización de Servidores</h3>
-            </div>
-          </div>
-          <p class="portfolio-desc">
-            Consolidación de hipervisores Microsoft Hyper-V, Proxmox VE y Nutanix AHV para optimizar el hardware TI.
-          </p>
-          <ul class="product-list" role="list">
-            <li class="product-item" role="listitem">
-              <div class="product-dot" aria-hidden="true"></div>
-              <div class="product-item-text"><strong>Hipervisores Corporativos</strong> — Microsoft Hyper-V, Proxmox VE y Nutanix AHV</div>
-            </li>
-            <li class="product-item" role="listitem">
-              <div class="product-dot" aria-hidden="true"></div>
-              <div class="product-item-text"><strong>Hiperconvergencia (HCI)</strong> — Despliegue de clústeres Nutanix AHV y Proxmox</div>
-            </li>
-          </ul>
-          <div class="brand-tags" aria-label="Marcas asociadas">
-            <span class="brand-tag">Nutanix</span>
-            <span class="brand-tag">Hyper-V</span>
-            <span class="brand-tag">Proxmox</span>
-            <span class="brand-tag">Red Hat</span>
-          </div>
-          <div class="card-link-btn">
-            Ver detalles de unidad
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-        </a>
-
+          <a href="https://tecnovoa.cl/servicios-ti/virtualizacion-proxmox-ve/" class="portfolio-link">
+            Explorar Unidad
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════════════ -->
-  <!--  CTA FINAL                                             -->
-  <!-- ══════════════════════════════════════════════════════ -->
-  <section id="unidades-cta-final" aria-labelledby="unidades-cta-title">
-    <div class="container">
-      <div class="cta-inner fade-in">
-        <div class="section-tag" style="margin-bottom:20px">Conversemos</div>
-        <h2 class="cta-title" id="unidades-cta-title">
-          ¿Necesitas asesoría para<br><span class="grad-blue">tu infraestructura TI?</span>
-        </h2>
-        <p class="cta-sub">
-          Contáctanos hoy mismo para evaluar tu proyecto. Nuestros ingenieros dimensionarán la solución idónea para tu negocio.
-        </p>
-        <div class="cta-actions">
-          <a href="https://tecnovoa.cl/contacto/" class="btn-primary" id="unidades-cta-final-btn">
-            Solicitar propuesta sin costo
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <a href="https://tecnovoa.cl/nosotros/" class="btn-secondary" id="unidades-cta-back-btn">
-            Conoce más sobre TECNOVOA
-          </a>
+  <!-- SECCIÓN 5: PREGUNTAS FRECUENTES (FAQ) -->
+  <section class="tv-sec-faq" aria-label="Preguntas Frecuentes">
+    <div class="tv-container">
+      <div class="tv-arch-header tv-anim-fade-in">
+        <div class="tv-arch-eyebrow">Dudas Comunes</div>
+        <h2 class="tv-arch-title">Preguntas Frecuentes de Nuestros Clientes</h2>
+        <p class="tv-arch-lead">Respuestas claras sobre nuestros modelos de trabajo, SLA y cobertura nacional.</p>
+      </div>
+
+      <div class="faq-wrapper tv-anim-fade-in">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>¿Cuál es el tiempo de respuesta garantizado por contrato (SLA)?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Garantizamos un tiempo de respuesta inicial inferior a 2 horas para incidentes de prioridad crítica en clientes con contratos de soporte activo 24/7 en todo Chile.
+          </div>
         </div>
-        <div class="cta-contact-strip" role="list" aria-label="Datos de contacto">
-          <a href="tel:+56997051793" class="cta-contact-item" role="listitem">
-            <span class="icon" aria-hidden="true">📞</span>+56 9 9705 1793
-          </a>
-          <a href="mailto:ventas@tecnovoa.cl" class="cta-contact-item" role="listitem">
-            <span class="icon" aria-hidden="true">✉️</span>ventas@tecnovoa.cl
-          </a>
-          <div class="cta-contact-item" role="listitem">
-            <span class="icon" aria-hidden="true">📍</span>Providencia, Santiago de Chile
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>¿Realizan proyectos y despachos fuera de Santiago?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Sí, contamos con cobertura operativa y logística para despachos de hardware, instalaciones de cableado y despliegues técnicos en todas las regiones de Chile.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>¿Tienen alianzas y certificaciones directas con los fabricantes?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Somos partner certificado de Cisco, Fortinet, Lenovo, Proxmox VE, Western Digital, Veeam, Eaton, Microsoft y Logitech, lo que garantiza garantías oficiales y respaldo de fábrica.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>¿Cómo funciona el proceso de diagnóstico de infraestructura?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Realizamos una evaluación técnica inicial sin costo para identificar cuellos de botella, brechas de seguridad o riesgos de continuidad operacional en tu empresa.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>¿Ofrecen facilidades de compra o servicios administrados (MSP)?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Ofrecemos modelos de compra directa, venta por proyecto corporativo y contratos de servicios gestionados (SaaS/IaaS) con pago mensual centralizado.
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <button class="tv-theme-toggle-btn" id="tv-theme-toggle" aria-label="Cambiar tema claro/oscuro">
-    <span class="theme-icon-sun">☀️</span>
-    <span class="theme-icon-moon">🌙</span>
-    <span class="theme-toggle-text">Modo Claro</span>
-  </button>
+  <!-- SECCIÓN 6: BANNER CTA & CONTACTO -->
+  <section class="tv-sec-cta" aria-label="Contacto y Asesoría">
+    <div class="tv-container">
+      <div class="cta-inner tv-anim-fade-in">
+        <h2 class="cta-title">¿Listo para optimizar la continuidad tecnológica de tu empresa?</h2>
+        <p class="cta-desc">Conversa directamente con nuestros ingenieros especialistas y recibe una propuesta técnica adaptada a las necesidades de tu organización.</p>
+        
+        <div class="cta-buttons">
+          <a href="https://tecnovoa.cl/contacto/" class="tv-btn-primary">
+            Solicitar evaluación sin costo
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="https://wa.me/56997051793" target="_blank" rel="noopener noreferrer" class="tv-btn-secondary">
+            Contacto directo WhatsApp
+          </a>
+        </div>
+
+        <div class="cta-contact-strip">
+          <div class="cta-contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>+56 9 9705 1793</span>
+          </div>
+          <div class="cta-contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>ventas@tecnovoa.cl</span>
+          </div>
+          <div class="cta-contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Providencia, Santiago de Chile</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /.tv-home-b2b-embed -->
+
+<!-- Botón Flotante de Conmutación de Tema -->
+<button class="tv-theme-toggle-btn" id="tv-theme-toggle" aria-label="Cambiar tema claro/oscuro">
+  <span class="theme-icon-sun">☀️</span>
+  <span class="theme-icon-moon">🌙</span>
+  <span class="theme-toggle-text">Modo Claro</span>
+</button>
 
 <script>
-/* ─────────────────────────────────────────────────────────────────
-   TECNOVOA — Master Global JavaScript (Toda la Web)
-   Versión: Luminous Corporate B2B (Universal & Autosuficiente)
-   Funciones:
-     1. Inyector y Controlador de Modo Claro / Oscuro
-     2. Aceleración e Intersección de Animaciones
-     3. Tabs de Arquitecturas y Soluciones 3D
-     4. Acordeón Interactivo de Preguntas Frecuentes (FAQ)
-     5. Captación Asíncrona de Leads (Formularios / CRM / Webhook)
-     6. Navegación Suave de Anclas (#)
-───────────────────────────────────────────────────────────────── */
 (function() {
-  'use strict';
-
-  /* ── 1. MODO CLARO / OSCURO & BOTÓN FLOTANTE AUTOMÁTICO ───────── */
-  function initTheme() {
-    // Si el botón no existe en el DOM, se crea e inyecta dinámicamente
-    var toggleBtn = document.getElementById('tv-theme-toggle');
-    if (!toggleBtn) {
-      toggleBtn = document.createElement('button');
-      toggleBtn.id = 'tv-theme-toggle';
-      toggleBtn.className = 'tv-theme-toggle-btn';
-      toggleBtn.setAttribute('aria-label', 'Cambiar tema de color');
-      toggleBtn.setAttribute('type', 'button');
-      toggleBtn.innerHTML = '<span class="theme-icon-sun" aria-hidden="true">☀️</span>' +
-                            '<span class="theme-icon-moon" aria-hidden="true">🌙</span>' +
-                            '<span class="theme-toggle-text">Modo Claro</span>';
-      document.body.appendChild(toggleBtn);
+  var archData = {
+    redes: {
+      badgeText: "Topología LAN / WiFi 6",
+      img: "img/telecomunicaciones-redes-isometric.jpg",
+      alt: "Arquitectura Técnica de Telecomunicaciones y Redes TECNOVOA",
+      tag: "Unidad de Negocio 01",
+      title: "Redes Empresariales, WiFi de Alta Densidad y Fibra Óptica",
+      desc: "Diseñamos e implementamos infraestructuras de red de alta disponibilidad con topología de doble núcleo, segmentación por VLAN y monitoreo centralizado en la nube para garantizar cero caídas en tu operación.",
+      specs: [
+        "<strong>Core &amp; Switching:</strong> Cisco Catalyst, Meraki y Extreme Networks con redundancia L3.",
+        "<strong>WiFi Empresarial:</strong> Ubiquiti UniFi y Meraki con Site Survey predictivo Ekahau.",
+        "<strong>Cableado Estructurado:</strong> Cat 6A / Fibra óptica con certificación Fluke Networks AS-BUILT."
+      ],
+      link: "https://tecnovoa.cl/servicios-ti/telecomunicaciones-y-redes/",
+      linkText: "Ver catálogo técnico de redes",
+      partners: "Partners: <strong>Cisco</strong> · <strong>Ubiquiti</strong> · <strong>Extreme</strong> · <strong>Fluke</strong>"
+    },
+    av: {
+      badgeText: "Salas Híbridas &amp; Ecosistema AV",
+      img: "img/audio-video-colaboracion-isometric.jpg",
+      alt: "Arquitectura Técnica de Audio y Video Colaboración TECNOVOA",
+      tag: "Unidad de Negocio 03",
+      title: "Audio &amp; Video Colaboración y Salas de Reunión Inteligentes",
+      desc: "Transformamos espacios corporativos en centros de colaboración híbrida con tecnologías de videoconferencia de alta definición, cancelación de ruido con IA y automatización táctil.",
+      specs: [
+        "<strong>Pantallas Interactivas:</strong> HUAWEI IdeaHub 4K con pizarra inteligente y doble SO.",
+        "<strong>Sistemas de Videoconferencia:</strong> Logitech Rally Bar, Tap Controller y Neat Bar.",
+        "<strong>Audio Profesional:</strong> Microfonía de techo Shure Microflex Advance y procesadores QSC."
+      ],
+      link: "https://tecnovoa.cl/servicios-ti/audio-y-video-colaboracion/",
+      linkText: "Ver soluciones de Audio &amp; Video",
+      partners: "Partners: <strong>HUAWEI</strong> · <strong>Logitech</strong> · <strong>Neat</strong> · <strong>Shure</strong> · <strong>QSC</strong>"
+    },
+    ciber: {
+      badgeText: "Perímetro Zero Trust &amp; SOC",
+      img: "img/ciberseguridad-isometric.jpg",
+      alt: "Arquitectura Técnica de Ciberseguridad TECNOVOA",
+      tag: "Unidad de Negocio 04",
+      title: "Ciberseguridad Perimetral, Endpoint &amp; Cumplimiento Normativo",
+      desc: "Protegemos la infraestructura digital de tu empresa contra amenazas avanzadas, ransomware y accesos no autorizados con un enfoque multicapa y políticas de Zero Trust.",
+      specs: [
+        "<strong>Firewalls de Próxima Generación:</strong> Fortinet FortiGate con inspección SSL y SD-WAN.",
+        "<strong>Protección Endpoint &amp; XDR:</strong> Sophos Intercept X con EDR asistido por IA.",
+        "<strong>Cumplimiento &amp; Auditoría:</strong> Evaluaciones de vulnerabilidad y alineación ISO 27001."
+      ],
+      link: "https://tecnovoa.cl/servicios-ti/ciberseguridad/",
+      linkText: "Ver soluciones de Ciberseguridad",
+      partners: "Partners: <strong>Fortinet</strong> · <strong>Sophos</strong> · <strong>Veeam</strong> · <strong>Microsoft</strong>"
+    },
+    enduser: {
+      badgeText: "Flotas Corporativas &amp; Cloud Workspace",
+      img: "img/enduser-computing-isometric.jpg",
+      alt: "Arquitectura Técnica de End-User Computing TECNOVOA",
+      tag: "Unidad de Negocio 06",
+      title: "Hardware End-User, Movilidad &amp; Licenciamiento Corporativo",
+      desc: "Equipamos a tus colaboradores con hardware de alto rendimiento, despliegue automatizado en la nube y licencias oficiales organizadas para el trabajo moderno.",
+      specs: [
+        "<strong>Equipamiento Computacional:</strong> Notebooks Lenovo ThinkPad, Dell Latitude y Workstations HP.",
+        "<strong>Licenciamiento Empresarial:</strong> Microsoft 365 Enterprise, Google Workspace y Adobe.",
+        "<strong>Gestión de Dispositivos:</strong> MDM / Intune para provisión remota y borrado seguro."
+      ],
+      link: "https://tecnovoa.cl/servicios-ti/end-user-computing/",
+      linkText: "Ver catálogo de End-User Computing",
+      partners: "Partners: <strong>Lenovo</strong> · <strong>Dell</strong> · <strong>Microsoft</strong> · <strong>HP</strong>"
+    },
+    energia: {
+      badgeText: "Respaldo Eléctrico &amp; Vigilancia IP",
+      img: "img/energia-seguridad-isometric.jpg",
+      alt: "Arquitectura Técnica de Energía y Seguridad TECNOVOA",
+      tag: "Unidad de Negocio 07",
+      title: "Energía Crítica UPS, Climatización de Datacenter &amp; CCTV IP",
+      desc: "Aseguramos el suministro continuo de energía limpia para tus equipos críticos y la protección física de tus instalaciones con analítica de video avanzada.",
+      specs: [
+        "<strong>Sistemas UPS Corporativos:</strong> Eaton y Legrand de doble conversión para racks y datacenters.",
+        "<strong>Climatización de Precisión:</strong> Sistemas in-row e in-rack para control térmico 24/7.",
+        "<strong>Seguridad Física &amp; CCTV:</strong> Cámaras IP de alta resolución, NVRs redundantes y control de acceso."
+      ],
+      link: "https://tecnovoa.cl/servicios-ti/energia-y-seguridad/",
+      linkText: "Ver soluciones de Energía &amp; Seguridad",
+      partners: "Partners: <strong>Eaton</strong> · <strong>Legrand</strong> · <strong>Schneider</strong> · <strong>Hikvision</strong>"
     }
+  };
 
-    var targets = [
-      document.documentElement,
-      document.body
-    ];
-    document.querySelectorAll('.tv-landing-page, .tv-home-b2b-embed').forEach(function(el) {
-      targets.push(el);
-    });
+  function init3DExplorer() {
+    var tabs = document.querySelectorAll('.tv-arch-tab');
+    if (!tabs.length) return;
+    tabs.forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        var unitKey = this.getAttribute('data-unit');
+        var data = archData[unitKey];
+        if (!data) return;
 
-    function applyTheme(theme) {
-      targets.forEach(function(el) {
-        if (el) el.setAttribute('data-theme', theme);
-      });
-      if (toggleBtn) {
-        var textSpan = toggleBtn.querySelector('.theme-toggle-text');
-        if (textSpan) {
-          textSpan.textContent = theme === 'light' ? 'Modo Oscuro' : 'Modo Claro';
+        tabs.forEach(function(t) {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        this.classList.add('active');
+        this.setAttribute('aria-selected', 'true');
+
+        var badgeTextEl = document.getElementById('tv-arch-badge-text');
+        var imgEl = document.getElementById('tv-arch-image');
+        var tagEl = document.getElementById('tv-arch-tag');
+        var titleEl = document.getElementById('tv-arch-title');
+        var descEl = document.getElementById('tv-arch-desc');
+        var specsEl = document.getElementById('tv-arch-specs');
+        var linkEl = document.getElementById('tv-arch-link');
+        var partnersEl = document.getElementById('tv-arch-partners');
+
+        if (badgeTextEl) badgeTextEl.textContent = data.badgeText;
+        if (imgEl) {
+          imgEl.src = data.img;
+          imgEl.alt = data.alt;
         }
-      }
-      try { localStorage.setItem('tecnovoa-theme', theme); } catch(e) {}
-    }
+        if (tagEl) tagEl.textContent = data.tag;
+        if (titleEl) titleEl.textContent = data.title;
+        if (descEl) descEl.textContent = data.desc;
+        if (specsEl) {
+          specsEl.innerHTML = data.specs.map(function(s) {
+            return '<div class="tv-arch-spec-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg><div>' + s + '</div></div>';
+          }).join('');
+        }
+        if (linkEl) {
+          linkEl.href = data.link;
+          linkEl.innerHTML = data.linkText + ' <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+        }
+        if (partnersEl) partnersEl.innerHTML = data.partners;
+      });
+    });
+  }
 
+  function applyTheme(theme) {
+    var targets = [document.documentElement, document.body];
+    document.querySelectorAll('.tv-home-b2b-embed, .tv-landing-page').forEach(function(el) { targets.push(el); });
+    targets.forEach(function(el) { el.setAttribute('data-theme', theme); });
+    var toggleBtn = document.getElementById('tv-theme-toggle');
+    if (toggleBtn) {
+      var textSpan = toggleBtn.querySelector('.theme-toggle-text');
+      if (textSpan) textSpan.textContent = theme === 'light' ? 'Modo Oscuro' : 'Modo Claro';
+    }
+    try { localStorage.setItem('tecnovoa-theme', theme); } catch(e) {}
+  }
+
+  function initTheme() {
+    var toggleBtn = document.getElementById('tv-theme-toggle');
     var savedTheme = 'dark';
     try { savedTheme = localStorage.getItem('tecnovoa-theme') || 'dark'; } catch(e) {}
     applyTheme(savedTheme);
-
     if (toggleBtn && !toggleBtn.dataset.themeBound) {
       toggleBtn.dataset.themeBound = 'true';
       toggleBtn.addEventListener('click', function() {
         var currentTheme = (document.documentElement.getAttribute('data-theme') || 'dark') === 'light' ? 'light' : 'dark';
-        var nextTheme = currentTheme === 'light' ? 'dark' : 'light';
-        applyTheme(nextTheme);
+        applyTheme(currentTheme === 'light' ? 'dark' : 'light');
       });
     }
   }
 
-  /* ── 2. ANIMACIONES CON PROGRESIÓN FLUIDA (GPU A11y) ──────────── */
-  function initAnimations() {
-    var animSelector = '.tv-anim-fade-in, .tv-anim-slide-up, .tv-anim-scale, .tv-anim-stagger, .fade-in';
-    var animEls = document.querySelectorAll(animSelector);
-    if (!animEls.length) return;
-
-    // Hacer visibles de inmediato los elementos en el viewport inicial
-    var vh = window.innerHeight || document.documentElement.clientHeight;
-    animEls.forEach(function(el) {
-      var rect = el.getBoundingClientRect();
-      if (rect.top <= vh * 0.95) {
-        el.classList.add('visible');
-      }
+  function initFAQ() {
+    document.querySelectorAll('.faq-question').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = btn.closest('.faq-item');
+        if (!item) return;
+        var isActive = item.classList.contains('active');
+        var parent = item.parentElement;
+        if (parent) parent.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('active'); });
+        if (!isActive) item.classList.add('active');
+      });
     });
+  }
 
+  function initAnimations() {
+    var animEls = document.querySelectorAll('.tv-anim-fade-in');
+    if (!animEls.length) return;
     if ('IntersectionObserver' in window) {
       var io = new IntersectionObserver(function(entries) {
         entries.forEach(function(e) {
@@ -2184,166 +2245,21 @@
             io.unobserve(e.target);
           }
         });
-      }, { threshold: 0.05, rootMargin: '0px 0px 50px 0px' });
-
-      animEls.forEach(function(el) {
-        if (!el.classList.contains('visible')) {
-          io.observe(el);
-        }
-      });
+      }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+      animEls.forEach(function(el) { io.observe(el); });
     } else {
       animEls.forEach(function(el) { el.classList.add('visible'); });
     }
   }
 
-  /* ── 3. TABS INTERACTIVAS DE ARQUITECTURAS Y SOLUCIONES ────────── */
-  function initArchTabs() {
-    var tabBtns = document.querySelectorAll('.arch-tab-btn, .tv-arch-tab');
-    if (!tabBtns.length) return;
-
-    tabBtns.forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        var parentNav = btn.closest('.arch-showcase-tabs, .tv-arch-tabs');
-        if (parentNav) {
-          parentNav.querySelectorAll('.arch-tab-btn, .tv-arch-tab').forEach(function(b) {
-            b.classList.remove('active');
-            b.setAttribute('aria-selected', 'false');
-          });
-        }
-        btn.classList.add('active');
-        btn.setAttribute('aria-selected', 'true');
-
-        var tabId = btn.getAttribute('data-tab');
-        if (!tabId) return;
-
-        // Mostrar el contenido correspondiente
-        var container = btn.closest('.arch-showcase-section, .tv-sec-explorer') || document;
-        container.querySelectorAll('.arch-showcase-card, .tv-arch-display').forEach(function(card) {
-          if (card.getAttribute('data-tab-content') === tabId || card.id === tabId) {
-            card.style.display = 'grid';
-            card.classList.add('fade-in', 'visible');
-          } else if (card.hasAttribute('data-tab-content')) {
-            card.style.display = 'none';
-          }
-        });
-      });
-    });
-  }
-
-  /* ── 4. ACORDEÓN INTERACTIVO DE PREGUNTAS FRECUENTES (FAQ) ─────── */
-  function initFAQ() {
-    document.querySelectorAll('.tv-sec-faq .faq-question, .faq-question').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        var item = btn.closest('.faq-item');
-        if (!item) return;
-        var isActive = item.classList.contains('active');
-        var parent = item.parentElement;
-        if (parent) {
-          parent.querySelectorAll('.faq-item').forEach(function(i) {
-            i.classList.remove('active');
-          });
-        }
-        if (!isActive) {
-          item.classList.add('active');
-        }
-      });
-    });
-  }
-
-  /* ── 5. CAPTACIÓN ASÍNCRONA DE LEADS (AJAX / CRM / WHATSAPP) ───── */
-  function initFormHandler() {
-    var forms = document.querySelectorAll('form[action*="contact"], form.tv-form, .tv-form-card form');
-    forms.forEach(function(form) {
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        var submitBtn = form.querySelector('button[type="submit"], .tv-btn-submit, .btn-primary');
-        var originalText = submitBtn ? submitBtn.innerHTML : 'Enviar';
-
-        if (submitBtn) {
-          submitBtn.disabled = true;
-          submitBtn.innerHTML = 'Enviando solicitud...';
-        }
-
-        // Recolectar datos
-        var formData = new FormData(form);
-        var data = {};
-        formData.forEach(function(value, key) { data[key] = value; });
-
-        // Endpoint Webhook configurable o respaldo por WhatsApp directo
-        var webhookUrl = form.getAttribute('data-webhook-url');
-
-        function showSuccess() {
-          if (submitBtn) {
-            submitBtn.innerHTML = '✓ ¡Solicitud Recibida con Éxito!';
-            submitBtn.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
-          }
-          var feedbackEl = document.createElement('div');
-          feedbackEl.className = 'tv-form-feedback success';
-          feedbackEl.style.cssText = 'margin-top: 14px; padding: 12px; border-radius: 8px; background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.3); color: #34d399; font-size: 13.5px; text-align: center;';
-          feedbackEl.textContent = 'Gracias por contactarnos. Un ingeniero especialista de Tecnovoa te contactará en menos de 15 minutos.';
-          form.appendChild(feedbackEl);
-          form.reset();
-          setTimeout(function() {
-            if (submitBtn) {
-              submitBtn.disabled = false;
-              submitBtn.innerHTML = originalText;
-              submitBtn.style.background = '';
-            }
-          }, 8000);
-        }
-
-        if (webhookUrl && webhookUrl.startsWith('http')) {
-          fetch(webhookUrl, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
-          }).then(function(res) {
-            showSuccess();
-          }).catch(function() {
-            showSuccess();
-          });
-        } else {
-          // Si no hay webhook configurado, simular éxito inmediato y ofrecer WhatsApp
-          setTimeout(showSuccess, 600);
-        }
-      });
-    });
-  }
-
-  /* ── 6. NAVEGACIÓN SUAVE DE ENLACES (#) ────────────────────────── */
-  function initSmoothScroll() {
-    document.querySelectorAll('a[href^="#"]').forEach(function(a) {
-      a.addEventListener('click', function(e) {
-        var href = a.getAttribute('href');
-        if (href && href.length > 1) {
-          var target = document.querySelector(href);
-          if (target) {
-            e.preventDefault();
-            var offset = 60;
-            var top = target.getBoundingClientRect().top + window.scrollY - offset;
-            window.scrollTo({ top: top, behavior: 'smooth' });
-          }
-        }
-      });
-    });
-  }
-
-  /* ── INICIALIZACIÓN GLOBAL DE TODA LA WEB ─────────────────────── */
   function initAll() {
     initTheme();
-    initAnimations();
-    initArchTabs();
+    init3DExplorer();
     initFAQ();
-    initFormHandler();
-    initSmoothScroll();
+    initAnimations();
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initAll);
-  } else {
-    initAll();
-  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initAll);
+  else initAll();
 })();
 </script>
-
-</div><!-- /.tv-landing-page -->
